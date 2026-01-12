@@ -1,11 +1,18 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "claude-plugin-pack",
-  "version": "0.1.0",
+  "version": "26.1.0",
   "description": "A collection of useful plugins, skills, and commands for Claude Code",
   "owner": {
     "name": "Jongmin Park",
     "url": "https://github.com/GzuPark"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "creators",
+      "description": "Skills for creating Claude Code extensions: skills, slash commands, hooks, and subagents",
+      "source": "./plugins/creators",
+      "category": "development"
+    }
+  ]
 }

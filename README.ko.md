@@ -36,7 +36,14 @@ claude --plugin-dir ./claude-plugin-pack
 
 ## 포함된 플러그인
 
-(준비 중)
+### creators
+
+Claude Code 확장 기능 생성을 위한 스킬:
+
+- **skill-creator** - SKILL.md로 에이전트 스킬 생성
+- **slash-command-creator** - 커스텀 슬래시 명령어 생성
+- **hook-creator** - 이벤트 훅 생성
+- **subagent-creator** - 커스텀 서브에이전트 생성
 
 ## 구조
 

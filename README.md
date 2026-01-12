@@ -36,7 +36,14 @@ claude --plugin-dir ./claude-plugin-pack
 
 ## Included Plugins
 
-(Coming soon)
+### creators
+
+Skills for creating Claude Code extensions:
+
+- **skill-creator** - Create Agent Skills with SKILL.md
+- **slash-command-creator** - Create custom slash commands
+- **hook-creator** - Create event hooks
+- **subagent-creator** - Create custom subagents
 
 ## Structure
 
