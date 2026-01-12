@@ -8,30 +8,18 @@ Claude Code plugins extend the functionality of Claude Code CLI. This repository
 
 ## Installation
 
-### From GitHub (Recommended)
-
-1. Add the marketplace:
-
-   ```bash
-   /plugin marketplace add GzuPark/claude-plugin-pack
-   ```
-
-2. Install plugins:
-
-   ```bash
-   /plugin install plugin-name@claude-plugin-pack
-   ```
-
-### From CLI
+Add the marketplace:
 
 ```bash
-claude plugin install plugin-name@claude-plugin-pack
+/plugin marketplace add GzuPark/claude-plugin-pack
 ```
 
-### Local Development
+## Update
+
+Custom plugins do not auto-update. Run the following command to get the latest version:
 
 ```bash
-claude --plugin-dir ./claude-plugin-pack
+/plugin marketplace update claude-plugin-pack
 ```
 
 ## Included Plugins
@@ -44,6 +32,10 @@ Skills for creating Claude Code extensions:
 - **slash-command-creator** - Create custom slash commands
 - **hook-creator** - Create event hooks
 - **subagent-creator** - Create custom subagents
+
+```bash
+/plugin install creators@claude-plugin-pack
+```
 
 ## Structure
 

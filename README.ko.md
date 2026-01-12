@@ -8,30 +8,18 @@ Claude Code 플러그인은 Claude Code CLI의 기능을 확장합니다. 이 �
 
 ## 설치
 
-### GitHub에서 설치 (권장)
-
-1. 마켓플레이스 추가:
-
-   ```bash
-   /plugin marketplace add GzuPark/claude-plugin-pack
-   ```
-
-2. 플러그인 설치:
-
-   ```bash
-   /plugin install plugin-name@claude-plugin-pack
-   ```
-
-### CLI에서 설치
+마켓플레이스 추가:
 
 ```bash
-claude plugin install plugin-name@claude-plugin-pack
+/plugin marketplace add GzuPark/claude-plugin-pack
 ```
 
-### 로컬 개발
+## 업데이트
+
+커스텀 플러그인은 자동 업데이트되지 않습니다. 다음 명령어로 최신 버전을 받을 수 있습니다:
 
 ```bash
-claude --plugin-dir ./claude-plugin-pack
+/plugin marketplace update claude-plugin-pack
 ```
 
 ## 포함된 플러그인
@@ -44,6 +32,10 @@ Claude Code 확장 기능 생성을 위한 스킬:
 - **slash-command-creator** - 커스텀 슬래시 명령어 생성
 - **hook-creator** - 이벤트 훅 생성
 - **subagent-creator** - 커스텀 서브에이전트 생성
+
+```bash
+/plugin install creators@claude-plugin-pack
+```
 
 ## 구조
 
