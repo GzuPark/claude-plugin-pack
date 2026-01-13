@@ -34,6 +34,7 @@ Custom plugins do not auto-update. Run the following command to get the latest v
 Essential dev workflow for daily development:
 
 - **/commit** - Create well-structured git commits with conventional commit format
+- **/interview** - Conduct technical interviews about project plans to generate specifications
 - **/pr** - Create GitHub PR with automated code review
 
 ```bash

@@ -19,6 +19,22 @@ Create well-structured git commits with conventional commit format.
 - Automatic staging of relevant files
 - Style reference from recent commits
 
+### /interview
+
+Conduct technical interviews about project plans to generate specifications.
+
+```
+/interview path/to/plan.md
+/interview "Build a todo app with React"
+```
+
+**Features:**
+
+- Dynamic question count based on complexity (3-10 questions)
+- Progress tracking during interview
+- Automatic specification document generation
+- Intermediate save for long interviews
+
 ### /pr
 
 Create GitHub PR with automated code review.
@@ -39,6 +55,15 @@ Create GitHub PR with automated code review.
 - Push confirmation before creating PR
 
 ## Skills
+
+### plan-interview
+
+The `/interview` command uses the `plan-interview` skill internally. This skill provides:
+
+- 4-step workflow: input understanding, complexity assessment, interview, specification
+- Interview areas: Architecture, Backend, Frontend, AI/LLM, Concerns, Scalability
+- Specification template generation
+- References for interview questions and spec format
 
 ### pr-workflow
 

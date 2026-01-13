@@ -34,6 +34,7 @@ Claude Code 플러그인은 Claude Code CLI의 기능을 확장합니다. 이 �
 일상적인 개발을 위한 필수 워크플로우:
 
 - **/commit** - Conventional Commit 형식으로 Git 커밋 생성
+- **/interview** - 프로젝트 계획에 대한 기술 인터뷰를 수행하여 사양 문서 생성
 - **/pr** - 자동 코드 리뷰가 포함된 GitHub PR 생성
 
 ```bash

@@ -1,5 +1,10 @@
 # Changelog
 
+## 26.1.2 (2026-01-13)
+
+- Update hello-world plugin (v1.1.0)
+  - /interview: Conduct technical interviews about project plans (uses plan-interview skill)
+
 ## 26.1.1 (2026-01-13)
 
 - Add hello-world plugin (v1.0.0)
