@@ -52,6 +52,11 @@ SHOULD use formal polite speech ("~합니다" form), NOT casual speech ("~해줘
 - New feature → minor ↑
 - Bug fix → patch ↑
 
+**Version Sync:** Keep versions in sync between:
+
+- `.claude-plugin/marketplace.json`
+- `.claude-plugin/plugin.json`
+
 ### Changelog
 
 All changes are recorded in `CHANGELOG.md`.
