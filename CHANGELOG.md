@@ -1,5 +1,14 @@
 # Changelog
 
+## 26.1.3 (2026-01-13)
+
+- Update creators plugin (v1.0.1)
+  - slash-command-creator: Fix bash execution example description
+- Update hello-world plugin (v1.1.1)
+  - /commit: Add missing allowed-tools (git diff, branch, log), add error handling for empty repos
+  - /interview: Improve description
+  - plan-interview: Add Triggers section
+
 ## 26.1.2 (2026-01-13)
 
 - Update hello-world plugin (v1.1.0)

@@ -1,7 +1,7 @@
 {
   "name": "creators",
   "description": "Skills for creating Claude Code extensions: skills, slash commands, hooks, and subagents",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Jongmin Park",
     "url": "https://github.com/GzuPark"

@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*)
+allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*), Bash(git diff:*), Bash(git branch:*), Bash(git log:*)
 description: Create a git commit
 argument-hint: [additional context]
 ---
@@ -19,7 +19,7 @@ Gather information about the current repository state:
 - Current git status: !`git status`
 - Current git diff (staged and unstaged changes): !`git diff HEAD`
 - Current branch: !`git branch --show-current`
-- Recent commits: !`git log --oneline -10`
+- Recent commits: !`git log --oneline -10 2>/dev/null || echo "No commits yet"`
 
 ## Your Task
 

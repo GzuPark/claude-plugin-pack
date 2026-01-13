@@ -1,6 +1,6 @@
 ---
 allowed-tools: Skill(plan-interview:*)
-description: Interview me about the plan
+description: Conduct technical interview about project plans
 argument-hint: [plan-file-or-description]
 ---
 

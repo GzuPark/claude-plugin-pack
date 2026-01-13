@@ -78,6 +78,15 @@ Use template from [references/spec-template.md](references/spec-template.md).
 
 **Cleanup:** Delete `.interview-progress-*.md` after successful spec generation.
 
+## Triggers
+
+This skill activates when users want to:
+
+- Be interviewed about a project plan or specification
+- Uncover hidden assumptions in their implementation plan
+- Get structured feedback on a project idea before coding
+- Generate a detailed specification from a concept
+
 ## Anti-Patterns
 
 - **Asking obvious questions**: Don't ask what's already in the plan

@@ -66,7 +66,7 @@ Review PR #$1 with priority $2
 
 ### Bash Execution
 
-Execute shell commands with `!` prefix (requires `allowed-tools` in frontmatter):
+Execute shell commands inline using the exclamation mark prefix (see example below). The allowed-tools field is required in frontmatter:
 
 ```markdown
 ---
