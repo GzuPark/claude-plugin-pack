@@ -1,5 +1,11 @@
 # Changelog
 
+## 26.1.1 (2026-01-13)
+
+- Add hello-world plugin (v1.0.0)
+  - /commit: Create well-structured git commits with conventional commit format
+  - /pr: Create GitHub PR with automated code review (uses pr-workflow skill)
+
 ## 26.1.0 (2026-01-12)
 
 - Add creators plugin (v1.0.0)

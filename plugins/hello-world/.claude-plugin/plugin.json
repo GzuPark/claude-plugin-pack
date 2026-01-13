@@ -1,0 +1,22 @@
+{
+  "name": "hello-world",
+  "description": "Essential dev workflow: git commit and GitHub PR with automated code review",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jongmin Park",
+    "url": "https://github.com/GzuPark"
+  },
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "git",
+    "github",
+    "commit",
+    "pull-request",
+    "pr",
+    "code-review",
+    "workflow",
+    "automation",
+    "essentials"
+  ]
+}

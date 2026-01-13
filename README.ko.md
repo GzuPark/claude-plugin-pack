@@ -24,6 +24,22 @@ Claude Code 플러그인은 Claude Code CLI의 기능을 확장합니다. 이 �
 
 ## 포함된 플러그인
 
+| 플러그인 | 설명 |
+|----------|------|
+| [hello-world](#hello-world) | 필수 개발 워크플로우: Git 커밋 및 GitHub PR |
+| [creators](#creators) | Claude Code 확장 기능 생성을 위한 스킬 |
+
+### hello-world
+
+일상적인 개발을 위한 필수 워크플로우:
+
+- **/commit** - Conventional Commit 형식으로 Git 커밋 생성
+- **/pr** - 자동 코드 리뷰가 포함된 GitHub PR 생성
+
+```bash
+/plugin install hello-world@claude-plugin-pack
+```
+
 ### creators
 
 Claude Code 확장 기능 생성을 위한 스킬:

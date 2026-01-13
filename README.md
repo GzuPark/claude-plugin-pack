@@ -24,6 +24,22 @@ Custom plugins do not auto-update. Run the following command to get the latest v
 
 ## Included Plugins
 
+| Plugin | Description |
+|--------|-------------|
+| [hello-world](#hello-world) | Essential dev workflow: git commit and GitHub PR |
+| [creators](#creators) | Skills for creating Claude Code extensions |
+
+### hello-world
+
+Essential dev workflow for daily development:
+
+- **/commit** - Create well-structured git commits with conventional commit format
+- **/pr** - Create GitHub PR with automated code review
+
+```bash
+/plugin install hello-world@claude-plugin-pack
+```
+
 ### creators
 
 Skills for creating Claude Code extensions:
