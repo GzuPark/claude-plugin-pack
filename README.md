@@ -28,6 +28,7 @@ Custom plugins do not auto-update. Run the following command to get the latest v
 |--------|-------------|
 | [hello-world](#hello-world) | Essential dev workflow: git commit and GitHub PR |
 | [creators](#creators) | Skills for creating Claude Code extensions |
+| [task-forge](#task-forge) | Workplace productivity tools: meeting analysis, video insights |
 
 ### hello-world
 
@@ -52,6 +53,17 @@ Skills for creating Claude Code extensions:
 
 ```bash
 /plugin install creators@claude-plugin-pack
+```
+
+### task-forge
+
+Workplace productivity tools for non-developers:
+
+- **meeting-insight** - Analyze meeting transcripts for communication patterns and insights
+- **video-insight** - Extract transcripts, summaries, Q&A, and deep research from videos
+
+```bash
+/plugin install task-forge@claude-plugin-pack
 ```
 
 ## Structure

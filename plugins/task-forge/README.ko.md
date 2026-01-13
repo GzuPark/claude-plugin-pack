@@ -1,0 +1,120 @@
+# task-forge
+
+Claude Code를 위한 업무 생산성 도구입니다. 회의 분석, 영상 요약, 문서 인사이트 기능을 제공합니다.
+
+## 스킬
+
+### meeting-insight
+
+회의 기록을 분석하여 행동 패턴과 커뮤니케이션 인사이트를 도출합니다.
+
+**트리거:**
+
+- 회의 기록의 커뮤니케이션 패턴 분석
+- 리더십/퍼실리테이션 스타일 피드백
+- 갈등 회피 순간 식별
+- 발화 습관 및 군말 추적
+- 시간에 따른 커뮤니케이션 개선 비교
+
+**지원 형식:** `.txt`, `.md`, `.vtt`, `.srt`, `.docx`
+
+**사용 예시:**
+
+```
+이 폴더의 모든 회의를 분석하고 갈등을 회피한 순간을 알려 주세요.
+```
+
+```
+지난 달 회의를 보고 커뮤니케이션 패턴을 파악해 주세요.
+```
+
+```
+Q1과 Q2 회의를 비교하여 경청 스킬이 개선되었는지 확인해 주세요.
+```
+
+**주요 분석 영역:**
+
+- **갈등 회피**: 회피 언어, 간접적 표현, 주제 전환
+- **발언 비율**: 발언 시간 비율, 끼어들기 횟수, 질문 대 진술 비율
+- **군말**: "음", "어", "그러니까", "있잖아", "뭐랄까" 빈도
+- **적극적 경청**: 인용, 바꿔 말하기, 명확화 질문
+- **리더십**: 의사결정 방식, 포용적 진행
+
+### video-insight
+
+YouTube 영상 및 로컬 미디어 파일에서 자막을 추출하고, 요약을 생성하며, 퀴즈를 만들고, 심화 조사를 수행합니다.
+
+**트리거:**
+
+- "video insight", "summarize video", "유튜브 정리해줘", "영상 요약해줘"
+- YouTube URL 또는 로컬 비디오/오디오 파일 경로
+
+**지원 입력:**
+
+| 유형 | 형식 |
+|------|------|
+| YouTube | `https://youtu.be/...`, `https://youtube.com/...` |
+| 비디오 | `.mp4`, `.mov`, `.mkv`, `.avi`, `.webm` |
+| 오디오 | `.mp3`, `.m4a`, `.wav`, `.flac`, `.aac` |
+| 자막 | `.srt`, `.vtt` |
+
+**기능:**
+
+- 컨텍스트 효율성을 위한 멀티 에이전트 아키텍처
+- 선택적 Q&A 하이라이트 (내용 길이에 따라 1-5쌍)
+- 웹 검색을 통한 심화 조사
+- 한국어/영어 자막 지원
+
+**필수 도구:**
+
+| 기능 | 필요 도구 |
+|------|-----------|
+| YouTube | `yt-dlp` |
+| 로컬 파일 | `whisper-cpp`, `ffmpeg` |
+
+<details>
+<summary><strong>macOS 설치</strong></summary>
+
+```bash
+# 모든 도구
+brew install yt-dlp ffmpeg whisper-cpp
+```
+
+</details>
+
+<details>
+<summary><strong>Ubuntu 설치</strong></summary>
+
+```bash
+# yt-dlp
+pipx install yt-dlp
+
+# ffmpeg
+sudo apt install ffmpeg
+
+# whisper-cpp (소스에서 빌드)
+git clone https://github.com/ggerganov/whisper.cpp.git
+cd whisper.cpp && make && sudo cp main /usr/local/bin/whisper-cpp
+```
+
+</details>
+
+**사용 예시:**
+
+```
+이 유튜브 영상을 요약해 주세요: https://youtu.be/...
+```
+
+```
+~/Downloads/lecture.mp4 파일을 정리해 주세요.
+```
+
+## 설치
+
+```bash
+/plugin install task-forge@claude-plugin-pack
+```
+
+## 라이선스
+
+MIT

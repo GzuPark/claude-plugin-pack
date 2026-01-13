@@ -28,6 +28,7 @@ Claude Code 플러그인은 Claude Code CLI의 기능을 확장합니다. 이 �
 |----------|------|
 | [hello-world](#hello-world) | 필수 개발 워크플로우: Git 커밋 및 GitHub PR |
 | [creators](#creators) | Claude Code 확장 기능 생성을 위한 스킬 |
+| [task-forge](#task-forge) | 업무 생산성 도구: 회의 분석, 영상 인사이트 |
 
 ### hello-world
 
@@ -52,6 +53,17 @@ Claude Code 확장 기능 생성을 위한 스킬:
 
 ```bash
 /plugin install creators@claude-plugin-pack
+```
+
+### task-forge
+
+비개발자를 위한 업무 생산성 도구:
+
+- **meeting-insight** - 회의 기록에서 커뮤니케이션 패턴과 인사이트 분석
+- **video-insight** - 비디오에서 자막, 요약, Q&A, 심화 조사 추출
+
+```bash
+/plugin install task-forge@claude-plugin-pack
 ```
 
 ## 구조

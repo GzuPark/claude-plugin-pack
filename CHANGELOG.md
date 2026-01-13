@@ -1,5 +1,15 @@
 # Changelog
 
+## 26.1.4 (2026-01-13)
+
+- Add task-forge plugin (v1.0.0)
+  - meeting-insight: Analyze meeting transcripts for communication patterns and insights
+  - video-insight: Extract transcripts, summaries, Q&A highlights from YouTube/local media
+  - 4 subagents: transcript-analyzer, digest-writer, qa-generator, deep-researcher
+  - Supports macOS and Ubuntu (see prerequisites.md for installation)
+  - Parallel execution for Q&A and Deep Research
+  - Dynamic Q&A count (1-5 pairs based on content length)
+
 ## 26.1.3 (2026-01-13)
 
 - Update creators plugin (v1.0.1)

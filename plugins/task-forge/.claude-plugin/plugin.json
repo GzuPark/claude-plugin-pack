@@ -1,0 +1,25 @@
+{
+  "name": "task-forge",
+  "description": "Workplace productivity tools: meeting analysis, video summaries, and document insights",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jongmin Park",
+    "url": "https://github.com/GzuPark"
+  },
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "productivity",
+    "meeting",
+    "analysis",
+    "insights",
+    "workplace",
+    "communication",
+    "transcript",
+    "youtube",
+    "video",
+    "audio",
+    "digest",
+    "qa"
+  ]
+}
