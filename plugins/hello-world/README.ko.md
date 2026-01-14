@@ -2,7 +2,7 @@
 
 Claude Code를 위한 필수 개발 워크플로우입니다. Git 커밋 및 GitHub PR 생성과 자동 코드 리뷰 기능을 포함합니다.
 
-## 커맨드
+## Command
 
 ### /commit
 
@@ -54,47 +54,47 @@ Conventional Commit 형식으로 구조화된 Git 커밋을 생성합니다.
 - 스마트 PR 제목/설명 생성
 - PR 생성 전 푸시 확인
 
-## 스킬
+## Skill
 
 ### plan-interview
 
-`/interview` 커맨드는 내부적으로 `plan-interview` 스킬을 사용합니다. 이 스킬은 다음을 제공합니다:
+`/interview` command는 내부적으로 `plan-interview` skill을 사용합니다. 이 skill은 다음을 제공합니다:
 
-- 4단계 워크플로우: 입력 이해, 복잡도 평가, 인터뷰, 사양 작성
-- 인터뷰 영역: 아키텍처, 백엔드, 프론트엔드, AI/LLM, 우려사항, 확장성
-- 사양 템플릿 생성
+- 4단계 workflow: 입력 이해, 복잡도 평가, 인터뷰, 사양 작성
+- 인터뷰 영역: architecture, backend, frontend, AI/LLM, 우려사항, 확장성
+- 사양 template 생성
 - 인터뷰 질문 및 사양 형식을 위한 참조 문서
 
 ### pr-workflow
 
-`/pr` 커맨드는 내부적으로 `pr-workflow` 스킬을 사용합니다. 이 스킬은 다음을 제공합니다:
+`/pr` command는 내부적으로 `pr-workflow` skill을 사용합니다. 이 skill은 다음을 제공합니다:
 
-- 사전 검사부터 PR 생성까지 9단계 워크플로우
-- 가독성, 에러 처리, 중복, 타입 안전성에 대한 코드 리뷰 규칙
-- PR 템플릿 생성
-- 에러 메시지 처리
+- 사전 검사부터 PR 생성까지 9단계 workflow
+- 가독성, error 처리, 중복, type 안전성에 대한 code review 규칙
+- PR template 생성
+- Error message 처리
 
-## 워크플로우
+## Workflow
 
 ```
 /commit → /pr → 리뷰 → 푸시 → PR 생성
 ```
 
-1. **커밋**: `/commit`으로 변경사항을 스테이징하고 커밋합니다
-2. **PR**: `/pr`을 실행하여 PR 워크플로우를 시작합니다
-3. **리뷰**: 자동 코드 리뷰가 이슈를 검사합니다
+1. **Commit**: `/commit`으로 변경사항을 staging하고 commit합니다
+2. **PR**: `/pr`을 실행하여 PR workflow를 시작합니다
+3. **Review**: 자동 code review가 issue를 검사합니다
 4. **푸시**: 원격으로 푸시를 확인합니다
 5. **완료**: 생성된 제목과 설명으로 PR이 생성됩니다
 
-## 코드 리뷰 카테고리
+## Code Review 카테고리
 
-PR 워크플로우는 다음 항목을 검토합니다:
+PR workflow는 다음 항목을 검토합니다:
 
-- **가독성**: 네이밍, 함수 길이, 중첩 깊이
-- **에러 처리**: Async/Promise, null 안전성, catch 블록
-- **중복**: 동일한 코드 블록
-- **타입 안전성**: TypeScript `any` 사용, 누락된 타입
-- **보안**: 설정 파일의 하드코딩된 시크릿
+- **가독성**: Naming, 함수 길이, 중첩 깊이
+- **Error 처리**: Async/Promise, null 안전성, catch block
+- **중복**: 동일한 code block
+- **Type 안전성**: TypeScript `any` 사용, 누락된 type
+- **보안**: 설정 파일의 하드코딩된 secret
 
 ## 요구사항
 

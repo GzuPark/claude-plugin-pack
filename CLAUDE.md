@@ -38,6 +38,15 @@ SHOULD use formal polite speech ("~합니다" form), NOT casual speech ("~해줘
 - Good: "스킬을 만듭니다", "수정합니다"
 - Bad: "스킬 만들어줘", "수정해줘"
 
+### Technical Terms in Korean Documentation
+
+Keep technical terms in English rather than transliterating to Korean. This improves readability for developers.
+
+**Example:**
+
+- Good: "Multi-agent system으로 session context를 분석합니다"
+- Bad: "멀티 에이전트 시스템으로 세션 컨텍스트를 분석합니다"
+
 ### Versioning
 
 **Marketplace (CalVer):** `YY.M.patch` (e.g., 26.1.0)
