@@ -8,9 +8,6 @@
 ```bash
 # Add marketplace
 /plugin marketplace add GzuPark/claude-plugin-pack
-
-# Install a plugin
-/plugin install hello-world@claude-plugin-pack
 ```
 
 ## Plugins
@@ -47,6 +44,9 @@
 
 ```bash
 /plugin install heimdall@claude-plugin-pack
+```
+
+```bash
 /heimdall:bifrost
 ```
 

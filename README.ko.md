@@ -8,9 +8,6 @@
 ```bash
 # Marketplace 추가
 /plugin marketplace add GzuPark/claude-plugin-pack
-
-# Plugin 설치
-/plugin install hello-world@claude-plugin-pack
 ```
 
 ## Plugins
@@ -47,6 +44,9 @@
 
 ```bash
 /plugin install heimdall@claude-plugin-pack
+```
+
+```bash
 /heimdall:bifrost
 ```
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## 26.1.14 (2026-01-14)
+
+- Add plugins directory README files
+  - plugins/README.md: Plugin overview table
+  - plugins/README.ko.md: Korean version
+- Fix hooks/markdown-lint.json for zsh compatibility
+  - Replace pipe subshell syntax with command substitution
+
 ## 26.1.13 (2026-01-14)
 
 - Remove `.markdownlintrc` and fix all lint errors without disabling rules
