@@ -1,17 +1,48 @@
 # task-forge
 
-Claude Code를 위한 업무 생산성 도구입니다. 회의 분석, 영상 요약, 문서 인사이트 기능을 제공합니다.
+Claude Code를 위한 업무 생산성 도구입니다. 회의 분석, 영상 요약, 작업 정리, 문서 insight 기능을 제공합니다.
 
-## 스킬
+## Command
+
+### /recap
+
+Multi-agent system으로 작업 session을 분석하고 실행 가능한 결과물을 정리합니다.
+
+**기능:**
+
+- 5개 agent가 병렬로 session context 분석
+- 제안 전 중복 검증
+- Interactive multi-select로 action 선택
+
+**분석 결과:**
+
+| 결과 | 설명 |
+|------|------|
+| 문서 | CLAUDE.md, context.md 수정 제안 |
+| 자동화 | skill/command/agent 생성 기회 |
+| TIL | 오늘 배운 것 |
+| 다음 단계 | 미완료 작업과 우선순위 |
+
+**사용법:**
+
+```
+/recap
+```
+
+```
+/recap "feat: 사용자 인증 추가"
+```
+
+## Skill
 
 ### meeting-insight
 
-회의 기록을 분석하여 행동 패턴과 커뮤니케이션 인사이트를 도출합니다.
+회의 기록을 분석하여 행동 패턴과 communication insight를 도출합니다.
 
-**트리거:**
+**Trigger:**
 
-- 회의 기록의 커뮤니케이션 패턴 분석
-- 리더십/퍼실리테이션 스타일 피드백
+- 회의 기록의 communication pattern 분석
+- Leadership/facilitation style feedback
 - 갈등 회피 순간 식별
 - 발화 습관 및 군말 추적
 - 시간에 따른 커뮤니케이션 개선 비교
@@ -25,11 +56,11 @@ Claude Code를 위한 업무 생산성 도구입니다. 회의 분석, 영상 �
 ```
 
 ```
-지난 달 회의를 보고 커뮤니케이션 패턴을 파악해 주세요.
+지난 달 회의를 보고 communication pattern을 파악해 주세요.
 ```
 
 ```
-Q1과 Q2 회의를 비교하여 경청 스킬이 개선되었는지 확인해 주세요.
+Q1과 Q2 회의를 비교하여 경청 skill이 개선되었는지 확인해 주세요.
 ```
 
 **주요 분석 영역:**
@@ -44,7 +75,7 @@ Q1과 Q2 회의를 비교하여 경청 스킬이 개선되었는지 확인해 �
 
 YouTube 영상 및 로컬 미디어 파일에서 자막을 추출하고, 요약을 생성하며, 퀴즈를 만들고, 심화 조사를 수행합니다.
 
-**트리거:**
+**Trigger:**
 
 - "video insight", "summarize video", "유튜브 정리해줘", "영상 요약해줘"
 - YouTube URL 또는 로컬 비디오/오디오 파일 경로
@@ -60,7 +91,7 @@ YouTube 영상 및 로컬 미디어 파일에서 자막을 추출하고, 요약�
 
 **기능:**
 
-- 컨텍스트 효율성을 위한 멀티 에이전트 아키텍처
+- Context 효율성을 위한 multi-agent architecture
 - 선택적 Q&A 하이라이트 (내용 길이에 따라 1-5쌍)
 - 웹 검색을 통한 심화 조사
 - 한국어/영어 자막 지원

@@ -1,6 +1,37 @@
 # task-forge
 
-Workplace productivity tools: meeting analysis, video summaries, and document insights for Claude Code.
+Workplace productivity tools: meeting analysis, video summaries, work recap, and document insights for Claude Code.
+
+## Commands
+
+### /recap
+
+Analyzes your work session with multi-agent system and organizes actionable outputs.
+
+**Features:**
+
+- 5 parallel agents analyze session context
+- Duplicate validation before suggestions
+- Interactive multi-select for actions
+
+**Analysis Outputs:**
+
+| Output | Description |
+|--------|-------------|
+| Documentation | CLAUDE.md, context.md update suggestions |
+| Automation | Skill/command/agent creation opportunities |
+| TIL | Today I Learned items |
+| Next Steps | Incomplete tasks with priority |
+
+**Usage:**
+
+```
+/recap
+```
+
+```
+/recap "feat: add user authentication"
+```
 
 ## Skills
 

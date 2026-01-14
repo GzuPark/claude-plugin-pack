@@ -1,5 +1,12 @@
 # Changelog
 
+## 26.1.5 (2026-01-14)
+
+- Update task-forge plugin (v1.1.0)
+  - /recap: Multi-agent work session analysis command
+  - 5 new agents: doc-updater, automation-scout, learning-extractor, followup-suggester, duplicate-checker
+  - Documentation updates, automation suggestions, TIL extraction, follow-up task prioritization
+
 ## 26.1.4 (2026-01-13)
 
 - Add task-forge plugin (v1.0.0)

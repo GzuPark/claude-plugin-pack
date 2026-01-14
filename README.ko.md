@@ -8,7 +8,7 @@ Claude Code 플러그인은 Claude Code CLI의 기능을 확장합니다. 이 �
 
 ## 설치
 
-마켓플레이스 추가:
+Marketplace 추가:
 
 ```bash
 /plugin marketplace add GzuPark/claude-plugin-pack
@@ -27,8 +27,8 @@ Claude Code 플러그인은 Claude Code CLI의 기능을 확장합니다. 이 �
 | 플러그인 | 설명 |
 |----------|------|
 | [hello-world](#hello-world) | 필수 개발 워크플로우: Git 커밋 및 GitHub PR |
-| [creators](#creators) | Claude Code 확장 기능 생성을 위한 스킬 |
-| [task-forge](#task-forge) | 업무 생산성 도구: 회의 분석, 영상 인사이트 |
+| [creators](#creators) | Claude Code 확장 기능 생성을 위한 skill |
+| [task-forge](#task-forge) | 업무 생산성 도구: 회의 분석, 영상 insight, work recap |
 
 ### hello-world
 
@@ -44,12 +44,12 @@ Claude Code 플러그인은 Claude Code CLI의 기능을 확장합니다. 이 �
 
 ### creators
 
-Claude Code 확장 기능 생성을 위한 스킬:
+Claude Code 확장 기능 생성을 위한 skill:
 
-- **skill-creator** - SKILL.md로 에이전트 스킬 생성
-- **slash-command-creator** - 커스텀 슬래시 명령어 생성
-- **hook-creator** - 이벤트 훅 생성
-- **subagent-creator** - 커스텀 서브에이전트 생성
+- **skill-creator** - SKILL.md로 agent skill 생성
+- **slash-command-creator** - custom slash command 생성
+- **hook-creator** - event hook 생성
+- **subagent-creator** - custom subagent 생성
 
 ```bash
 /plugin install creators@claude-plugin-pack
@@ -57,9 +57,10 @@ Claude Code 확장 기능 생성을 위한 스킬:
 
 ### task-forge
 
-비개발자를 위한 업무 생산성 도구:
+업무 생산성 도구:
 
-- **meeting-insight** - 회의 기록에서 커뮤니케이션 패턴과 인사이트 분석
+- **/recap** - Multi-agent work session 분석으로 문서화, 자동화, TIL, follow-up 제안
+- **meeting-insight** - 회의 기록에서 communication pattern과 insight 분석
 - **video-insight** - 비디오에서 자막, 요약, Q&A, 심화 조사 추출
 
 ```bash
@@ -71,8 +72,8 @@ Claude Code 확장 기능 생성을 위한 스킬:
 ```text
 claude-plugin-pack/
 ├── .claude-plugin/
-│   ├── marketplace.json     # 마켓플레이스 설정
-│   └── plugin.json          # 플러그인 매니페스트
+│   ├── marketplace.json     # marketplace 설정
+│   └── plugin.json          # plugin manifest
 ├── plugins/                 # 개별 플러그인
 ├── CLAUDE.md
 ├── LICENSE
