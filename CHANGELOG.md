@@ -1,5 +1,13 @@
 # Changelog
 
+## 26.1.6 (2026-01-14)
+
+- Update task-forge plugin (v1.2.0)
+  - image-insight: Analyze images and generate JSON profiles for AI image recreation
+  - 10-category analysis (composition, color, lighting, subject, background, etc.)
+  - Critical area analysis for hair, hands, facial expression, lighting details
+  - Structured output with hex color codes and actionable generation prompts
+
 ## 26.1.5 (2026-01-14)
 
 - Update task-forge plugin (v1.1.0)

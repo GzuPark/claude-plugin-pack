@@ -140,6 +140,46 @@ Summarize this YouTube video: https://youtu.be/...
 ~/Downloads/lecture.mp4 파일을 정리해 주세요.
 ```
 
+### image-insight
+
+Analyze images and generate comprehensive JSON profiles for style recreation and AI image generation.
+
+**Triggers:**
+
+- `image-insight` - Primary trigger
+- "analyze this image", "extract visual style", "generate image profile"
+
+**Features:**
+
+- 10-category comprehensive analysis (composition, color, lighting, subject, background, etc.)
+- Structured JSON output for AI image recreation (Midjourney, DALL-E, etc.)
+- Critical area analysis: hair, hands, facial expression, lighting details
+- Hex color codes and actionable generation prompts
+
+**Analysis Categories:**
+
+| Category | Description |
+|----------|-------------|
+| metadata | Confidence, image type, purpose |
+| composition | Rule, layout, focal points, hierarchy |
+| color_profile | Dominant colors with hex, palette, temperature |
+| lighting | Type, direction, shadows, highlights |
+| technical_specs | Medium, style, texture, depth of field |
+| artistic_elements | Genre, influences, mood, atmosphere |
+| subject_analysis | Expression, hair, hands, positioning |
+| background | Setting, surfaces, objects catalog |
+| generation_parameters | Recreation prompts, keywords |
+
+**Usage Examples:**
+
+```
+Analyze this image and extract the visual style.
+```
+
+```
+Generate a JSON profile for recreating this photo's lighting and composition.
+```
+
 ## Installation
 
 ```bash

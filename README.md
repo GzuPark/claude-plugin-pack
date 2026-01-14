@@ -62,6 +62,7 @@ Workplace productivity tools:
 - **/recap** - Multi-agent work session analysis with documentation, automation, TIL, and follow-up suggestions
 - **meeting-insight** - Analyze meeting transcripts for communication patterns and insights
 - **video-insight** - Extract transcripts, summaries, Q&A, and deep research from videos
+- **image-insight** - Analyze images and generate JSON profiles for AI image recreation
 
 ```bash
 /plugin install task-forge@claude-plugin-pack

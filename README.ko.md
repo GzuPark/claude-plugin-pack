@@ -62,6 +62,7 @@ Claude Code 확장 기능 생성을 위한 skill:
 - **/recap** - Multi-agent work session 분석으로 문서화, 자동화, TIL, follow-up 제안
 - **meeting-insight** - 회의 기록에서 communication pattern과 insight 분석
 - **video-insight** - 비디오에서 자막, 요약, Q&A, 심화 조사 추출
+- **image-insight** - 이미지 분석 및 AI 이미지 재현을 위한 JSON profile 생성
 
 ```bash
 /plugin install task-forge@claude-plugin-pack

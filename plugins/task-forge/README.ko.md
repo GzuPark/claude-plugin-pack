@@ -140,6 +140,46 @@ cd whisper.cpp && make && sudo cp main /usr/local/bin/whisper-cpp
 ~/Downloads/lecture.mp4 파일을 정리해 주세요.
 ```
 
+### image-insight
+
+이미지를 분석하여 style 재현 및 AI 이미지 생성을 위한 종합적인 JSON profile을 생성합니다.
+
+**Trigger:**
+
+- `image-insight` - Primary trigger
+- "analyze this image", "이미지 분석해 줘", "visual style 추출해 줘"
+
+**기능:**
+
+- 10개 category 종합 분석 (composition, color, lighting, subject, background 등)
+- AI 이미지 재현을 위한 구조화된 JSON 출력 (Midjourney, DALL-E 등)
+- 중요 영역 분석: hair, hands, 표정, lighting 세부사항
+- Hex color code 및 실행 가능한 generation prompt
+
+**분석 Category:**
+
+| Category | 설명 |
+|----------|------|
+| metadata | 신뢰도, 이미지 유형, 목적 |
+| composition | 구도, layout, focal point, hierarchy |
+| color_profile | Hex code 포함 dominant color, palette, 온도 |
+| lighting | 유형, 방향, shadow, highlight |
+| technical_specs | 매체, style, texture, 피사계 심도 |
+| artistic_elements | 장르, 영향, 분위기, atmosphere |
+| subject_analysis | 표정, hair, hands, 자세 |
+| background | 배경 설정, 표면, object catalog |
+| generation_parameters | 재현 prompt, keyword |
+
+**사용 예시:**
+
+```
+이 이미지를 분석하고 visual style을 추출해 주세요.
+```
+
+```
+이 사진의 조명과 구도를 재현할 수 있는 JSON profile을 생성해 주세요.
+```
+
 ## 설치
 
 ```bash

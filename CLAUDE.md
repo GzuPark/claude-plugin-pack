@@ -66,6 +66,8 @@ Keep technical terms in English rather than transliterating to Korean. This impr
 - `.claude-plugin/marketplace.json`
 - `.claude-plugin/plugin.json`
 
+Both files must have the same version number.
+
 ### Changelog
 
 All changes are recorded in `CHANGELOG.md`.
