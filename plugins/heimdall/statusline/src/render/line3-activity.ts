@@ -37,31 +37,34 @@ export function renderCompletedActivity(ctx: RenderContext): string | null {
     return null;
   }
 
-  const parts: string[] = [];
+  const sections: string[] = [];
 
   // 완료된 도구 (빈도순)
   const toolCounts = countByName(completedTools);
+  const toolParts: string[] = [];
   Object.entries(toolCounts)
     .sort((a, b) => b[1] - a[1])
     .forEach(([name, count]) => {
       const color = getToolColor(name);
       const countStr = count > 1 ? `×${count}` : '';
-      parts.push(color(`${name}${countStr}`));
+      toolParts.push(color(`${name}${countStr}`));
     });
+  if (toolParts.length > 0) {
+    sections.push(toolParts.join(' | '));
+  }
 
   // 완료된 에이전트 (타입별 그룹화)
   const agentCounts = countByType(completedAgents);
-  if (Object.keys(agentCounts).length > 0) {
-    if (parts.length > 0) {
-      parts.push(dim('│'));
-    }
-    Object.entries(agentCounts).forEach(([type, count]) => {
-      const countStr = count > 1 ? `×${count}` : '';
-      parts.push(green(`✓ ${type}${countStr}`));
-    });
+  const agentParts: string[] = [];
+  Object.entries(agentCounts).forEach(([type, count]) => {
+    const countStr = count > 1 ? `×${count}` : '';
+    agentParts.push(green(`✓ ${type}${countStr}`));
+  });
+  if (agentParts.length > 0) {
+    sections.push(agentParts.join(' | '));
   }
 
-  return parts.join(' | ').replace(/\| \│/g, '│');
+  return sections.join(` ${dim('│')} `);
 }
 
 /**

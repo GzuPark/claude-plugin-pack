@@ -1,5 +1,10 @@
 # Changelog
 
+## 26.1.9 (2026-01-14)
+
+- Fix heimdall plugin (v1.0.2)
+  - Fix delimiter display bug between tools and agents (`| │ |` → `│`)
+
 ## 26.1.8 (2026-01-14)
 
 - Fix heimdall plugin (v1.0.1)
