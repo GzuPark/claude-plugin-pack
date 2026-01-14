@@ -82,6 +82,8 @@ This improves readability for developers.
 **Marketplace (CalVer):** `YY.M.patch` (e.g., 26.1.0)
 
 - New plugin added → patch ↑
+- Plugin version changed → patch ↑
+- Hook added/removed/modified → patch ↑
 - Plugin removed / structure change → minor ↑
 - New year/month → YY.M reset
 
@@ -108,6 +110,9 @@ Both files must have the same version number.
 ### Changelog
 
 All changes are recorded in `CHANGELOG.md`.
+
+**Important:** Update CHANGELOG.md only when marketplace version changes.
+Do NOT update for documentation-only changes without version bump.
 
 ```markdown
 ## YY.M.patch (YYYY-MM-DD)
