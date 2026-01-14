@@ -1,5 +1,12 @@
 # Changelog
 
+## 26.1.11 (2026-01-14)
+
+- Fix task-forge plugin (v1.2.1)
+  - Remove invalid `commands` and `agents` fields from plugin.json
+  - Rename `agents/` to `subagents/` for proper auto-discovery
+  - Rename `commands/` to `slash-commands/` for proper auto-discovery
+
 ## 26.1.10 (2026-01-14)
 
 - Update heimdall plugin (v1.1.0)

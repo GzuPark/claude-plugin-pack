@@ -1,7 +1,7 @@
 {
   "name": "task-forge",
   "description": "Workplace productivity tools: meeting analysis, video summaries, work recap, and document insights",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": {
     "name": "Jongmin Park",
     "url": "https://github.com/GzuPark"
@@ -28,19 +28,5 @@
     "multi-agent",
     "til",
     "learning"
-  ],
-  "commands": [
-    "commands/recap.md"
-  ],
-  "agents": [
-    "agents/transcript-analyzer.md",
-    "agents/digest-writer.md",
-    "agents/qa-generator.md",
-    "agents/deep-researcher.md",
-    "agents/doc-updater.md",
-    "agents/automation-scout.md",
-    "agents/learning-extractor.md",
-    "agents/followup-suggester.md",
-    "agents/duplicate-checker.md"
   ]
 }
