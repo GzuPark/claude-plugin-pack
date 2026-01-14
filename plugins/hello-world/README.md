@@ -103,8 +103,9 @@ The PR workflow reviews code for:
 
 ## Requirements
 
-- Git repository
-- [GitHub CLI (gh)](https://cli.github.com) installed and authenticated
+> [!IMPORTANT]
+> - Git repository
+> - [GitHub CLI (gh)](https://cli.github.com) installed and authenticated
 
 ## Installation
 

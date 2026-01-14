@@ -1,5 +1,19 @@
 # Changelog
 
+## 26.1.15 (2026-01-14)
+
+- Add GitHub Alerts to README files
+  - CLAUDE.md: Add GitHub Alerts guide
+  - Root READMEs: `[!IMPORTANT]` for update notice
+  - hello-world: `[!IMPORTANT]` for requirements
+  - heimdall: `[!IMPORTANT]` for requirements, `[!TIP]` for bifrost features
+  - task-forge: `[!IMPORTANT]` for prerequisites
+  - hooks: `[!IMPORTANT]`, `[!NOTE]`, `[!WARNING]` for setup guide
+- Improve root README structure
+  - Add links to plugin directories in section headers
+  - Sync heimdall features (add: Running activity, MCP server,
+    Cost tracking, 5-hour reset)
+
 ## 26.1.14 (2026-01-14)
 
 - Add plugins directory README files

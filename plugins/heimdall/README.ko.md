@@ -72,11 +72,12 @@ RESET at 18:00 (1h 30m left)
 /heimdall:bifrost
 ```
 
-자동으로 수행되는 작업:
-
-1. TypeScript statusline 빌드
-2. `~/.claude/settings.json` 설정
-3. Claude Code 재시작하여 적용
+> [!TIP]
+> 자동으로 수행되는 작업:
+>
+> 1. TypeScript statusline 빌드
+> 2. `~/.claude/settings.json` 설정
+> 3. Claude Code 재시작하여 적용
 
 ## 수동 설정
 
@@ -111,8 +112,9 @@ Heimdall statusline을 자동으로 빌드하고 설정합니다.
 
 ## 요구 사항
 
-- Node.js 18+
-- npm
+> [!IMPORTANT]
+> - Node.js 18+
+> - npm
 
 ## 라이선스
 

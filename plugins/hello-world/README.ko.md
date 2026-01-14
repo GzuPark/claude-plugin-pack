@@ -105,8 +105,9 @@ PR workflow는 다음 항목을 검토합니다:
 
 ## 요구사항
 
-- Git 저장소
-- [GitHub CLI (gh)](https://cli.github.com) 설치 및 인증 완료
+> [!IMPORTANT]
+> - Git 저장소
+> - [GitHub CLI (gh)](https://cli.github.com) 설치 및 인증 완료
 
 ## 설치
 

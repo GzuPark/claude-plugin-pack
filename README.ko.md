@@ -12,7 +12,9 @@
 
 ## Plugins
 
-### hello-world
+[plugins](plugins/)에서 개요를 확인할 수 있습니다.
+
+### [hello-world](plugins/hello-world/)
 
 > 일상적인 개발을 위한 필수 workflow
 
@@ -28,7 +30,7 @@
 
 ---
 
-### heimdall
+### [heimdall](plugins/heimdall/)
 
 > Claude Code용 확장 statusline *(북유럽 신화의 감시자 신 헤임달)*
 
@@ -38,9 +40,13 @@
 | Dynamic display | 활동에 따라 3-5줄 동적 표시 |
 | Tool tracking | 색상 코드별 완료 개수 |
 | Agent tracking | 경과 시간과 함께 실행 중인 agent |
+| Running activity | Spinner animation과 함께 별도 라인 |
 | Todo progress | 전체 task 설명 표시 |
 | Git integration | Branch, staged/modified, sync 상태 |
+| MCP server | 연결 상태 표시 |
 | Context usage | 색상 코드 progress bar |
+| Cost tracking | Session 비용 및 라인 변경 |
+| 5-hour reset | Local 시간으로 사용량 추적 |
 
 ```bash
 /plugin install heimdall@claude-plugin-pack
@@ -52,7 +58,7 @@
 
 ---
 
-### creators
+### [creators](plugins/creators/)
 
 > Claude Code 확장 기능 생성을 위한 skill
 
@@ -69,7 +75,7 @@
 
 ---
 
-### task-forge
+### [task-forge](plugins/task-forge/)
 
 > 업무 생산성 도구
 
@@ -99,7 +105,8 @@ Claude Code에 설정을 요청하면 자동으로 적용됩니다.
 
 ## Update
 
-Custom plugin은 자동 업데이트되지 않습니다. 최신 버전 받기:
+> [!IMPORTANT]
+> Custom plugin은 자동 업데이트되지 않습니다. 최신 버전 받기:
 
 ```bash
 /plugin marketplace update claude-plugin-pack

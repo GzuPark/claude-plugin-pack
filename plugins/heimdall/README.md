@@ -71,11 +71,12 @@ After installation, run the setup command:
 /heimdall:bifrost
 ```
 
-This will automatically:
-
-1. Build the TypeScript statusline
-2. Configure `~/.claude/settings.json`
-3. Restart Claude Code to apply changes
+> [!TIP]
+> This will automatically:
+>
+> 1. Build the TypeScript statusline
+> 2. Configure `~/.claude/settings.json`
+> 3. Restart Claude Code to apply changes
 
 ## Manual Setup
 
@@ -110,8 +111,9 @@ Automatically builds and configures the Heimdall statusline.
 
 ## Requirements
 
-- Node.js 18+
-- npm
+> [!IMPORTANT]
+> - Node.js 18+
+> - npm
 
 ## License
 

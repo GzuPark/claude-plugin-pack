@@ -6,6 +6,9 @@ Skills for creating Claude Code extensions.
 
 ```bash
 /plugin marketplace add GzuPark/claude-plugin-pack
+```
+
+```bash
 /plugin install creators@claude-plugin-pack
 ```
 

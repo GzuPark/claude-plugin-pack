@@ -105,10 +105,11 @@ YouTube 영상 및 로컬 미디어 파일에서 자막을 추출하고,
 
 **필수 도구:**
 
-| 기능      | 필요 도구                |
-|-----------|--------------------------|
-| YouTube   | `yt-dlp`                 |
-| 로컬 파일 | `whisper-cpp`, `ffmpeg`  |
+> [!IMPORTANT]
+> | 기능      | 필요 도구                |
+> |-----------|--------------------------|
+> | YouTube   | `yt-dlp`                 |
+> | 로컬 파일 | `whisper-cpp`, `ffmpeg`  |
 
 **macOS 설치:**
 
@@ -127,6 +128,7 @@ pipx install yt-dlp
 sudo apt install ffmpeg
 
 # whisper-cpp (소스에서 빌드)
+# ⚠️ 빌드에 수 분이 소요될 수 있습니다
 git clone https://github.com/ggerganov/whisper.cpp.git
 cd whisper.cpp && make && sudo cp main /usr/local/bin/whisper-cpp
 ```

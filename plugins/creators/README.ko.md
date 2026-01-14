@@ -6,6 +6,9 @@ Claude Code 확장 기능 생성을 위한 skill 모음입니다.
 
 ```bash
 /plugin marketplace add GzuPark/claude-plugin-pack
+```
+
+```bash
 /plugin install creators@claude-plugin-pack
 ```
 

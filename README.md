@@ -12,7 +12,9 @@
 
 ## Plugins
 
-### hello-world
+See [plugins](plugins/) for overview.
+
+### [hello-world](plugins/hello-world/)
 
 > Essential dev workflow for daily development
 
@@ -28,7 +30,7 @@
 
 ---
 
-### heimdall
+### [heimdall](plugins/heimdall/)
 
 > Enhanced statusline for Claude Code *(named after the Norse watchman god)*
 
@@ -38,9 +40,13 @@
 | Dynamic display | 3-5 lines based on activity |
 | Tool tracking | Color-coded completion counts |
 | Agent tracking | Running agents with elapsed time |
+| Running activity | Separate line with spinner animation |
 | Todo progress | Full task description display |
 | Git integration | Branch, staged/modified, sync status |
+| MCP server | Connection status display |
 | Context usage | Color-coded progress bar |
+| Cost tracking | Session cost and line changes |
+| 5-hour reset | Usage tracking with local time |
 
 ```bash
 /plugin install heimdall@claude-plugin-pack
@@ -52,7 +58,7 @@
 
 ---
 
-### creators
+### [creators](plugins/creators/)
 
 > Skills for creating Claude Code extensions
 
@@ -69,7 +75,7 @@
 
 ---
 
-### task-forge
+### [task-forge](plugins/task-forge/)
 
 > Workplace productivity tools
 
@@ -99,7 +105,8 @@ See [hooks/README.md](hooks/README.md) for details.
 
 ## Update
 
-Custom plugins do not auto-update. Get the latest version:
+> [!IMPORTANT]
+> Custom plugins do not auto-update. Get the latest version:
 
 ```bash
 /plugin marketplace update claude-plugin-pack

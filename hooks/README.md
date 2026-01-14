@@ -39,21 +39,22 @@ Automatically runs markdownlint after editing `.md` files to detect lint errors.
 
 #### Prerequisites
 
-**markdownlint-cli** (required):
-
-```bash
-npm install -g markdownlint-cli
-```
-
-**jq** (required for JSON parsing):
-
-```bash
-# Ubuntu/Debian
-sudo apt install jq
-
-# macOS
-brew install jq
-```
+> [!IMPORTANT]
+> **markdownlint-cli** (required):
+>
+> ```bash
+> npm install -g markdownlint-cli
+> ```
+>
+> **jq** (required for JSON parsing):
+>
+> ```bash
+> # Ubuntu/Debian
+> sudo apt install jq
+>
+> # macOS
+> brew install jq
+> ```
 
 #### Configuration
 
@@ -81,11 +82,12 @@ jq -r '.tool_input.file_path // empty'  # Extract file_path from stdin JSON
 
 #### Verification
 
-After setup:
-
-1. Restart Claude Code
-2. Edit any `.md` file
-3. Lint results should appear in the response
+> [!NOTE]
+> After setup:
+>
+> 1. Restart Claude Code
+> 2. Edit any `.md` file
+> 3. Lint results should appear in the response
 
 #### Customization
 
@@ -118,9 +120,10 @@ npm install -g markdownlint-cli
 
 ##### Hook not working
 
-1. Restart Claude Code
-2. Check settings.json JSON syntax
-3. Verify jq installation: `which jq`
+> [!WARNING]
+> 1. Restart Claude Code
+> 2. Check settings.json JSON syntax
+> 3. Verify jq installation: `which jq`
 
 ---
 

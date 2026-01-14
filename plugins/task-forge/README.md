@@ -104,10 +104,11 @@ deep research from YouTube videos and local media files.
 
 **Prerequisites:**
 
-| Feature     | Required Tools           |
-|-------------|--------------------------|
-| YouTube     | `yt-dlp`                 |
-| Local files | `whisper-cpp`, `ffmpeg`  |
+> [!IMPORTANT]
+> | Feature     | Required Tools           |
+> |-------------|--------------------------|
+> | YouTube     | `yt-dlp`                 |
+> | Local files | `whisper-cpp`, `ffmpeg`  |
 
 **macOS Installation:**
 
@@ -126,6 +127,7 @@ pipx install yt-dlp
 sudo apt install ffmpeg
 
 # whisper-cpp (build from source)
+# ⚠️ Build may take several minutes
 git clone https://github.com/ggerganov/whisper.cpp.git
 cd whisper.cpp && make && sudo cp main /usr/local/bin/whisper-cpp
 ```

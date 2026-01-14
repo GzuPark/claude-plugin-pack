@@ -36,6 +36,20 @@ See `README.md` for detailed plugin structure.
 **Important:** When either README is modified,
 the other must be updated to keep content in sync.
 
+### GitHub Alerts
+
+Use [GitHub Alerts](https://github.com/orgs/community/discussions/16925)
+sparingly for important information:
+
+| Type           | Usage                            |
+| -------------- | -------------------------------- |
+| `[!IMPORTANT]` | Prerequisites, required setup    |
+| `[!WARNING]`   | Manual steps, build warnings     |
+| `[!NOTE]`      | Additional info, verification    |
+| `[!TIP]`       | Optional improvements            |
+
+**Do NOT overuse.** Apply only where truly needed.
+
 ### Korean Language Style
 
 SHOULD use formal polite speech ("~합니다" form),

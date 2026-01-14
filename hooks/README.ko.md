@@ -39,21 +39,22 @@ Claude Code에 요청:
 
 #### Prerequisites
 
-**markdownlint-cli** (필수):
-
-```bash
-npm install -g markdownlint-cli
-```
-
-**jq** (JSON parsing에 필수):
-
-```bash
-# Ubuntu/Debian
-sudo apt install jq
-
-# macOS
-brew install jq
-```
+> [!IMPORTANT]
+> **markdownlint-cli** (필수):
+>
+> ```bash
+> npm install -g markdownlint-cli
+> ```
+>
+> **jq** (JSON parsing에 필수):
+>
+> ```bash
+> # Ubuntu/Debian
+> sudo apt install jq
+>
+> # macOS
+> brew install jq
+> ```
 
 #### Configuration
 
@@ -82,11 +83,12 @@ jq -r '.tool_input.file_path // empty'  # stdin JSON에서 file_path 추출
 
 #### 검증
 
-설정 후:
-
-1. Claude Code 재시작
-2. `.md` 파일 편집
-3. lint 결과가 응답에 표시되는지 확인
+> [!NOTE]
+> 설정 후:
+>
+> 1. Claude Code 재시작
+> 2. `.md` 파일 편집
+> 3. lint 결과가 응답에 표시되는지 확인
 
 #### Customization
 
@@ -119,9 +121,10 @@ npm install -g markdownlint-cli
 
 ##### Hook이 동작하지 않음
 
-1. Claude Code 재시작 필요
-2. settings.json JSON 문법 확인
-3. jq 설치 확인: `which jq`
+> [!WARNING]
+> 1. Claude Code 재시작 필요
+> 2. settings.json JSON 문법 확인
+> 3. jq 설치 확인: `which jq`
 
 ---
 
