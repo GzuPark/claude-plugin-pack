@@ -1,5 +1,11 @@
 # Changelog
 
+## 26.1.10 (2026-01-14)
+
+- Update heimdall plugin (v1.1.0)
+  - bifrost: Add version check, auto-update settings.json path, and old version cleanup
+  - Step-by-step conditional workflow for install/update/cleanup
+
 ## 26.1.9 (2026-01-14)
 
 - Fix heimdall plugin (v1.0.2)

@@ -1,74 +1,133 @@
 ---
-allowed-tools: Bash(npm install:*), Bash(npm run build:*), Bash(node:*), Bash(mkdir:*), Bash(cat:*), Bash(ls:*), Read, Write, Edit
-description: Open the Bifrost - Build and activate Heimdall statusline
+allowed-tools: Bash(npm install:*), Bash(npm run build:*), Bash(rm -rf:*), Bash(ls:*), Read, Write, Edit
+description: Open the Bifrost - Install, update, or manage Heimdall statusline
 ---
 
 # Bifrost
 
 Open the Bifrost bridge and summon Heimdall to watch over your Claude Code session.
 
-## Workflow
-
-### Step 1: Find Plugin Directory
-
-Locate the installed Heimdall plugin:
+## Step 1: Find Plugin Versions
 
 ```bash
-ls -d ~/.claude/plugins/cache/claude-plugin-pack/heimdall/*/statusline 2>/dev/null | head -1
+ls -d ~/.claude/plugins/cache/claude-plugin-pack/heimdall/*/ 2>/dev/null
 ```
 
-If not found, inform the user to install first:
+**If no directories found:**
+→ Inform user: "Heimdall not installed. Run `/plugin install heimdall@claude-plugin-pack` first."
+→ END
 
-```
-/plugin install heimdall@claude-plugin-pack
-```
+**If directories found:**
+→ Identify the latest version (highest semver)
+→ Continue to Step 2
 
-### Step 2: Build TypeScript Project
+## Step 2: Check Current Settings
 
-Navigate to the statusline directory and build:
+Read `~/.claude/settings.json` and extract current `statusLine.command` path.
+
+**Case A: No statusLine configured**
+→ Set `CURRENT_VERSION` = none
+→ Continue to Step 3
+
+**Case B: statusLine configured with heimdall path**
+→ Extract version from path (e.g., `/heimdall/1.0.1/statusline/` → `1.0.1`)
+→ Set `CURRENT_VERSION` = extracted version
+→ Continue to Step 3
+
+**Case C: statusLine configured with non-heimdall command**
+→ Warn user: "Existing statusLine will be replaced"
+→ Set `CURRENT_VERSION` = none
+→ Continue to Step 3
+
+## Step 3: Compare Versions
+
+**If `CURRENT_VERSION` == `LATEST_VERSION`:**
+→ Inform user: "Already up to date (v{VERSION})"
+→ Continue to Step 6 (cleanup only)
+
+**If `CURRENT_VERSION` != `LATEST_VERSION`:**
+→ Continue to Step 4
+
+## Step 4: Build Latest Version
 
 ```bash
-cd <PLUGIN_DIR>/statusline
+cd ~/.claude/plugins/cache/claude-plugin-pack/heimdall/<LATEST_VERSION>/statusline
 npm install
 npm run build
 ```
 
-Verify `dist/index.js` exists after build.
+**If build fails:**
+→ Show error message
+→ END
 
-### Step 3: Update Settings
+**If build succeeds:**
+→ Verify `dist/index.js` exists
+→ Continue to Step 5
 
-Read `~/.claude/settings.json` and update the `statusLine` configuration:
+## Step 5: Update Settings
+
+Update `~/.claude/settings.json`:
 
 ```json
 {
   "statusLine": {
     "type": "command",
-    "command": "node <FULL_PATH>/dist/index.js",
+    "command": "node <HOME>/.claude/plugins/cache/claude-plugin-pack/heimdall/<LATEST_VERSION>/statusline/dist/index.js",
     "padding": 0
   }
 }
 ```
 
-Use the Edit tool to update settings.json, preserving existing settings.
+Use Edit tool to preserve existing settings.
 
-### Step 4: Confirm Success
+**If settings.json doesn't exist:**
+→ Create new file with statusLine config only
 
-Display success message:
+→ Continue to Step 6
+
+## Step 6: Clean Up Old Versions
+
+List all version directories except `LATEST_VERSION`.
+
+**If old versions exist:**
+
+```bash
+rm -rf ~/.claude/plugins/cache/claude-plugin-pack/heimdall/<OLD_VERSION>/
+```
+
+→ Record removed versions
+
+**If no old versions:**
+→ Skip cleanup
+
+→ Continue to Step 7
+
+## Step 7: Report
+
+**Fresh install (Case A from Step 2):**
 
 ```
 The Bifrost is open! Heimdall now watches over your session.
 
+Installed: v<LATEST_VERSION>
 Restart Claude Code to see the new statusline.
-
-Output example:
-~/project (main) S:2 M:1 │ ↑1↓0 │ v2.1.5 │ 🕐 22:30
-🧠 Claude Opus 4.5 │ $0.05 │ +100/-20 │ ████████░░ 65%
-⠋ Read(file.ts) │ ● Explore (searching)
-▸ [Current task] (2/5) │ RESET at 14:00 (3h 30m left)
 ```
 
-## Error Handling
+**Update (had previous version):**
 
-- If npm install fails: Check Node.js version (requires 18+)
-- If build fails: Check for TypeScript errors in src/
-- If settings.json doesn't exist: Create it with statusLine config only
+```
+Bifrost Status:
+- Updated: v<OLD_VERSION> → v<LATEST_VERSION>
+- Removed: <OLD_VERSIONS_LIST>
+- Settings: Updated ✓
+
+Restart Claude Code to activate.
+```
+
+**Already up to date:**
+
+```
+Bifrost Status:
+- Current: v<LATEST_VERSION> (up to date)
+- Removed: <OLD_VERSIONS_LIST or "none">
+```
