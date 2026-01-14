@@ -1,121 +1,121 @@
 # Claude Plugin Pack
 
-A collection of plugins for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
+> A curated collection of plugins to supercharge your [Claude Code](https://docs.anthropic.com/en/docs/claude-code) experience.
 
-## About Claude Code Plugins
-
-Claude Code plugins extend the functionality of Claude Code CLI. This repository provides ready-to-use plugins for productivity and development workflows.
-
-## Installation
-
-Add the marketplace:
+## Quick Start
 
 ```bash
+# Add marketplace
 /plugin marketplace add GzuPark/claude-plugin-pack
+
+# Install a plugin
+/plugin install hello-world@claude-plugin-pack
 ```
 
-## Update
-
-Custom plugins do not auto-update. Run the following command to get the latest version:
-
-```bash
-/plugin marketplace update claude-plugin-pack
-```
-
-## Included Plugins
-
-| Plugin | Description |
-|--------|-------------|
-| [hello-world](#hello-world) | Essential dev workflow: git commit and GitHub PR |
-| [heimdall](#heimdall) | Enhanced statusline with tool/agent/todo tracking and session monitoring |
-| [creators](#creators) | Skills for creating Claude Code extensions |
-| [task-forge](#task-forge) | Workplace productivity tools: meeting analysis, video insights, work recap |
+## Plugins
 
 ### hello-world
 
-Essential dev workflow for daily development:
+**Essential dev workflow for daily development**
 
-- **/commit** - Create well-structured git commits with conventional commit format
-- **/interview** - Conduct technical interviews about project plans to generate specifications
-- **/pr** - Create GitHub PR with automated code review
+| Command | Description |
+| ------- | ----------- |
+| `/commit` | Create well-structured git commits with conventional format |
+| `/interview` | Conduct technical interviews to generate project specs |
+| `/pr` | Create GitHub PR with automated code review |
 
 ```bash
 /plugin install hello-world@claude-plugin-pack
 ```
 
+---
+
 ### heimdall
 
-Enhanced statusline for Claude Code (named after the Norse watchman god):
+**Enhanced statusline for Claude Code** *(named after the Norse watchman god)*
 
-- **/heimdall:bifrost** - Open the Bifrost bridge (automatic build and configuration)
-- **Dynamic statusline** - 3-5 lines based on activity
-- **Tool tracking** - Color-coded completion counts
-- **Agent tracking** - Running agents with elapsed time
-- **Todo progress** - Full task description display
-- **Git integration** - Branch, staged/modified, sync status
-- **MCP server** - Connection status display
-- **Context usage** - Color-coded progress bar (green → yellow → red)
-- **5-hour reset timer** - Usage tracking
+| Feature | Description |
+| ------- | ----------- |
+| `/heimdall:bifrost` | One-command setup (automatic build and configuration) |
+| Dynamic display | 3-5 lines based on activity |
+| Tool tracking | Color-coded completion counts |
+| Agent tracking | Running agents with elapsed time |
+| Todo progress | Full task description display |
+| Git integration | Branch, staged/modified, sync status |
+| Context usage | Color-coded progress bar |
 
 ```bash
 /plugin install heimdall@claude-plugin-pack
 /heimdall:bifrost
 ```
 
+---
+
 ### creators
 
-Skills for creating Claude Code extensions:
+**Skills for creating Claude Code extensions**
 
-- **skill-creator** - Create Agent Skills with SKILL.md
-- **slash-command-creator** - Create custom slash commands
-- **hook-creator** - Create event hooks
-- **subagent-creator** - Create custom subagents
+| Skill | Description |
+| ----- | ----------- |
+| skill-creator | Create Agent Skills with SKILL.md |
+| slash-command-creator | Create custom slash commands |
+| hook-creator | Create event hooks |
+| subagent-creator | Create custom subagents |
 
 ```bash
 /plugin install creators@claude-plugin-pack
 ```
 
+---
+
 ### task-forge
 
-Workplace productivity tools:
+**Workplace productivity tools**
 
-- **/recap** - Multi-agent work session analysis with documentation, automation, TIL, and follow-up suggestions
-- **meeting-insight** - Analyze meeting transcripts for communication patterns and insights
-- **video-insight** - Extract transcripts, summaries, Q&A, and deep research from videos
-- **image-insight** - Analyze images and generate JSON profiles for AI image recreation
+| Feature | Description |
+| ------- | ----------- |
+| `/recap` | Multi-agent work session analysis |
+| meeting-insight | Analyze meeting transcripts for patterns |
+| video-insight | Extract transcripts, summaries, Q&A from videos |
+| image-insight | Generate JSON profiles for AI image recreation |
 
 ```bash
 /plugin install task-forge@claude-plugin-pack
 ```
 
+---
+
 ## Hooks
 
-Reusable Claude Code hook configurations. Ask Claude Code to set up hooks automatically.
+Reusable hook configurations. Ask Claude Code to set them up automatically.
 
 | Hook | Description |
-|------|-------------|
+| ---- | ----------- |
 | [markdown-lint](hooks/README.md#1-markdown-lint) | Auto-lint `.md` files on edit |
 
 See [hooks/README.md](hooks/README.md) for details.
+
+## Update
+
+Custom plugins do not auto-update. Get the latest version:
+
+```bash
+/plugin marketplace update claude-plugin-pack
+```
 
 ## Structure
 
 ```text
 claude-plugin-pack/
-├── .claude-plugin/
-│   ├── marketplace.json     # Marketplace config
-│   └── plugin.json          # Plugin manifest
+├── .claude-plugin/          # Marketplace & plugin manifests
 ├── plugins/                 # Individual plugins
 ├── hooks/                   # Reusable hook configurations
-├── CLAUDE.md
-├── LICENSE
-├── README.ko.md
 └── README.md
 ```
 
-## Creating Your Own
+## Create Your Own
 
-See the [Claude Code Plugins Documentation](https://docs.anthropic.com/en/docs/claude-code/plugins) for guides on creating plugins.
+See [Claude Code Plugins Documentation](https://docs.anthropic.com/en/docs/claude-code/plugins).
 
 ## License
 
