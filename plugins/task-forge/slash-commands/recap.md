@@ -43,7 +43,7 @@ Prepare session summary:
 
 Run 4 agents **in parallel**. Use the Task tool to execute them simultaneously:
 
-```
+```text
 Task 1: doc-updater agent
 - Pass session context
 - Collect CLAUDE.md, context.md update suggestions
@@ -67,7 +67,7 @@ Task 4: followup-suggester agent
 
 After collecting Phase 1 results, run the duplicate-checker agent:
 
-```
+```text
 Task: duplicate-checker agent
 - Pass all suggestions from Phase 1
 - Compare with current project's CLAUDE.md, context.md, .claude/
@@ -111,7 +111,7 @@ Display results **grouped by action**:
 
 Use AskUserQuestion to present **multi-select** options:
 
-```
+```text
 Which actions would you like to execute?
 
 Options:

@@ -24,8 +24,8 @@ Conduct in-depth technical interviews about project plans to deeply understand i
 
 Input: `$ARGUMENTS`
 
-- **File path** (contains `/` or ends with `.md`, `.txt`) → Read the file, use Glob for related files
-- **Text description** → Use directly as project concept
+- **File path** (contains `/` or ends with `.md`, `.txt`) -> Read the file, use Glob for related files
+- **Text description** -> Use directly as project concept
 
 ### Step 2: Assess Complexity
 
@@ -43,7 +43,7 @@ For question areas, see [references/interview-areas.md](references/interview-are
 
 **Progress Tracking:** Display after each question:
 
-```
+```text
 [Progress: 2/6 | Covered: Architecture, API | Remaining: Security, Testing]
 ```
 
@@ -73,8 +73,8 @@ Use template from [references/spec-template.md](references/spec-template.md).
 
 **Output location:**
 
-- File input → Same directory with `-spec` suffix
-- Text input → Ask user, default `./specs/<project-name>-spec.md`
+- File input -> Same directory with `-spec` suffix
+- Text input -> Ask user, default `./specs/<project-name>-spec.md`
 
 **Cleanup:** Delete `.interview-progress-*.md` after successful spec generation.
 

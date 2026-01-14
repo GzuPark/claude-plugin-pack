@@ -40,7 +40,7 @@ From "Technical Terms / Proper Nouns" extracted by transcript-analyzer:
 
 Perform brief web search on video topic:
 
-```
+```text
 WebSearch: "{video topic} overview" or "{key term} explanation"
 ```
 
@@ -51,7 +51,7 @@ WebSearch: "{video topic} overview" or "{key term} explanation"
 
 Reference template to write the following sections:
 
-**Header**
+#### Header
 
 ```markdown
 # {title}
@@ -62,42 +62,42 @@ Reference template to write the following sections:
 > **URL**: {url}
 ```
 
-**Summary** (3-5 sentences)
+#### Summary (3-5 sentences)
 
 - Concisely summarize the video's key message
 - Anyone should be able to understand the video content
 
-**Key Insights** (5-7)
+#### Key Insights (5-7)
 
 - Core insights that can be learned from the video
 - Include detailed explanation for each insight
 - Add related background information if available
 
-**Actionable Takeaways**
+#### Actionable Takeaways
 
 - Based on Action Items extracted by transcript-analyzer
 - Organize into specific, actionable items
 - Checklist format (- [ ])
 
-**Detailed Timeline**
+#### Detailed Timeline
 
 - Expand transcript-analyzer's timeline
 - Group by major sections
 - Add brief description to each item
 
-**Key Concepts Glossary** (5-10)
+#### Key Concepts Glossary (5-10)
 
 - Definitions of key concepts/terms covered in video
 - Use accurate definitions supplemented by web search
 
-**Notes**
+#### Notes
 
 - Speaker style or notable points
 - Key quotes (selected from Key Quotes)
 
 ### 4. Save Document
 
-```
+```text
 Write: {output_path}
 ```
 

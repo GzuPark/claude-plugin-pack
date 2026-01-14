@@ -92,5 +92,6 @@ All changes are recorded in `CHANGELOG.md`.
 
 ## Reference
 
-- [Claude Code Plugins Documentation](https://docs.anthropic.com/en/docs/claude-code/plugins)
+- [Create plugins](https://code.claude.com/docs/en/plugins.md): Create custom plugins to extend Claude Code with slash commands, agents, hooks, Skills, and MCP servers.
+- [Plugins reference](https://code.claude.com/docs/en/plugins-reference.md): Complete technical reference for Claude Code plugin system, including schemas, CLI commands, and component specifications.
 - [Plugin Marketplaces Guide](https://code.claude.com/docs/en/plugin-marketplaces)

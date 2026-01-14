@@ -27,7 +27,7 @@ The following information is provided when called:
 
 ### 1. Analyze Digest
 
-```
+```text
 Read: {digest_path}
 Read: {qa_patterns_path}
 ```
@@ -51,7 +51,7 @@ Based on content length:
 | Long (30-60 min, substantial content) | 4 |
 | Very long (60+ min, comprehensive content) | 5 |
 
-**Guidelines:**
+#### Guidelines
 
 - Focus on the most important points
 - Quality over quantity

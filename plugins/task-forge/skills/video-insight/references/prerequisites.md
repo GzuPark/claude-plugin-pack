@@ -78,22 +78,22 @@ brew install yt-dlp ffmpeg whisper-cpp
 
 ## Ubuntu Installation
 
-### yt-dlp (YouTube)
+### yt-dlp on Ubuntu
 
-**Option 1: pipx (Recommended)**
+#### Option 1: pipx (Recommended)
 
 ```bash
 sudo apt install pipx
 pipx install yt-dlp
 ```
 
-**Option 2: pip**
+#### Option 2: pip
 
 ```bash
 pip install yt-dlp
 ```
 
-**Option 3: Binary**
+#### Option 3: Binary
 
 ```bash
 sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
@@ -106,7 +106,7 @@ Verify installation:
 yt-dlp --version
 ```
 
-### ffmpeg (Audio/Video Processing)
+### ffmpeg on Ubuntu
 
 ```bash
 sudo apt update
@@ -120,7 +120,7 @@ ffmpeg -version
 ffprobe -version
 ```
 
-### whisper-cpp (Speech-to-Text)
+### whisper-cpp on Ubuntu
 
 whisper-cpp must be built from source on Ubuntu:
 
@@ -143,7 +143,7 @@ Verify installation:
 whisper-cpp --help
 ```
 
-### Whisper Model Download
+### Whisper Model Download on Ubuntu
 
 ```bash
 mkdir -p ~/.cache/whisper
@@ -151,7 +151,7 @@ curl -L -o ~/.cache/whisper/ggml-large-v3-turbo-q8_0.bin \
   "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-turbo-q8_0.bin?download=true"
 ```
 
-### Quick Install (All Tools)
+### Quick Install on Ubuntu
 
 ```bash
 # ffmpeg
@@ -178,7 +178,7 @@ Run the dependency check script:
 
 Expected output when all tools are installed:
 
-```
+```text
 OK: yt-dlp found
 OK: whisper-cpp found
 OK: ffmpeg found

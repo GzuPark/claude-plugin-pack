@@ -9,10 +9,10 @@ Standard error messages for PR workflow.
 | Not a git repo | Not a git repository. |
 | Detached HEAD | Cannot determine current branch. You are in detached HEAD state. |
 | Uncommitted changes | There are uncommitted changes. Run /commit first. |
-| gh not installed | gh CLI is not installed. Install it from <https://cli.github.com> |
+| gh not installed | gh CLI is not installed. Install it from `https://cli.github.com` |
 | gh not authenticated | GitHub authentication required. Run `gh auth login` first. |
 | No base branch found | Cannot find default branch. Please specify base branch explicitly. |
-| No diff | No difference from <base-branch>. Verify you have changes to push. |
+| No diff | No difference from base-branch. Verify you have changes to push. |
 | PR already exists | A PR already exists for this branch: [URL] |
 
 ## Review Errors
@@ -48,9 +48,9 @@ Standard error messages for PR workflow.
 
 ## Success Output Template
 
-### Regular PR
+### Regular PR Output
 
-```
+```text
 PR created successfully!
 
 [PR Title]
@@ -62,9 +62,9 @@ Next steps:
 - Check CI status
 ```
 
-### Draft PR
+### Draft PR Output
 
-```
+```text
 Draft PR created!
 
 [PR Title]

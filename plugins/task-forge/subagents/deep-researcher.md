@@ -28,7 +28,7 @@ The following information is provided when called:
 
 ### 1. Analyze Digest
 
-```
+```text
 Read: {digest_path}
 Read: {deep_research_reference}
 ```
@@ -53,7 +53,7 @@ Generate 3-5 search queries:
 
 ### 3. Parallel Web Search
 
-```
+```text
 WebSearch: [query 1]
 WebSearch: [query 2]
 WebSearch: [query 3]
@@ -72,7 +72,7 @@ Select 3-5 key pages from search results:
 - Academic materials
 - Reliable media
 
-```
+```text
 WebFetch: [URL 1] - Extract key content
 WebFetch: [URL 2] - Extract key content
 ...

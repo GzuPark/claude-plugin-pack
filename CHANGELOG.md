@@ -1,5 +1,16 @@
 # Changelog
 
+## 26.1.12 (2026-01-14)
+
+- Add hooks directory with reusable hook configurations
+  - markdown-lint: Auto-lint `.md` files on edit (PostToolUse hook)
+- Add `.markdownlintrc` (disable MD013, MD060)
+- Fix markdown lint errors across all plugins
+  - creators (v1.0.2): 9 files fixed
+  - heimdall (v1.1.1): 3 files fixed
+  - hello-world (v1.1.2): 7 files fixed
+  - task-forge (v1.2.2): 18 files fixed
+
 ## 26.1.11 (2026-01-14)
 
 - Fix task-forge plugin (v1.2.1)

@@ -3,6 +3,7 @@
 ## Simple Commands
 
 ### Code Review Command
+
 ```markdown
 ---
 description: Review code for bugs and improvements
@@ -18,6 +19,7 @@ $ARGUMENTS
 ```
 
 ### Explain Command
+
 ```markdown
 ---
 description: Explain code in simple terms
@@ -31,6 +33,7 @@ $ARGUMENTS
 ## Commands with Arguments
 
 ### Single Argument (`$ARGUMENTS`)
+
 ```markdown
 ---
 description: Fix a GitHub issue
@@ -40,6 +43,7 @@ Fix issue #$ARGUMENTS following our coding standards.
 ```
 
 ### Positional Arguments (`$1`, `$2`, etc.)
+
 ```markdown
 ---
 argument-hint: [pr-number] [priority] [assignee]
@@ -55,6 +59,7 @@ Focus on security, performance, and code style.
 Use `!` prefix to execute bash commands and include output in context.
 
 ### Git Commit Command
+
 ```markdown
 ---
 allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*)
@@ -73,7 +78,7 @@ description: Create a git commit
 Based on the above changes, create a single git commit.
 ```
 
-### Commit-Push-PR
+### Commit-Push-PR Command
 
 ```markdown
 ---
@@ -124,7 +129,8 @@ Run the deployment process for the $1 environment.
 
 Use `@` prefix to include file contents.
 
-### Review Implementation
+### Review Implementation Command
+
 ```markdown
 ---
 description: Review implementation against spec
@@ -133,7 +139,8 @@ description: Review implementation against spec
 Review the implementation in @src/utils/helpers.js against the specification.
 ```
 
-### Compare Files
+### Compare Files Command
+
 ```markdown
 ---
 argument-hint: [old-file] [new-file]
@@ -148,6 +155,7 @@ Compare @$1 with @$2 and summarize the differences.
 Commands in subdirectories appear with namespace in description.
 
 ### Frontend Component (`.claude/commands/frontend/component.md`)
+
 ```markdown
 ---
 description: Generate a React component
@@ -161,6 +169,7 @@ Follow our frontend coding standards and use TypeScript.
 ```
 
 ### Backend API (`.claude/commands/backend/api.md`)
+
 ```markdown
 ---
 description: Generate API endpoint

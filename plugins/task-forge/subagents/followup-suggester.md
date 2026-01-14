@@ -72,31 +72,31 @@ Find the following in the session:
 
 In recently modified files:
 
-```
+```bash
 grep -r "TODO\|FIXME\|WIP\|HACK" [modified files]
 ```
 
 ### 3. Priority Classification
 
-**P0 (Urgent)**
+#### P0 (Urgent)
 
 - Blocking issues
 - Security problems
 - Data loss risk
 
-**P1 (High)**
+#### P1 (High)
 
 - Core feature related
 - Technical debt
 - Important bugs
 
-**P2 (Medium)**
+#### P2 (Medium)
 
 - Quality improvements
 - Minor bugs
 - Documentation
 
-**P3 (Low)**
+#### P3 (Low)
 
 - Future improvements
 - Nice-to-have

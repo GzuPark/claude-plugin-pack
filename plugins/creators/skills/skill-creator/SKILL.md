@@ -70,18 +70,14 @@ Every SKILL.md consists of:
 
 #### Bundled Resources (optional)
 
-##### Scripts (`scripts/`)
-
-Executable code (Python/Bash/etc.) for tasks that require deterministic reliability or are repeatedly rewritten.
+**Scripts (`scripts/`)**: Executable code (Python/Bash/etc.) for tasks that require deterministic reliability or are repeatedly rewritten.
 
 - **When to include**: When the same code is being rewritten repeatedly or deterministic reliability is needed
 - **Example**: `scripts/rotate_pdf.py` for PDF rotation tasks
 - **Benefits**: Token efficient, deterministic, may be executed without loading into context
 - **Note**: Scripts may still need to be read by Claude for patching or environment-specific adjustments
 
-##### References (`references/`)
-
-Documentation and reference material intended to be loaded as needed into context to inform Claude's process and thinking.
+**References (`references/`)**: Documentation and reference material intended to be loaded as needed into context to inform Claude's process and thinking.
 
 - **When to include**: For documentation that Claude should reference while working
 - **Examples**: `references/finance.md` for financial schemas, `references/mnda.md` for company NDA template, `references/policies.md` for company policies, `references/api_docs.md` for API specifications
@@ -90,9 +86,7 @@ Documentation and reference material intended to be loaded as needed into contex
 - **Best practice**: If files are large (>10k words), include grep search patterns in SKILL.md
 - **Avoid duplication**: Information should live in either SKILL.md or references files, not both. Prefer references files for detailed information unless it's truly core to the skill—this keeps SKILL.md lean while making information discoverable without hogging the context window. Keep only essential procedural instructions and workflow guidance in SKILL.md; move detailed reference material, schemas, and examples to references files.
 
-##### Assets (`assets/`)
-
-Files not intended to be loaded into context, but rather used within the output Claude produces.
+**Assets (`assets/`)**: Files not intended to be loaded into context, but rather used within the output Claude produces.
 
 - **When to include**: When the skill needs files that will be used in the final output
 - **Examples**: `assets/logo.png` for brand assets, `assets/slides.pptx` for PowerPoint templates, `assets/frontend-template/` for HTML/React boilerplate, `assets/font.ttf` for typography
@@ -125,7 +119,7 @@ Keep SKILL.md body to the essentials and under 500 lines to minimize context blo
 
 **Key principle:** When a skill supports multiple variations, frameworks, or options, keep only the core workflow and selection guidance in SKILL.md. Move variant-specific details (patterns, examples, configuration) into separate reference files.
 
-**Pattern 1: High-level guide with references**
+##### Pattern 1: High-level guide with references
 
 ```markdown
 # PDF Processing
@@ -144,11 +138,11 @@ Extract text with pdfplumber:
 
 Claude loads FORMS.md, REFERENCE.md, or EXAMPLES.md only when needed.
 
-**Pattern 2: Domain-specific organization**
+##### Pattern 2: Domain-specific organization
 
 For Skills with multiple domains, organize content by domain to avoid loading irrelevant context:
 
-```
+```text
 bigquery-skill/
 ├── SKILL.md (overview and navigation)
 └── reference/
@@ -162,7 +156,7 @@ When a user asks about sales metrics, Claude only reads sales.md.
 
 Similarly, for skills supporting multiple frameworks or variants, organize by variant:
 
-```
+```text
 cloud-deploy/
 ├── SKILL.md (workflow + provider selection)
 └── references/
@@ -173,7 +167,7 @@ cloud-deploy/
 
 When the user chooses AWS, Claude only reads aws.md.
 
-**Pattern 3: Conditional details**
+##### Pattern 3: Conditional details
 
 Show basic content, link to advanced content:
 

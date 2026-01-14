@@ -28,7 +28,7 @@ Session context is provided:
 
 First, check the current project's documentation status:
 
-```
+```text
 - Read CLAUDE.md (if exists)
 - Read context.md (if exists)
 - Check .claude/ directory structure
@@ -38,14 +38,14 @@ First, check the current project's documentation status:
 
 Find the following items in the session:
 
-**Items suitable for CLAUDE.md:**
+#### Items suitable for CLAUDE.md
 
 - New commands, skills, agents
 - Environment and project structure changes
 - Workflow updates
 - Tool configuration changes
 
-**Items suitable for context.md:**
+#### Items suitable for context.md
 
 - Project-specific knowledge and constraints
 - "Tribal knowledge" or organizational memory
@@ -103,16 +103,15 @@ Return results in the following format:
 ### CLAUDE.md Items
 
 #### Item 1
+
 - **Content**:
-  ```
 
 ### /wrap command
 
-  Use `/wrap` command for automatic session analysis at session end
+Use `/wrap` command for automatic session analysis at session end
 
 - Can update documentation, suggest automation, record TIL
 
-  ```
 - **Location**: ## Commands section
 - **Reason**: New workflow command added that team members need to know about
 
@@ -122,14 +121,11 @@ Return results in the following format:
 
 - **Content**:
 
-  ```
-
 ## API Rate Limiting
 
-  External API calls are limited to 100 per minute.
-  Batch processing required for bulk operations.
+External API calls are limited to 100 per minute.
+Batch processing required for bulk operations.
 
-  ```
 - **Location**: ## Technical Constraints section
 - **Reason**: Constraint discovered in this session that needs reference for future development
 ```

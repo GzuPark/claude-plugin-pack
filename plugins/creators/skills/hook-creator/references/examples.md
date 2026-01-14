@@ -20,7 +20,9 @@ Complete, tested hook configurations for common use cases.
 
 ## Logging Hooks
 
-**Required Tools**: `jq`
+### Required Tools for Logging
+
+`jq`
 
 ### Log All Bash Commands
 
@@ -64,11 +66,15 @@ Complete, tested hook configurations for common use cases.
 
 ## Auto-Formatting Hooks
 
-**Required Tools**: `jq`, and formatters (`prettier`, `black`, `gofmt`)
+### Required Tools for Formatting
+
+`jq`, and formatters (`prettier`, `black`, `gofmt`)
 
 ### Format TypeScript Files
 
-**Required**: `prettier` (`npm install -g prettier`)
+#### Required for TypeScript
+
+`prettier` (`npm install -g prettier`)
 
 ```json
 {
@@ -90,7 +96,9 @@ Complete, tested hook configurations for common use cases.
 
 ### Format Python Files with Black
 
-**Required**: `black` (`pip install black`)
+#### Required for Python
+
+`black` (`pip install black`)
 
 ```json
 {
@@ -112,7 +120,9 @@ Complete, tested hook configurations for common use cases.
 
 ### Format Go Files
 
-**Required**: `gofmt` (included with Go installation)
+#### Required for Go
+
+`gofmt` (included with Go installation)
 
 ```json
 {
@@ -134,7 +144,9 @@ Complete, tested hook configurations for common use cases.
 
 ## File Protection Hooks
 
-**Required Tools**: `jq` or `python3`
+### Required Tools for Protection
+
+`jq` or `python3`
 
 ### Block Edits to Sensitive Files
 
@@ -178,7 +190,9 @@ Complete, tested hook configurations for common use cases.
 
 ## Notification Hooks
 
-**Required Tools**: `jq`, platform-specific tools (`osascript` for macOS, `notify-send` for Linux)
+### Required Tools for Notifications
+
+`jq`, platform-specific tools (`osascript` for macOS, `notify-send` for Linux)
 
 ### macOS Desktop Notification
 
@@ -242,7 +256,9 @@ Complete, tested hook configurations for common use cases.
 
 ## Validation Hooks
 
-**Required Tools**: `jq`, optionally `eslint`
+### Required Tools for Validation
+
+`jq`, optionally `eslint`
 
 ### Validate JSON Before Write
 
@@ -286,7 +302,9 @@ Complete, tested hook configurations for common use cases.
 
 ## Session Hooks
 
-**Required Tools**: Shell (bash)
+### Required Tools for Sessions
+
+Shell (bash)
 
 ### Initialize Environment on Session Start
 
@@ -380,7 +398,9 @@ Block write operations to system directories:
 
 Hooks for the `UserPromptSubmit` event to process user input before Claude sees it.
 
-**Required Tools**: `jq`
+### Required Tools for Prompts
+
+`jq`
 
 ### Log User Prompts
 
@@ -526,12 +546,15 @@ Common issues and solutions when working with hooks.
 
 ### Hook Not Triggering
 
-**Symptom**: Hook command never executes.
+#### Symptom
 
-**Solutions**:
+Hook command never executes.
+
+#### Solutions
 
 1. **Check matcher pattern**: Ensure the matcher matches the tool name exactly (case-sensitive)
-   ```json
+
+   ```text
    "matcher": "Bash"  // Correct
    "matcher": "bash"  // Wrong - won't match
    ```
@@ -545,11 +568,14 @@ Common issues and solutions when working with hooks.
 
 ### Hook Blocks Everything
 
-**Symptom**: All operations of a certain type are blocked.
+#### Symptom: Blocking Issue
 
-**Solutions**:
+All operations of a certain type are blocked.
+
+#### Solutions for Blocking Issue
 
 1. **Check exit code**: Exit code 2 blocks the operation. Ensure your script returns 0 for allowed operations
+
    ```bash
    # Always allow (exit 0)
    echo "logged" && exit 0
@@ -559,42 +585,51 @@ Common issues and solutions when working with hooks.
    ```
 
 2. **Use proper error handling**: Add `|| exit 0` to prevent unexpected blocks
+
    ```bash
    some_command 2>/dev/null || exit 0
    ```
 
 ### JSON Parsing Errors
 
-**Symptom**: `jq` commands fail or produce unexpected output.
+#### Symptom: Parsing Issue
 
-**Solutions**:
+`jq` commands fail or produce unexpected output.
+
+#### Solutions for Parsing Issue
 
 1. **Escape quotes properly**: JSON in shell requires careful escaping
+
    ```json
    "command": "jq -r '.tool_input.file_path'"  // Correct
    "command": "jq -r ".tool_input.file_path""  // Wrong
    ```
 
 2. **Handle missing fields**: Use `// ""` for default values
+
    ```bash
    jq -r '.tool_input.description // ""'
    ```
 
 3. **Debug with logging**: Temporarily log the input to see what's received
+
    ```bash
    tee /tmp/hook-debug.json | jq -r '.tool_input.command'
    ```
 
 ### Platform-Specific Issues
 
-**macOS**:
+#### macOS
+
 - Use `osascript` for notifications
 - Sound files in `/System/Library/Sounds/`
 
-**Linux**:
+#### Linux
+
 - Use `notify-send` for notifications (requires `libnotify`)
 - Install with: `sudo apt install libnotify-bin`
 
-**Windows (WSL)**:
+#### Windows (WSL)
+
 - Use `powershell.exe` for Windows notifications
 - Path conversion may be needed for Windows tools

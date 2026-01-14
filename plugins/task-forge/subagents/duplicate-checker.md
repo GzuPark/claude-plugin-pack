@@ -55,7 +55,7 @@ Check if automation with the same purpose exists under a different name
 
 For each CLAUDE.md/context.md proposal:
 
-```
+```text
 1. Read the target file
 2. Search for text similar to proposed content
 3. Determine duplication status
@@ -65,7 +65,7 @@ For each CLAUDE.md/context.md proposal:
 
 For each automation proposal:
 
-```
+```text
 1. Scan .claude/ directory
 2. Search for commands/skills/agents with similar names
 3. Check if functionally similar ones exist

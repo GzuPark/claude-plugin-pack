@@ -6,7 +6,7 @@ PR generation rules for Step 8.
 
 ### Change Type Detection
 
-**Priority 1: Branch name prefix**
+#### Priority 1: Branch name prefix
 
 | Branch Pattern | Type |
 |----------------|------|
@@ -21,7 +21,7 @@ PR generation rules for Step 8.
 
 Extract: `git branch --show-current | sed -E 's|^([^/]+)/.*|\1|'`
 
-**Priority 2: Most recent commit message**
+#### Priority 2: Most recent commit message
 
 Check for conventional commit prefix: `feat:`, `fix:`, `docs:`, etc.
 
@@ -29,7 +29,7 @@ Check for conventional commit prefix: `feat:`, `fix:`, `docs:`, etc.
 git log <base-branch>..HEAD --format=%s | head -1
 ```
 
-**Priority 3: Changed file patterns**
+#### Priority 3: Changed file patterns
 
 | File Pattern | Type |
 |--------------|------|
@@ -82,13 +82,13 @@ Examples:
 
 ### Section Details
 
-#### Summary
+#### Summary Section
 
 - Analyze commit messages: `git log <base>..HEAD --format=%s`
 - Group related changes
 - Focus on "what" and "why"
 
-#### Changes Table
+#### Changes Table Section
 
 Build from: `git diff <base-branch>...HEAD --stat --name-status`
 
@@ -99,7 +99,7 @@ Type mapping:
 - `D` -> Deleted
 - `R` -> Renamed
 
-#### Impact
+#### Impact Section
 
 Analyze scope and describe:
 
@@ -108,7 +108,7 @@ Analyze scope and describe:
 - Database requirements
 - Configuration changes
 
-#### Review Notes
+#### Review Notes Section
 
 Based on:
 
@@ -118,7 +118,7 @@ Based on:
 
 Default: "Check overall code quality and logic."
 
-#### References (Optional)
+#### References Section (Optional)
 
 Extract issue references:
 

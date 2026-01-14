@@ -8,7 +8,7 @@ Essential dev workflow: git commit and GitHub PR with automated code review for 
 
 Create well-structured git commits with conventional commit format.
 
-```
+```text
 /commit
 /commit [additional context]
 ```
@@ -23,7 +23,7 @@ Create well-structured git commits with conventional commit format.
 
 Conduct technical interviews about project plans to generate specifications.
 
-```
+```text
 /interview path/to/plan.md
 /interview "Build a todo app with React"
 ```
@@ -39,7 +39,7 @@ Conduct technical interviews about project plans to generate specifications.
 
 Create GitHub PR with automated code review.
 
-```
+```text
 /pr
 /pr main
 /pr --draft
@@ -76,7 +76,7 @@ The `/pr` command uses the `pr-workflow` skill internally. This skill provides:
 
 ## Workflow
 
-```
+```text
 /commit → /pr → Review → Push → PR Created
 ```
 

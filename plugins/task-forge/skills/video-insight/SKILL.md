@@ -349,7 +349,7 @@ Display message: "Temporary files have been cleaned up."
 
 Display file location:
 
-```
+```text
 Temporary subtitle files are kept at /tmp/video-insight/
 Manual cleanup: rm -rf /tmp/video-insight/
 ```

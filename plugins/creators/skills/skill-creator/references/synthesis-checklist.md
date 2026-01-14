@@ -16,7 +16,7 @@ Ensures comprehensive review by systematically applying different viewpoints:
 
 Evaluates architectural quality and technical soundness.
 
-### Checklist
+### Design Checklist
 
 | # | Item | Check | Notes |
 |---|------|-------|-------|
@@ -25,14 +25,14 @@ Evaluates architectural quality and technical soundness.
 | D3 | **Minimal dependencies**: Are external dependencies minimized? | ☐ | |
 | D4 | **Error handling**: Are failure modes identified and handled? | ☐ | |
 
-### Key Questions
+### Design Key Questions
 
 - Could this skill be split into smaller, more focused skills?
 - Are there implicit assumptions that should be explicit?
 - What happens when things go wrong?
 - Is the complexity justified by the value delivered?
 
-### Red Flags
+### Design Red Flags
 
 - Skill tries to do too many things
 - Dependencies on specific versions or tools
@@ -45,7 +45,7 @@ Evaluates architectural quality and technical soundness.
 
 Evaluates usability and user experience.
 
-### Checklist
+### Audience Checklist
 
 | # | Item | Check | Notes |
 |---|------|-------|-------|
@@ -54,14 +54,14 @@ Evaluates usability and user experience.
 | A3 | **Helpful output**: Does output guide next steps? | ☐ | |
 | A4 | **Appropriate complexity**: Does difficulty match target audience? | ☐ | |
 
-### Key Questions
+### Audience Key Questions
 
 - Would a new user understand how to invoke this skill?
 - Does the output format match what users expect?
 - Are error messages actionable?
 - Is there unnecessary friction in the workflow?
 
-### Red Flags
+### Audience Red Flags
 
 - Triggers require memorization or documentation lookup
 - Output requires interpretation or additional processing
@@ -74,7 +74,7 @@ Evaluates usability and user experience.
 
 Evaluates future-readiness and maintainability.
 
-### Checklist
+### Evolution Checklist
 
 | # | Item | Check | Notes |
 |---|------|-------|-------|
@@ -83,14 +83,14 @@ Evaluates future-readiness and maintainability.
 | E3 | **Design rationale**: Is the WHY documented? | ☐ | |
 | E4 | **Anti-patterns**: Are pitfalls documented? | ☐ | |
 
-### Key Questions
+### Evolution Key Questions
 
 - What will break when dependencies change?
 - How would someone extend this skill?
 - Why were these design decisions made?
 - What mistakes might future maintainers make?
 
-### Red Flags
+### Evolution Red Flags
 
 - Specific version numbers in instructions
 - No documentation of design decisions

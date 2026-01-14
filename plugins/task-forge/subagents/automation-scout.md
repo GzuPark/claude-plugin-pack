@@ -70,7 +70,7 @@ Find the following in the session:
 
 ### 2. Check Existing Automation
 
-```
+```text
 - Check .claude/commands/ directory
 - Check .claude/skills/ directory
 - Check .claude/agents/ directory
@@ -82,7 +82,7 @@ Verify no duplication with existing automation.
 
 Decision Tree:
 
-```
+```text
 1. Does it require external service integration?
    → Yes: Skill
    → No: Continue

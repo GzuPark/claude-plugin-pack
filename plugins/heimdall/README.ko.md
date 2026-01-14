@@ -15,15 +15,15 @@ Tool/agent/todo tracking, Git 상태, session monitoring을 지원하는 Claude 
 | Todo 진행률 | 완료율과 함께 전체 task 설명 표시 |
 | Git 통합 | Branch, staged/modified 개수, sync 상태 |
 | MCP server | 연결 상태 표시 |
-| Context 사용량 | 색상 코드 progress bar (green → yellow → red) |
+| Context 사용량 | 색상 코드 progress bar (green -> yellow -> red) |
 | 5시간 리셋 타이머 | Local 시간으로 사용량 추적 |
 | 비용 추적 | Session 비용 및 라인 변경 (+/-) |
 
 ## 출력 예시
 
-**실행 중인 작업이 있을 때 (5줄):**
+### 실행 중인 작업이 있을 때 (5줄)
 
-```
+```text
 ~/project/private/my-app (main) S:2 M:3 │ ↑1↓0 │ v2.1.7 │ MCP:2 │ 🕐 16:30
 🧠 Opus 4.5 │ $12.50 │ +500/-120 │ ████████░░ 65%
 Edit×8 | Bash×5 | Read×4 | WebFetch×2 │ ✓ Explore×2
@@ -31,18 +31,18 @@ Edit×8 | Bash×5 | Read×4 | WebFetch×2 │ ✓ Explore×2
 ▸ [Implement user authentication module] (2/5) │ RESET at 18:00 (1h 30m left)
 ```
 
-**실행 중인 작업이 없을 때 (4줄):**
+### 실행 중인 작업이 없을 때 (4줄)
 
-```
+```text
 ~/project/private/my-app (main) S:2 M:3 │ ✔ │ v2.1.7 │ MCP:-- │ 🕐 16:30
 🧠 Opus 4.5 │ $12.50 │ +500/-120 │ ████████░░ 65%
 Edit×8 | Bash×5 | Read×4 │ ✓ Explore×2
 ✓ All todos complete (5/5) │ RESET at 18:00 (1h 30m left)
 ```
 
-**최소 표시 (3줄):**
+### 최소 표시 (3줄)
 
-```
+```text
 ~/project/private/my-app (main) │ ✔ │ v2.1.7 │ MCP:-- │ 🕐 16:30
 🧠 Opus 4.5 │ $0.00 │ +0/-0 │ ░░░░░░░░░░ 0%
 RESET at 18:00 (1h 30m left)

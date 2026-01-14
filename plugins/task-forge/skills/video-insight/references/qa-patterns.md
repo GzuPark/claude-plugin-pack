@@ -33,7 +33,7 @@ Select the most appropriate question types based on content:
 
 ## Question Examples
 
-**Core Message**
+### Core Message Example
 
 ```markdown
 **Q: What is the main message of this video?**
@@ -41,7 +41,7 @@ Select the most appropriate question types based on content:
 The speaker emphasizes that [core message]. This is demonstrated through [supporting point]. (around 2:30)
 ```
 
-**Key Facts**
+### Key Facts Example
 
 ```markdown
 **Q: What percentage improvement was achieved in the case study?**
@@ -49,7 +49,7 @@ The speaker emphasizes that [core message]. This is demonstrated through [suppor
 The case study showed a 40% improvement in efficiency after implementing the new process. The speaker attributes this to [reason]. (around 12:15)
 ```
 
-**Comparison**
+### Comparison Example
 
 ```markdown
 **Q: What is the key difference between approach A and approach B?**
@@ -57,7 +57,7 @@ The case study showed a 40% improvement in efficiency after implementing the new
 Approach A focuses on [aspect], while approach B emphasizes [different aspect]. The speaker recommends A for [situation] and B for [other situation]. (around 8:45)
 ```
 
-**Application**
+### Application Example
 
 ```markdown
 **Q: How can viewers apply this technique in their daily work?**

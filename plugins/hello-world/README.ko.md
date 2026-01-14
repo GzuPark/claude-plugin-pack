@@ -8,7 +8,7 @@ Claude Code를 위한 필수 개발 워크플로우입니다. Git 커밋 및 Git
 
 Conventional Commit 형식으로 구조화된 Git 커밋을 생성합니다.
 
-```
+```text
 /commit
 /commit [추가 컨텍스트]
 ```
@@ -23,7 +23,7 @@ Conventional Commit 형식으로 구조화된 Git 커밋을 생성합니다.
 
 프로젝트 계획에 대한 기술 인터뷰를 수행하여 사양 문서를 생성합니다.
 
-```
+```text
 /interview path/to/plan.md
 /interview "React로 할 일 앱 만들기"
 ```
@@ -39,7 +39,7 @@ Conventional Commit 형식으로 구조화된 Git 커밋을 생성합니다.
 
 자동 코드 리뷰가 포함된 GitHub PR을 생성합니다.
 
-```
+```text
 /pr
 /pr main
 /pr --draft
@@ -76,7 +76,7 @@ Conventional Commit 형식으로 구조화된 Git 커밋을 생성합니다.
 
 ## Workflow
 
-```
+```text
 /commit → /pr → 리뷰 → 푸시 → PR 생성
 ```
 

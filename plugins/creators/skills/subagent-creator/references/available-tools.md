@@ -42,22 +42,29 @@ Sub-agents can also access tools from configured MCP servers. MCP tool names fol
 ## Common Tool Combinations
 
 ### Read-Only Research
-```
+
+```text
 tools: Read, Grep, Glob, Bash
 ```
+
 Best for: Code analysis, documentation review, codebase exploration
 
 ### Code Modification
-```
+
+```text
 tools: Read, Write, Edit, Grep, Glob, Bash
 ```
+
 Best for: Implementing features, fixing bugs, refactoring
 
 ### Minimal Write Access
-```
+
+```text
 tools: Read, Grep, Glob
 ```
+
 Best for: Security audits, code review (report-only)
 
 ### Full Access
+
 Omit the `tools` field to inherit all available tools.

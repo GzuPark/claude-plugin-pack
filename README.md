@@ -88,6 +88,16 @@ Workplace productivity tools:
 /plugin install task-forge@claude-plugin-pack
 ```
 
+## Hooks
+
+Reusable Claude Code hook configurations. Ask Claude Code to set up hooks automatically.
+
+| Hook | Description |
+|------|-------------|
+| [markdown-lint](hooks/README.md#1-markdown-lint) | Auto-lint `.md` files on edit |
+
+See [hooks/README.md](hooks/README.md) for details.
+
 ## Structure
 
 ```text
@@ -96,6 +106,7 @@ claude-plugin-pack/
 │   ├── marketplace.json     # Marketplace config
 │   └── plugin.json          # Plugin manifest
 ├── plugins/                 # Individual plugins
+├── hooks/                   # Reusable hook configurations
 ├── CLAUDE.md
 ├── LICENSE
 ├── README.ko.md

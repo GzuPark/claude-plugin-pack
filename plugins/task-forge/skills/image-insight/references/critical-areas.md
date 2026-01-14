@@ -2,9 +2,9 @@
 
 These areas require special attention for accurate style recreation.
 
-## Hair Analysis (CRITICAL)
+## Hair Analysis (Critical)
 
-### Required Elements
+### Hair Required Elements
 
 - Exact length using body reference points (ears, shoulders, etc.)
 - Specific cut style by name (bob, shag, fade, undercut, etc.)
@@ -15,7 +15,7 @@ These areas require special attention for accurate style recreation.
 - Volume and movement quality
 - All unique features (bangs, layers, fades, undercuts)
 
-### Anti-Patterns
+### Hair Anti-Patterns
 
 - NEVER describe hair as "perfect" or overly uniform
 - AVOID "AI smooth" descriptions - real hair has natural variation
@@ -23,9 +23,9 @@ These areas require special attention for accurate style recreation.
 
 ---
 
-## Hand & Gesture Analysis (CRITICAL)
+## Hand and Gesture Analysis (Critical)
 
-### Required Elements
+### Hand Required Elements
 
 - Position of EACH hand separately (left and right)
 - Visibility status (visible, in pockets, behind back, out of frame)
@@ -36,7 +36,7 @@ These areas require special attention for accurate style recreation.
 - Natural vs posed quality with evidence
 - Contact points and pressure
 
-### Anti-Patterns
+### Hand Anti-Patterns
 
 - DON'T skip hand position for portraits
 - DON'T assume hand positions without evidence
@@ -44,9 +44,9 @@ These areas require special attention for accurate style recreation.
 
 ---
 
-## Background Analysis (CRITICAL)
+## Background Analysis (Critical)
 
-### Wall Material Distinction (MOST CRITICAL)
+### Wall Material Distinction
 
 Distinguish between:
 
@@ -56,7 +56,7 @@ Distinguish between:
 - Wood paneling
 - Tile/Wallpaper/Plaster
 
-### Required Elements
+### Background Required Elements
 
 - Every visible object cataloged with quadrant position
 - Plant species identification (monstera, pothos, bird of paradise, fern - NOT just "plant")
@@ -71,7 +71,7 @@ Distinguish between:
 
 ---
 
-## Lighting Analysis (CRITICAL)
+## Lighting Analysis (Critical)
 
 ### Directionality Assessment
 
@@ -87,7 +87,7 @@ Distinguish between:
 - Placement: under subject, on wall, cast patterns
 - Length: short, medium, long projection distance
 
-### Required Elements
+### Lighting Required Elements
 
 - Light source type and direction
 - Contrast ratio (high/medium/low)
@@ -98,9 +98,9 @@ Distinguish between:
 
 ---
 
-## Facial Expression Analysis (CRITICAL)
+## Facial Expression Analysis (Critical)
 
-### Required Elements
+### Facial Expression Required Elements
 
 - Exact mouth position (closed smile, slight smile, neutral, serious)
 - Smile intensity quantification (no smile, subtle, moderate, broad)

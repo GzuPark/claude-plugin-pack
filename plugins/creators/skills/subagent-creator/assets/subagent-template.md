@@ -1,3 +1,6 @@
+# Sub-agent Template
+
+```yaml
 ---
 name: your-subagent-name
 description: Clear description of what this subagent does and when to use it. Include "use proactively" or "MUST BE USED" for automatic delegation.
@@ -29,3 +32,4 @@ Output format:
 
 - [What to include in responses]
 - [How to structure findings]
+```

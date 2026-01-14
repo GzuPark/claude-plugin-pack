@@ -19,7 +19,8 @@
 
 Runs before tool calls. Can block execution.
 
-**Input Schema:**
+### Input Schema
+
 ```json
 {
   "tool_name": "Bash",
@@ -30,11 +31,13 @@ Runs before tool calls. Can block execution.
 }
 ```
 
-**Exit Codes:**
+### Exit Codes
+
 - `0` - Allow tool to proceed
 - `2` - Block tool, stdout sent as feedback to Claude
 
-**Common tool_input fields by tool:**
+### Common tool_input Fields by Tool
+
 - `Bash`: `command`, `description`
 - `Edit`: `file_path`, `old_string`, `new_string`
 - `Write`: `file_path`, `content`
@@ -46,7 +49,8 @@ Runs before tool calls. Can block execution.
 
 Runs after tool calls complete.
 
-**Input Schema:**
+### Input Schema for PostToolUse
+
 ```json
 {
   "tool_name": "Edit",
@@ -57,7 +61,8 @@ Runs after tool calls complete.
 }
 ```
 
-**Use Cases:**
+### Use Cases for PostToolUse
+
 - Auto-formatting edited files
 - Logging tool results
 - Triggering dependent actions
@@ -66,7 +71,8 @@ Runs after tool calls complete.
 
 Runs when permission dialog is shown.
 
-**Input Schema:**
+### Input Schema for PermissionRequest
+
 ```json
 {
   "tool_name": "Bash",
@@ -77,7 +83,8 @@ Runs when permission dialog is shown.
 }
 ```
 
-**Exit Codes:**
+### Exit Codes for PermissionRequest
+
 - `0` - Let user decide
 - `1` - Auto-deny
 - `2` - Auto-approve
@@ -86,7 +93,8 @@ Runs when permission dialog is shown.
 
 Runs when Claude sends notifications.
 
-**Input Schema:**
+### Input Schema for Notification
+
 ```json
 {
   "message": "Waiting for your input",
@@ -94,7 +102,8 @@ Runs when Claude sends notifications.
 }
 ```
 
-**Use Cases:**
+### Use Cases for Notification
+
 - Custom desktop notifications
 - Slack/Discord alerts
 - Sound notifications
@@ -103,7 +112,8 @@ Runs when Claude sends notifications.
 
 Runs when user submits a prompt, before Claude processes it.
 
-**Input Schema:**
+### Input Schema for UserPromptSubmit
+
 ```json
 {
   "prompt": "Help me fix this bug",
@@ -111,7 +121,8 @@ Runs when user submits a prompt, before Claude processes it.
 }
 ```
 
-**Use Cases:**
+### Use Cases for UserPromptSubmit
+
 - Prompt logging
 - Pre-processing
 - Context injection
@@ -120,7 +131,8 @@ Runs when user submits a prompt, before Claude processes it.
 
 Runs when Claude finishes responding.
 
-**Input Schema:**
+### Input Schema for Stop
+
 ```json
 {
   "stop_reason": "end_turn",
@@ -128,7 +140,8 @@ Runs when Claude finishes responding.
 }
 ```
 
-**Use Cases:**
+### Use Cases for Stop
+
 - Session logging
 - Cleanup tasks
 - Metrics collection
@@ -137,7 +150,8 @@ Runs when Claude finishes responding.
 
 Runs when subagent (Task tool) tasks complete.
 
-**Input Schema:**
+### Input Schema for SubagentStop
+
 ```json
 {
   "subagent_type": "Explore",
@@ -149,7 +163,8 @@ Runs when subagent (Task tool) tasks complete.
 
 Runs before Claude compacts conversation context.
 
-**Input Schema:**
+### Input Schema for PreCompact
+
 ```json
 {
   "reason": "context_limit",
@@ -161,7 +176,8 @@ Runs before Claude compacts conversation context.
 
 Runs when Claude Code starts or resumes a session.
 
-**Input Schema:**
+### Input Schema for SessionStart
+
 ```json
 {
   "session_id": "abc123",
@@ -171,9 +187,12 @@ Runs when Claude Code starts or resumes a session.
 }
 ```
 
-**agent_type values:** `main`, `subagent`, `skill`
+### agent_type Values
 
-**Use Cases:**
+`main`, `subagent`, `skill`
+
+### Use Cases for SessionStart
+
 - Environment setup
 - Loading project config
 - Starting background services
@@ -182,7 +201,8 @@ Runs when Claude Code starts or resumes a session.
 
 Runs when Claude Code session ends.
 
-**Input Schema:**
+### Input Schema for SessionEnd
+
 ```json
 {
   "session_id": "abc123",
@@ -190,7 +210,8 @@ Runs when Claude Code session ends.
 }
 ```
 
-**Use Cases:**
+### Use Cases for SessionEnd
+
 - Cleanup resources
 - Save session state
 - Stop background services

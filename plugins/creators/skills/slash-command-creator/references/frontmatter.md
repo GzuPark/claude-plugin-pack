@@ -3,6 +3,7 @@
 ## Required Fields
 
 ### `description`
+
 Brief description of what the command does. Shown in `/help` output.
 
 ```yaml
@@ -12,6 +13,7 @@ description: Create a git commit with staged changes
 ## Optional Fields
 
 ### `allowed-tools`
+
 Specifies which tools the command can use. Format: `ToolName(pattern:*)` or just `ToolName`.
 
 ```yaml
@@ -26,6 +28,7 @@ allowed-tools: Read, Write, Edit
 ```
 
 Common tool patterns:
+
 - `Bash(command:*)` - Allow specific bash commands
 - `Read` - File reading
 - `Write` - File writing
@@ -34,6 +37,7 @@ Common tool patterns:
 - `Glob` - File pattern matching
 
 ### `argument-hint`
+
 Shows expected arguments when auto-completing the command.
 
 ```yaml
@@ -48,6 +52,7 @@ argument-hint: add [tagId] | remove [tagId] | list
 ```
 
 ### `model`
+
 Specific model to use for this command. See [Models overview](https://docs.claude.com/en/docs/about-claude/models/overview).
 
 ```yaml

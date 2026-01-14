@@ -25,11 +25,11 @@ Multi-agent system으로 작업 session을 분석하고 실행 가능한 결과�
 
 **사용법:**
 
-```
+```text
 /recap
 ```
 
-```
+```text
 /recap "feat: 사용자 인증 추가"
 ```
 
@@ -51,15 +51,15 @@ Multi-agent system으로 작업 session을 분석하고 실행 가능한 결과�
 
 **사용 예시:**
 
-```
+```text
 이 폴더의 모든 회의를 분석하고 갈등을 회피한 순간을 알려 주세요.
 ```
 
-```
+```text
 지난 달 회의를 보고 communication pattern을 파악해 주세요.
 ```
 
-```
+```text
 Q1과 Q2 회의를 비교하여 경청 skill이 개선되었는지 확인해 주세요.
 ```
 
@@ -103,18 +103,14 @@ YouTube 영상 및 로컬 미디어 파일에서 자막을 추출하고, 요약�
 | YouTube | `yt-dlp` |
 | 로컬 파일 | `whisper-cpp`, `ffmpeg` |
 
-<details>
-<summary><strong>macOS 설치</strong></summary>
+**macOS 설치:**
 
 ```bash
 # 모든 도구
 brew install yt-dlp ffmpeg whisper-cpp
 ```
 
-</details>
-
-<details>
-<summary><strong>Ubuntu 설치</strong></summary>
+**Ubuntu 설치:**
 
 ```bash
 # yt-dlp
@@ -128,15 +124,13 @@ git clone https://github.com/ggerganov/whisper.cpp.git
 cd whisper.cpp && make && sudo cp main /usr/local/bin/whisper-cpp
 ```
 
-</details>
-
 **사용 예시:**
 
-```
+```text
 이 유튜브 영상을 요약해 주세요: https://youtu.be/...
 ```
 
-```
+```text
 ~/Downloads/lecture.mp4 파일을 정리해 주세요.
 ```
 
@@ -172,11 +166,11 @@ cd whisper.cpp && make && sudo cp main /usr/local/bin/whisper-cpp
 
 **사용 예시:**
 
-```
+```text
 이 이미지를 분석하고 visual style을 추출해 주세요.
 ```
 
-```
+```text
 이 사진의 조명과 구도를 재현할 수 있는 JSON profile을 생성해 주세요.
 ```
 

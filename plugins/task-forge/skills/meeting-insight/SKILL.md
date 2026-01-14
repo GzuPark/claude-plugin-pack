@@ -29,7 +29,7 @@ Transforms meeting transcripts into actionable insights about communication patt
 
 ### 1. Discover Data
 
-```
+```text
 1. Scan folder for transcript files
 2. Check for speaker labels and timestamps
 3. Confirm date range of meetings
@@ -118,15 +118,15 @@ For each pattern:
 
 ## Usage Examples
 
-```
+```text
 Analyze all meetings in this folder and tell me when I avoided conflict.
 ```
 
-```
+```text
 Look at my meetings from the past month and identify my communication patterns.
 ```
 
-```
+```text
 Compare my Q1 vs Q2 meetings to see if my listening skills improved.
 ```
 

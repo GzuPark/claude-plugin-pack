@@ -33,7 +33,7 @@
 
 ### Speaking Ratio Calculation
 
-```
+```text
 Speaking Ratio = (Individual Speaking Time / Total Meeting Time) x 100
 ```
 

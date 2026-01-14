@@ -11,45 +11,51 @@ Systematically applies 6 mental models to skill design. Each lens reveals differ
 
 ## Lens 1: First Principles
 
-**Core Question**: What is fundamentally needed? What remains when conventions are removed?
+### First Principles Core Question
 
-**Application Method**:
+What is fundamentally needed? What remains when conventions are removed?
+
+### First Principles Application Method
 
 1. Think outside existing skill patterns
 2. "If skills didn't exist, how would we solve this problem?"
 3. Identify the core value this skill provides
 4. Build from fundamental requirements
 
-**Key Questions**:
+### First Principles Key Questions
 
 - What is the atomic unit of value this skill delivers?
 - What assumptions are we unnecessarily carrying from existing skills?
 - What does the minimum viable skill (MVS) look like?
 
-**Example**:
+### First Principles Example
 
-```
+```text
 Input: "I need a PDF processing skill"
 Analysis: Is PDF the real goal? Or is "extracting information from documents" the goal?
 Conclusion: Core value is "information extraction"; PDF is just one input format
 ```
 
-**Output**: Core value proposition free from conventions
+### First Principles Output
+
+Core value proposition free from conventions
 
 ---
 
 ## Lens 2: Pre-Mortem
 
-**Core Question**: Assuming this skill has failed, why did it fail?
+### Pre-Mortem Core Question
 
-**Application Method**:
+Assuming this skill has failed, why did it fail?
+
+### Pre-Mortem Application Method
 
 1. Imagine complete failure 6 months from now
 2. List all possible reasons for failure
 3. Prioritize by likelihood × impact
 4. Proactively mitigate top risks
 
-**Pre-Mortem Template**:
+### Pre-Mortem Template
 
 ```markdown
 ## Pre-Mortem Analysis
@@ -67,7 +73,7 @@ Outcome: Skill is unused and deprecated
 - [Mitigation for Reason 2]
 ```
 
-**Failure Categories**:
+### Pre-Mortem Failure Categories
 
 | Category | Failure Examples |
 |----------|------------------|
@@ -76,22 +82,26 @@ Outcome: Skill is unused and deprecated
 | Integration | Conflicts with other skills, ecosystem disruption |
 | Evolution | Quickly obsolete, non-extensible, tight coupling |
 
-**Output**: Risk-aware design with built-in mitigations
+### Pre-Mortem Output
+
+Risk-aware design with built-in mitigations
 
 ---
 
 ## Lens 3: Constraint Analysis
 
-**Core Question**: What are the real constraints? Which are self-imposed?
+### Constraint Analysis Core Question
 
-**Application Method**:
+What are the real constraints? Which are self-imposed?
+
+### Constraint Analysis Application Method
 
 1. List all perceived constraints
 2. Categorize: Hard (real) vs Soft (assumed)
 3. Challenge soft constraints
 4. Work creatively within hard constraints
 
-**Constraint Categories**:
+### Constraint Analysis Categories
 
 | Type | Examples | Fixed? |
 |------|----------|--------|
@@ -100,31 +110,35 @@ Outcome: Skill is unused and deprecated
 | Technical | Must work with existing tools | Mostly Hard |
 | Social | "Users expect X pattern" | Soft |
 
-**Example**:
+### Constraint Analysis Example
 
-```
+```text
 Constraint: "10MB file size limit"
 Question: Is this a real constraint?
 Analysis: Not an API limit, just an assumption from past experience
 Conclusion: Needs verification, actual limit may differ
 ```
 
-**Output**: Clear understanding of real constraints, creative solutions
+### Constraint Analysis Output
+
+Clear understanding of real constraints, creative solutions
 
 ---
 
 ## Lens 4: Pareto Analysis (80/20)
 
-**Core Question**: Which 20% of features deliver 80% of the value?
+### Pareto Core Question
 
-**Application Method**:
+Which 20% of features deliver 80% of the value?
+
+### Pareto Application Method
 
 1. List all potential features/capabilities
 2. Estimate value contribution of each
 3. Identify the vital few (20%)
 4. Focus resources on high-value features
 
-**Pareto Matrix**:
+### Pareto Matrix
 
 | Feature | Value Contribution | Effort | Include? |
 |---------|-------------------|--------|----------|
@@ -133,21 +147,25 @@ Conclusion: Needs verification, actual limit may differ
 | Nice-to-have UI | 5% | Low | Consider - Easy win |
 | Advanced settings | 5% | High | No - Postpone |
 
-**Key Questions**:
+### Pareto Key Questions
 
 - What features will users use most frequently?
 - Without which features would the skill be meaningless?
 - What has the highest value-to-complexity ratio?
 
-**Output**: Focused feature set, deferred backlog
+### Pareto Output
+
+Focused feature set, deferred backlog
 
 ---
 
 ## Lens 5: Root Cause Analysis (5 Whys)
 
-**Core Question**: Why is this skill needed? (Ask 5 times)
+### Root Cause Core Question
 
-**Application Method**:
+Why is this skill needed? (Ask 5 times)
+
+### Root Cause Application Method
 
 1. Need statement: "We need a skill for X"
 2. Ask "Why?" and answer
@@ -155,7 +173,7 @@ Conclusion: Needs verification, actual limit may differ
 4. Repeat until root cause emerges
 5. Verify skill addresses root cause, not symptoms
 
-**Example**:
+### Root Cause Example
 
 ```text
 Need: "Users frequently misuse skills"
@@ -169,35 +187,39 @@ Root Cause: Missing user understanding step
 Solution: Make specific use case collection mandatory in Understanding phase
 ```
 
-**Output**: Skill that addresses root cause, not symptoms
+### Root Cause Output
+
+Skill that addresses root cause, not symptoms
 
 ---
 
 ## Lens 6: Systems Thinking
 
-**Core Question**: How do the parts interact? What are the feedback loops?
+### Systems Thinking Core Question
 
-**Application Method**:
+How do the parts interact? What are the feedback loops?
+
+### Systems Thinking Application Method
 
 1. Map skill as a system (inputs, processes, outputs)
 2. Identify relationships with other system components
 3. Find feedback loops (positive/negative)
 4. Locate leverage points for maximum impact
 
-**System Diagram Elements**:
+### Systems Thinking Diagram Elements
 
 - **Inputs**: User goals, context, settings
 - **Processes**: Each step of the skill
 - **Outputs**: Artifacts, side effects, state changes
 - **Connections**: Dependencies, triggers, compositions
 
-**Key Questions**:
+### Systems Thinking Key Questions
 
 - What other skills does this skill interact with?
 - What feedback loops exist (success breeds success, failure propagates)?
 - Where are the leverage points with big impact?
 
-**Example**:
+### Systems Thinking Example
 
 ```text
 Skill: Commit message generator
@@ -211,7 +233,9 @@ Feedback Loops:
 - Wrong messages → trust loss → abandonment → lost improvement opportunity
 ```
 
-**Output**: System integration map, leverage point identification
+### Systems Thinking Output
+
+System integration map, leverage point identification
 
 ---
 
@@ -221,7 +245,7 @@ Feedback Loops:
 
 Apply each lens for 2-3 minutes to identify most relevant ones:
 
-```markdown
+```text
 | Lens | Relevance (H/M/L) | Key Insight |
 |------|-------------------|-------------|
 | First Principles | High | Need to remove X convention |

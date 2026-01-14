@@ -16,11 +16,11 @@ Create GitHub Pull Requests with automated change analysis and code review.
 
 ## Workflow Overview
 
-```
-Step 1: Pre-checks → Step 2: Detect Base Branch → Step 3: Verify Changes
-    → Step 4: Check Existing PR → Step 5: Gather Context
-    → Step 6: Code Review → Step 7: Push Confirmation
-    → Step 8: Generate PR → Step 9: Complete
+```text
+Step 1: Pre-checks -> Step 2: Detect Base Branch -> Step 3: Verify Changes
+    -> Step 4: Check Existing PR -> Step 5: Gather Context
+    -> Step 6: Code Review -> Step 7: Push Confirmation
+    -> Step 8: Generate PR -> Step 9: Complete
 ```
 
 ## Step 1: Pre-checks
@@ -57,7 +57,7 @@ Fail (any output): "There are uncommitted changes. Run /commit first."
 gh --version
 ```
 
-Fail: "gh CLI is not installed. Install it from <https://cli.github.com>"
+Fail: "gh CLI is not installed. Install it from `https://cli.github.com`"
 
 ### 1.5 Verify gh Authentication
 
@@ -82,7 +82,7 @@ If no base branch provided:
 git diff <base-branch>...HEAD --stat
 ```
 
-Fail (no output): "No difference from <base-branch>."
+Fail (no output): "No difference from base-branch."
 
 ## Step 4: Check Existing PR
 
@@ -131,7 +131,7 @@ Check each code file for:
 
 ### 6.7 Review Output Format
 
-```
+```text
 ## Code Review Results
 
 **Status**: PASS | FAIL

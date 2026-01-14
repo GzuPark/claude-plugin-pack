@@ -1,7 +1,7 @@
 {
   "name": "task-forge",
   "description": "Workplace productivity tools: meeting analysis, video summaries, work recap, and document insights",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": {
     "name": "Jongmin Park",
     "url": "https://github.com/GzuPark"

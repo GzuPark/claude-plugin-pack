@@ -88,6 +88,16 @@ Claude Code 확장 기능 생성을 위한 skill:
 /plugin install task-forge@claude-plugin-pack
 ```
 
+## Hooks
+
+재사용 가능한 Claude Code hook 설정입니다. Claude Code에 hook 설정을 요청하면 자동으로 설정됩니다.
+
+| Hook | 설명 |
+|------|------|
+| [markdown-lint](hooks/README.ko.md#1-markdown-lint) | `.md` 파일 편집 시 자동 lint |
+
+자세한 내용은 [hooks/README.ko.md](hooks/README.ko.md)를 참고하세요.
+
 ## 구조
 
 ```text
@@ -96,6 +106,7 @@ claude-plugin-pack/
 │   ├── marketplace.json     # marketplace 설정
 │   └── plugin.json          # plugin manifest
 ├── plugins/                 # 개별 플러그인
+├── hooks/                   # 재사용 가능한 hook 설정
 ├── CLAUDE.md
 ├── LICENSE
 ├── README.ko.md

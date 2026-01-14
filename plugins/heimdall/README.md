@@ -15,15 +15,15 @@ Enhanced statusline for Claude Code with tool/agent/todo tracking, Git status, a
 | Todo progress | Full task description with completion rate |
 | Git integration | Branch, staged/modified counts, sync status |
 | MCP server | Connection status display |
-| Context usage | Color-coded progress bar (green → yellow → red) |
+| Context usage | Color-coded progress bar (green -> yellow -> red) |
 | 5-hour reset timer | Usage tracking with local time display |
 | Cost tracking | Session cost and line changes (+/-) |
 
 ## Output Example
 
-**With running activity (5 lines):**
+### With Running Activity (5 lines)
 
-```
+```text
 ~/project/private/my-app (main) S:2 M:3 │ ↑1↓0 │ v2.1.7 │ MCP:2 │ 🕐 16:30
 🧠 Opus 4.5 │ $12.50 │ +500/-120 │ ████████░░ 65%
 Edit×8 | Bash×5 | Read×4 | WebFetch×2 │ ✓ Explore×2
@@ -31,18 +31,18 @@ Edit×8 | Bash×5 | Read×4 | WebFetch×2 │ ✓ Explore×2
 ▸ [Implement user authentication module] (2/5) │ RESET at 18:00 (1h 30m left)
 ```
 
-**Without running activity (4 lines):**
+### Without Running Activity (4 lines)
 
-```
+```text
 ~/project/private/my-app (main) S:2 M:3 │ ✔ │ v2.1.7 │ MCP:-- │ 🕐 16:30
 🧠 Opus 4.5 │ $12.50 │ +500/-120 │ ████████░░ 65%
 Edit×8 | Bash×5 | Read×4 │ ✓ Explore×2
 ✓ All todos complete (5/5) │ RESET at 18:00 (1h 30m left)
 ```
 
-**Minimal (3 lines):**
+### Minimal Output (3 lines)
 
-```
+```text
 ~/project/private/my-app (main) │ ✔ │ v2.1.7 │ MCP:-- │ 🕐 16:30
 🧠 Opus 4.5 │ $0.00 │ +0/-0 │ ░░░░░░░░░░ 0%
 RESET at 18:00 (1h 30m left)

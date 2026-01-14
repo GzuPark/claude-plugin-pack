@@ -29,7 +29,7 @@ The following information is provided when called:
 
 ### 1. Read Transcript File
 
-```
+```text
 Read entire transcript file (split into chunks if file is large)
 ```
 

@@ -25,11 +25,11 @@ Analyzes your work session with multi-agent system and organizes actionable outp
 
 **Usage:**
 
-```
+```text
 /recap
 ```
 
-```
+```text
 /recap "feat: add user authentication"
 ```
 
@@ -51,15 +51,15 @@ Analyzes meeting transcripts to uncover behavioral patterns and communication in
 
 **Usage Examples:**
 
-```
+```text
 Analyze all meetings in this folder and tell me when I avoided conflict.
 ```
 
-```
+```text
 Look at my meetings from the past month and identify my communication patterns.
 ```
 
-```
+```text
 Compare my Q1 vs Q2 meetings to see if my listening skills improved.
 ```
 
@@ -103,18 +103,14 @@ Extract transcripts, generate summaries, create quizzes, and perform deep resear
 | YouTube | `yt-dlp` |
 | Local files | `whisper-cpp`, `ffmpeg` |
 
-<details>
-<summary><strong>macOS Installation</strong></summary>
+**macOS Installation:**
 
 ```bash
 # All tools
 brew install yt-dlp ffmpeg whisper-cpp
 ```
 
-</details>
-
-<details>
-<summary><strong>Ubuntu Installation</strong></summary>
+**Ubuntu Installation:**
 
 ```bash
 # yt-dlp
@@ -128,15 +124,13 @@ git clone https://github.com/ggerganov/whisper.cpp.git
 cd whisper.cpp && make && sudo cp main /usr/local/bin/whisper-cpp
 ```
 
-</details>
-
 **Usage Examples:**
 
-```
+```text
 Summarize this YouTube video: https://youtu.be/...
 ```
 
-```
+```text
 ~/Downloads/lecture.mp4 파일을 정리해 주세요.
 ```
 
@@ -172,11 +166,11 @@ Analyze images and generate comprehensive JSON profiles for style recreation and
 
 **Usage Examples:**
 
-```
+```text
 Analyze this image and extract the visual style.
 ```
 
-```
+```text
 Generate a JSON profile for recreating this photo's lighting and composition.
 ```
 
