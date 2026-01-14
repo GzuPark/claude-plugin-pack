@@ -33,12 +33,16 @@ export function renderLine1(ctx: RenderContext): string {
   parts.push(dim('│'));
   parts.push(magenta(`v${ctx.stdin.version}`));
 
-  // MCP 서버
+  // MCP 서버 + tool count
   parts.push(dim('│'));
   const mcpServers = ctx.stdin.mcp_servers || [];
   const mcpConnected = mcpServers.filter(s => s.status === 'connected' || s.status === 'active').length;
-  const mcpCount = mcpConnected > 0 ? String(mcpConnected) : '--';
-  parts.push(`MCP:${mcpCount}`);
+  const mcpServerCount = mcpConnected > 0 ? String(mcpConnected) : '--';
+  const mcpToolCount = ctx.transcript.mcpToolCount + ctx.transcript.mcpRunningTools.length;
+  const mcpDisplay = mcpToolCount > 0
+    ? `MCP:${mcpServerCount}/${mcpToolCount}`
+    : `MCP:${mcpServerCount}`;
+  parts.push(mcpDisplay);
 
   // 시간
   parts.push(dim('│'));

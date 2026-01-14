@@ -98,6 +98,10 @@ export interface TranscriptData {
   agents: AgentEntry[];
   todos: TodoItem[];
   sessionStart?: Date;
+  /** MCP tool 완료 횟수 */
+  mcpToolCount: number;
+  /** 실행 중인 MCP tools */
+  mcpRunningTools: ToolEntry[];
 }
 
 /**

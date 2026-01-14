@@ -1,5 +1,5 @@
 import type { RenderContext, ToolEntry, AgentEntry } from '../types.js';
-import { yellow, green, magenta, dim, cyan, blue } from './colors.js';
+import { yellow, green, magenta, dim, cyan, blue, white } from './colors.js';
 
 const SPINNER_FRAMES = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
 
@@ -120,4 +120,32 @@ function formatElapsed(ms: number): string {
   const mins = Math.floor(secs / 60);
   const remainSecs = secs % 60;
   return `${mins}:${String(remainSecs).padStart(2, '0')}`;
+}
+
+/**
+ * MCP Tools Line: 실행 중인 MCP tools (있을 경우만)
+ *
+ * 예시: ⠋ mcp__ide__getDiagnostics×3
+ */
+export function renderMcpRunningActivity(ctx: RenderContext): string | null {
+  const mcpRunning = ctx.transcript.mcpRunningTools;
+
+  if (mcpRunning.length === 0) {
+    return null;
+  }
+
+  const spinner = SPINNER_FRAMES[Math.floor(Date.now() / 100) % SPINNER_FRAMES.length];
+
+  // MCP tool 이름별로 그룹화
+  const mcpCounts = countByName(mcpRunning);
+  const parts: string[] = [];
+
+  Object.entries(mcpCounts)
+    .sort((a, b) => b[1] - a[1])
+    .forEach(([name, count]) => {
+      const countStr = count > 1 ? `×${count}` : '';
+      parts.push(white(`${name}${countStr}`));
+    });
+
+  return `${dim(spinner)} ${parts.join(' | ')}`;
 }

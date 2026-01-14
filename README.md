@@ -37,13 +37,14 @@ See [plugins](plugins/) for overview.
 | Feature | Description |
 | ------- | ----------- |
 | `/heimdall:bifrost` | One-command setup (automatic build and configuration) |
-| Dynamic display | 3-5 lines based on activity |
+| Dynamic display | 3-6 lines based on activity |
 | Tool tracking | Color-coded completion counts |
+| MCP tool tracking | Separate display for MCP tools (running only) |
 | Agent tracking | Running agents with elapsed time |
 | Running activity | Separate line with spinner animation |
 | Todo progress | Full task description display |
 | Git integration | Branch, staged/modified, sync status |
-| MCP server | Connection status display |
+| MCP server | Connection status with tool call count |
 | Context usage | Color-coded progress bar |
 | Cost tracking | Session cost and line changes |
 | 5-hour reset | Usage tracking with local time |

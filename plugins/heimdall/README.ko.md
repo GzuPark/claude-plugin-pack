@@ -10,23 +10,35 @@ Claude Code용 확장 statusline입니다.
 
 | 기능 | 설명 |
 | ---- | ---- |
-| Dynamic statusline | 활동에 따라 3-5줄 동적 표시 |
+| Dynamic statusline | 활동에 따라 3-6줄 동적 표시 |
 | Tool tracking | Tool 유형별 색상 코드 완료 개수 |
+| MCP tool tracking | MCP tool 별도 표시 (실행 중일 때만) |
 | Agent tracking | 경과 시간과 함께 실행 중인 agent 표시 |
 | Running activity | Spinner animation과 함께 별도 라인 표시 |
 | Todo 진행률 | 완료율과 함께 전체 task 설명 표시 |
 | Git 통합 | Branch, staged/modified 개수, sync 상태 |
-| MCP server | 연결 상태 표시 |
+| MCP server | 연결 상태 및 tool 호출 횟수 표시 |
 | Context 사용량 | 색상 코드 progress bar (green/yellow/red) |
 | 5시간 리셋 타이머 | Local 시간으로 사용량 추적 |
 | 비용 추적 | Session 비용 및 라인 변경 (+/-) |
 
 ## 출력 예시
 
+### MCP tool 실행 중일 때 (6줄)
+
+```text
+~/my-app (main) S:2 M:3 │ ↑1↓0 │ v2.1.7 │ MCP:2/15 │ 🕐 16:30
+🧠 Opus 4.5 │ $12.50 │ +500/-120 │ ████████░░ 65%
+Edit×8 | Bash×5 | Read×4 | WebFetch×2 │ ✓ Explore×2
+⠋ Read(/src/Button.tsx) | ● Explore (searching for endpoints)
+⠋ mcp__ide__getDiagnostics×3
+▸ [Implement auth module] (2/5) │ RESET at 18:00 (1h 30m left)
+```
+
 ### 실행 중인 작업이 있을 때 (5줄)
 
 ```text
-~/my-app (main) S:2 M:3 │ ↑1↓0 │ v2.1.7 │ MCP:2 │ 🕐 16:30
+~/my-app (main) S:2 M:3 │ ↑1↓0 │ v2.1.7 │ MCP:2/12 │ 🕐 16:30
 🧠 Opus 4.5 │ $12.50 │ +500/-120 │ ████████░░ 65%
 Edit×8 | Bash×5 | Read×4 | WebFetch×2 │ ✓ Explore×2
 ⠋ Read(/src/Button.tsx) | ● Explore (searching for endpoints)
@@ -36,7 +48,7 @@ Edit×8 | Bash×5 | Read×4 | WebFetch×2 │ ✓ Explore×2
 ### 실행 중인 작업이 없을 때 (4줄)
 
 ```text
-~/my-app (main) S:2 M:3 │ ✔ │ v2.1.7 │ MCP:-- │ 🕐 16:30
+~/my-app (main) S:2 M:3 │ ✔ │ v2.1.7 │ MCP:2/8 │ 🕐 16:30
 🧠 Opus 4.5 │ $12.50 │ +500/-120 │ ████████░░ 65%
 Edit×8 | Bash×5 | Read×4 │ ✓ Explore×2
 ✓ All todos complete (5/5) │ RESET at 18:00 (1h 30m left)
@@ -54,11 +66,12 @@ RESET at 18:00 (1h 30m left)
 
 | Line | 내용 |
 | ---- | ---- |
-| 1 | Project 디렉토리, Git branch, Staged/Modified, Sync, MCP |
+| 1 | Project 디렉토리, Git branch, Staged/Modified, Sync, MCP (servers/tools) |
 | 2 | Model (emoji), 비용, 라인 변경, Context bar + % |
 | 3 | 완료된 tool (색상 코드), 완료된 agent (있을 경우) |
 | 4 | 실행 중인 tool (spinner), 실행 중인 agent (있을 경우) |
-| 4/5 | Todo 진행률, 5시간 리셋 타이머 |
+| 5 | 실행 중인 MCP tool (실행 중일 때만 표시) |
+| 5/6 | Todo 진행률, 5시간 리셋 타이머 |
 
 ## 설치
 

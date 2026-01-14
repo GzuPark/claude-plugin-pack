@@ -4,6 +4,7 @@ import type { TranscriptData, ToolEntry, AgentEntry, TodoItem } from './types.js
 
 const MAX_TOOLS = 20;
 const MAX_AGENTS = 10;
+const MCP_PREFIX = 'mcp__';
 
 /**
  * 트랜스크립트 파일 파싱
@@ -13,6 +14,8 @@ export async function parseTranscript(path: string): Promise<TranscriptData> {
     tools: [],
     agents: [],
     todos: [],
+    mcpToolCount: 0,
+    mcpRunningTools: [],
   };
 
   if (!fs.existsSync(path)) {
@@ -21,6 +24,7 @@ export async function parseTranscript(path: string): Promise<TranscriptData> {
 
   const toolMap = new Map<string, ToolEntry>();
   const agentMap = new Map<string, AgentEntry>();
+  const mcpToolMap = new Map<string, ToolEntry>();
 
   const stream = fs.createReadStream(path, { encoding: 'utf-8' });
   const rl = readline.createInterface({
@@ -33,7 +37,7 @@ export async function parseTranscript(path: string): Promise<TranscriptData> {
 
     try {
       const entry = JSON.parse(line);
-      processEntry(entry, toolMap, agentMap, result);
+      processEntry(entry, toolMap, agentMap, mcpToolMap, result);
 
       if (!result.sessionStart && entry.timestamp) {
         result.sessionStart = new Date(entry.timestamp);
@@ -46,6 +50,11 @@ export async function parseTranscript(path: string): Promise<TranscriptData> {
   result.tools = Array.from(toolMap.values()).slice(-MAX_TOOLS);
   result.agents = Array.from(agentMap.values()).slice(-MAX_AGENTS);
 
+  // MCP tools: count completed, track running
+  const mcpTools = Array.from(mcpToolMap.values());
+  result.mcpToolCount = mcpTools.filter(t => t.status === 'completed').length;
+  result.mcpRunningTools = mcpTools.filter(t => t.status === 'running');
+
   return result;
 }
 
@@ -53,6 +62,7 @@ function processEntry(
   entry: Record<string, unknown>,
   toolMap: Map<string, ToolEntry>,
   agentMap: Map<string, AgentEntry>,
+  mcpToolMap: Map<string, ToolEntry>,
   result: TranscriptData
 ): void {
   const message = entry.message as Record<string, unknown> | undefined;
@@ -61,9 +71,9 @@ function processEntry(
 
   for (const block of content) {
     if (block.type === 'tool_use') {
-      processToolUse(block, toolMap, agentMap, result, entry.timestamp as string | undefined);
+      processToolUse(block, toolMap, agentMap, mcpToolMap, result, entry.timestamp as string | undefined);
     } else if (block.type === 'tool_result') {
-      processToolResult(block, toolMap, agentMap);
+      processToolResult(block, toolMap, agentMap, mcpToolMap);
     }
   }
 }
@@ -72,6 +82,7 @@ function processToolUse(
   block: Record<string, unknown>,
   toolMap: Map<string, ToolEntry>,
   agentMap: Map<string, AgentEntry>,
+  mcpToolMap: Map<string, ToolEntry>,
   result: TranscriptData,
   timestamp?: string
 ): void {
@@ -94,6 +105,15 @@ function processToolUse(
     if (todos && Array.isArray(todos)) {
       result.todos = todos as TodoItem[];
     }
+  } else if (name.startsWith(MCP_PREFIX)) {
+    // MCP tool
+    mcpToolMap.set(id, {
+      id,
+      name,
+      status: 'running',
+      target: extractTarget(name, input),
+      startTime,
+    });
   } else {
     toolMap.set(id, {
       id,
@@ -108,7 +128,8 @@ function processToolUse(
 function processToolResult(
   block: Record<string, unknown>,
   toolMap: Map<string, ToolEntry>,
-  agentMap: Map<string, AgentEntry>
+  agentMap: Map<string, AgentEntry>,
+  mcpToolMap: Map<string, ToolEntry>
 ): void {
   const toolUseId = block.tool_use_id as string;
   const isError = block.is_error as boolean;
@@ -124,6 +145,12 @@ function processToolResult(
     const agent = agentMap.get(toolUseId)!;
     agent.status = 'completed';
     agent.endTime = endTime;
+  }
+
+  if (mcpToolMap.has(toolUseId)) {
+    const tool = mcpToolMap.get(toolUseId)!;
+    tool.status = isError ? 'error' : 'completed';
+    tool.endTime = endTime;
   }
 }
 

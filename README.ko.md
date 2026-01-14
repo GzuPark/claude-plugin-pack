@@ -37,13 +37,14 @@
 | Feature | 설명 |
 | ------- | ---- |
 | `/heimdall:bifrost` | One-command 설정 (자동 빌드 및 구성) |
-| Dynamic display | 활동에 따라 3-5줄 동적 표시 |
+| Dynamic display | 활동에 따라 3-6줄 동적 표시 |
 | Tool tracking | 색상 코드별 완료 개수 |
+| MCP tool tracking | MCP tool 별도 표시 (실행 중일 때만) |
 | Agent tracking | 경과 시간과 함께 실행 중인 agent |
 | Running activity | Spinner animation과 함께 별도 라인 |
 | Todo progress | 전체 task 설명 표시 |
 | Git integration | Branch, staged/modified, sync 상태 |
-| MCP server | 연결 상태 표시 |
+| MCP server | 연결 상태 및 tool 호출 횟수 표시 |
 | Context usage | 색상 코드 progress bar |
 | Cost tracking | Session 비용 및 라인 변경 |
 | 5-hour reset | Local 시간으로 사용량 추적 |

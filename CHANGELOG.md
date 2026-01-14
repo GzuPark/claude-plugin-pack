@@ -1,5 +1,12 @@
 # Changelog
 
+## 26.1.16 (2026-01-14)
+
+- Update heimdall plugin (v1.2.0)
+  - MCP tool tracking: Separate display for MCP tools (running only)
+  - MCP count format: `MCP:servers/tools` (e.g., `MCP:2/20`)
+  - Dynamic statusline now supports 3-6 lines
+
 ## 26.1.15 (2026-01-14)
 
 - Add GitHub Alerts to README files

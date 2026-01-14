@@ -1,7 +1,7 @@
 import type { RenderContext } from '../types.js';
 import { renderLine1 } from './line1-workspace.js';
 import { renderLine2 } from './line2-session.js';
-import { renderCompletedActivity, renderRunningActivity } from './line3-activity.js';
+import { renderCompletedActivity, renderRunningActivity, renderMcpRunningActivity } from './line3-activity.js';
 import { renderProgress } from './line4-progress.js';
 import { RESET } from './colors.js';
 
@@ -33,6 +33,12 @@ export function render(ctx: RenderContext): void {
   const runningActivity = renderRunningActivity(ctx);
   if (runningActivity) {
     lines.push(runningActivity);
+  }
+
+  // MCP Tools Line: 실행 중인 MCP tools (있을 때만)
+  const mcpRunning = renderMcpRunningActivity(ctx);
+  if (mcpRunning) {
+    lines.push(mcpRunning);
   }
 
   // Line 4/5: Progress + Reset (항상 표시)

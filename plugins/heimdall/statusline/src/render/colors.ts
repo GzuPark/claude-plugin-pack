@@ -10,6 +10,7 @@ export const YELLOW = '\x1b[33m';
 export const BLUE = '\x1b[34m';
 export const MAGENTA = '\x1b[35m';
 export const CYAN = '\x1b[36m';
+export const WHITE = '\x1b[37m';
 
 // Bright colors (90-97)
 export const BRIGHT_CYAN = '\x1b[96m';
@@ -21,6 +22,7 @@ export const yellow = (s: string): string => `${YELLOW}${s}${RESET}`;
 export const blue = (s: string): string => `${BLUE}${s}${RESET}`;
 export const magenta = (s: string): string => `${MAGENTA}${s}${RESET}`;
 export const cyan = (s: string): string => `${CYAN}${s}${RESET}`;
+export const white = (s: string): string => `${WHITE}${s}${RESET}`;
 export const brightCyan = (s: string): string => `${BRIGHT_CYAN}${s}${RESET}`;
 export const dim = (s: string): string => `${DIM}${s}${RESET}`;
 
