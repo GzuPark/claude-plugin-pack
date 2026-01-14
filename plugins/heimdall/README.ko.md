@@ -106,13 +106,16 @@ npm install && npm run build
 
 ## Command
 
-### /heimdall:bifrost
+```text
+/heimdall:bifrost
+```
 
 Heimdall statusline을 자동으로 빌드하고 설정합니다.
 
 ## 요구 사항
 
 > [!IMPORTANT]
+>
 > - Node.js 18+
 > - npm
 

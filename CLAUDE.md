@@ -50,6 +50,15 @@ sparingly for important information:
 
 **Do NOT overuse.** Apply only where truly needed.
 
+**MD032 Note:** Add blank line before lists in alerts:
+
+```markdown
+> [!IMPORTANT]
+>
+> - Item 1
+> - Item 2
+```
+
 ### Korean Language Style
 
 SHOULD use formal polite speech ("~합니다" form),

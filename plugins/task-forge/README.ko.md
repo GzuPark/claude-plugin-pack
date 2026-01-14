@@ -5,7 +5,10 @@ Claude Code를 위한 업무 생산성 도구입니다.
 
 ## Command
 
-### /recap
+```text
+/recap
+/recap "feat: 사용자 인증 추가"
+```
 
 Multi-agent system으로 작업 session을 분석하고
 실행 가능한 결과물을 정리합니다.
@@ -24,16 +27,6 @@ Multi-agent system으로 작업 session을 분석하고
 | 자동화    | skill/command/agent 생성 기회    |
 | TIL       | 오늘 배운 것                     |
 | 다음 단계 | 미완료 작업과 우선순위           |
-
-**사용법:**
-
-```text
-/recap
-```
-
-```text
-/recap "feat: 사용자 인증 추가"
-```
 
 ## Skill
 

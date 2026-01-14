@@ -121,6 +121,7 @@ npm install -g markdownlint-cli
 ##### Hook not working
 
 > [!WARNING]
+>
 > 1. Restart Claude Code
 > 2. Check settings.json JSON syntax
 > 3. Verify jq installation: `which jq`

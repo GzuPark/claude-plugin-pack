@@ -6,14 +6,12 @@ Git 커밋 및 GitHub PR 생성과 자동 코드 리뷰 기능을
 
 ## Command
 
-### /commit
-
-Conventional Commit 형식으로 구조화된 Git 커밋을 생성합니다.
-
 ```text
 /commit
 /commit [추가 컨텍스트]
 ```
+
+Conventional Commit 형식으로 구조화된 Git 커밋을 생성합니다.
 
 **기능:**
 
@@ -21,15 +19,15 @@ Conventional Commit 형식으로 구조화된 Git 커밋을 생성합니다.
 - 관련 파일 자동 스테이징
 - 최근 커밋에서 스타일 참조
 
-### /interview
-
-프로젝트 계획에 대한 기술 인터뷰를 수행하여
-사양 문서를 생성합니다.
+---
 
 ```text
 /interview path/to/plan.md
 /interview "React로 할 일 앱 만들기"
 ```
+
+프로젝트 계획에 대한 기술 인터뷰를 수행하여
+사양 문서를 생성합니다.
 
 **기능:**
 
@@ -38,9 +36,7 @@ Conventional Commit 형식으로 구조화된 Git 커밋을 생성합니다.
 - 자동 사양 문서 생성
 - 긴 인터뷰를 위한 중간 저장
 
-### /pr
-
-자동 코드 리뷰가 포함된 GitHub PR을 생성합니다.
+---
 
 ```text
 /pr
@@ -48,6 +44,8 @@ Conventional Commit 형식으로 구조화된 Git 커밋을 생성합니다.
 /pr --draft
 /pr main --draft
 ```
+
+자동 코드 리뷰가 포함된 GitHub PR을 생성합니다.
 
 **기능:**
 
@@ -106,6 +104,7 @@ PR workflow는 다음 항목을 검토합니다:
 ## 요구사항
 
 > [!IMPORTANT]
+>
 > - Git 저장소
 > - [GitHub CLI (gh)](https://cli.github.com) 설치 및 인증 완료
 

@@ -5,7 +5,10 @@ work recap, and document insights for Claude Code.
 
 ## Commands
 
-### /recap
+```text
+/recap
+/recap "feat: add user authentication"
+```
 
 Analyzes your work session with multi-agent system and organizes
 actionable outputs.
@@ -24,16 +27,6 @@ actionable outputs.
 | Automation    | Skill/command/agent creation opportunities|
 | TIL           | Today I Learned items                     |
 | Next Steps    | Incomplete tasks with priority            |
-
-**Usage:**
-
-```text
-/recap
-```
-
-```text
-/recap "feat: add user authentication"
-```
 
 ## Skills
 

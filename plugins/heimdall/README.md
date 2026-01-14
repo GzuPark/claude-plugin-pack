@@ -105,13 +105,16 @@ Add to `~/.claude/settings.json`:
 
 ## Commands
 
-### /heimdall:bifrost
+```text
+/heimdall:bifrost
+```
 
 Automatically builds and configures the Heimdall statusline.
 
 ## Requirements
 
 > [!IMPORTANT]
+>
 > - Node.js 18+
 > - npm
 

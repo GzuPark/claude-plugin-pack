@@ -122,6 +122,7 @@ npm install -g markdownlint-cli
 ##### Hook이 동작하지 않음
 
 > [!WARNING]
+>
 > 1. Claude Code 재시작 필요
 > 2. settings.json JSON 문법 확인
 > 3. jq 설치 확인: `which jq`

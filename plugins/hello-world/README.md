@@ -5,14 +5,12 @@ for Claude Code.
 
 ## Commands
 
-### /commit
-
-Create well-structured git commits with conventional commit format.
-
 ```text
 /commit
 /commit [additional context]
 ```
+
+Create well-structured git commits with conventional commit format.
 
 **Features:**
 
@@ -20,15 +18,15 @@ Create well-structured git commits with conventional commit format.
 - Automatic staging of relevant files
 - Style reference from recent commits
 
-### /interview
-
-Conduct technical interviews about project plans
-to generate specifications.
+---
 
 ```text
 /interview path/to/plan.md
 /interview "Build a todo app with React"
 ```
+
+Conduct technical interviews about project plans
+to generate specifications.
 
 **Features:**
 
@@ -37,9 +35,7 @@ to generate specifications.
 - Automatic specification document generation
 - Intermediate save for long interviews
 
-### /pr
-
-Create GitHub PR with automated code review.
+---
 
 ```text
 /pr
@@ -47,6 +43,8 @@ Create GitHub PR with automated code review.
 /pr --draft
 /pr main --draft
 ```
+
+Create GitHub PR with automated code review.
 
 **Features:**
 
@@ -104,6 +102,7 @@ The PR workflow reviews code for:
 ## Requirements
 
 > [!IMPORTANT]
+>
 > - Git repository
 > - [GitHub CLI (gh)](https://cli.github.com) installed and authenticated
 
