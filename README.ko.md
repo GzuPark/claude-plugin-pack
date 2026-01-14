@@ -27,6 +27,7 @@ Marketplace 추가:
 | 플러그인 | 설명 |
 |----------|------|
 | [hello-world](#hello-world) | 필수 개발 워크플로우: Git 커밋 및 GitHub PR |
+| [heimdall](#heimdall) | Tool/agent/todo tracking 및 session monitoring을 지원하는 확장 statusline |
 | [creators](#creators) | Claude Code 확장 기능 생성을 위한 skill |
 | [task-forge](#task-forge) | 업무 생산성 도구: 회의 분석, 영상 insight, work recap |
 
@@ -40,6 +41,25 @@ Marketplace 추가:
 
 ```bash
 /plugin install hello-world@claude-plugin-pack
+```
+
+### heimdall
+
+Claude Code용 확장 statusline입니다 (북유럽 신화의 감시자 신 헤임달의 이름을 따왔습니다):
+
+- **/heimdall:bifrost** - Bifrost 다리 열기 (자동 빌드 및 설정)
+- **Dynamic statusline** - 활동에 따라 3-5줄 동적 표시
+- **Tool tracking** - 색상 코드별 완료 개수 표시
+- **Agent tracking** - 경과 시간과 함께 실행 중인 agent 표시
+- **Todo 진행률** - 전체 task 설명 표시
+- **Git 통합** - branch, staged/modified, sync 상태
+- **MCP server** - 연결 상태 표시
+- **Context 사용량** - 색상 코드 progress bar (green → yellow → red)
+- **5시간 리셋 타이머** - 사용량 추적
+
+```bash
+/plugin install heimdall@claude-plugin-pack
+/heimdall:bifrost
 ```
 
 ### creators

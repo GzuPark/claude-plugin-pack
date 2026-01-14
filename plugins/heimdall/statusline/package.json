@@ -1,0 +1,30 @@
+{
+  "name": "heimdall-statusline",
+  "version": "1.0.0",
+  "description": "Enhanced statusline for Claude Code with tool/agent/todo tracking",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "heimdall-statusline": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "claude-code",
+    "statusline",
+    "terminal",
+    "hud"
+  ],
+  "license": "MIT"
+}

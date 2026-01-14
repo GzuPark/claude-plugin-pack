@@ -27,6 +27,7 @@ Custom plugins do not auto-update. Run the following command to get the latest v
 | Plugin | Description |
 |--------|-------------|
 | [hello-world](#hello-world) | Essential dev workflow: git commit and GitHub PR |
+| [heimdall](#heimdall) | Enhanced statusline with tool/agent/todo tracking and session monitoring |
 | [creators](#creators) | Skills for creating Claude Code extensions |
 | [task-forge](#task-forge) | Workplace productivity tools: meeting analysis, video insights, work recap |
 
@@ -40,6 +41,25 @@ Essential dev workflow for daily development:
 
 ```bash
 /plugin install hello-world@claude-plugin-pack
+```
+
+### heimdall
+
+Enhanced statusline for Claude Code (named after the Norse watchman god):
+
+- **/heimdall:bifrost** - Open the Bifrost bridge (automatic build and configuration)
+- **Dynamic statusline** - 3-5 lines based on activity
+- **Tool tracking** - Color-coded completion counts
+- **Agent tracking** - Running agents with elapsed time
+- **Todo progress** - Full task description display
+- **Git integration** - Branch, staged/modified, sync status
+- **MCP server** - Connection status display
+- **Context usage** - Color-coded progress bar (green → yellow → red)
+- **5-hour reset timer** - Usage tracking
+
+```bash
+/plugin install heimdall@claude-plugin-pack
+/heimdall:bifrost
 ```
 
 ### creators

@@ -68,6 +68,13 @@ Keep technical terms in English rather than transliterating to Korean. This impr
 
 Both files must have the same version number.
 
+**Heimdall Version Sync:** Keep versions in sync between:
+
+- `plugins/heimdall/.claude-plugin/plugin.json`
+- `plugins/heimdall/statusline/package.json`
+
+Both files must have the same version number.
+
 ### Changelog
 
 All changes are recorded in `CHANGELOG.md`.

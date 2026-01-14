@@ -1,0 +1,20 @@
+{
+  "name": "heimdall",
+  "description": "Enhanced statusline for Claude Code with tool/agent/todo tracking, Git status, and session monitoring",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jongmin Park",
+    "url": "https://github.com/GzuPark"
+  },
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "statusline",
+    "monitoring",
+    "hud",
+    "terminal"
+  ],
+  "commands": [
+    "commands/bifrost.md"
+  ]
+}

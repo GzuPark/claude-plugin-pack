@@ -1,5 +1,20 @@
 # Changelog
 
+## 26.1.7 (2026-01-14)
+
+- Add heimdall plugin (v1.0.0)
+  - Dynamic statusline (3-5 lines based on activity)
+  - `/heimdall:bifrost` command for automatic build and configuration
+  - Tool tracking with color-coded completion counts
+  - Agent tracking with elapsed time display
+  - Running activity on separate line with spinner
+  - Todo progress with full task description
+  - Git integration (branch, staged/modified, sync status)
+  - MCP server connection status
+  - Context usage with color-coded progress bar (80%+ red, 60%+ yellow)
+  - 5-hour reset timer (UTC blocks: 04, 09, 14, 19, 00)
+  - Project directory display (stable, not affected by cd)
+
 ## 26.1.6 (2026-01-14)
 
 - Update task-forge plugin (v1.2.0)
