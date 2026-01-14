@@ -13,8 +13,5 @@
     "monitoring",
     "hud",
     "terminal"
-  ],
-  "commands": [
-    "commands/bifrost.md"
   ]
 }
