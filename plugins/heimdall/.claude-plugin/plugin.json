@@ -1,7 +1,7 @@
 {
   "name": "heimdall",
   "description": "Enhanced statusline for Claude Code with tool/agent/todo tracking, Git status, and session monitoring",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Jongmin Park",
     "url": "https://github.com/GzuPark"

@@ -1,5 +1,10 @@
 # Changelog
 
+## 26.1.8 (2026-01-14)
+
+- Fix heimdall plugin (v1.0.1)
+  - Remove invalid `commands` field from plugin.json (auto-discovery used instead)
+
 ## 26.1.7 (2026-01-14)
 
 - Add heimdall plugin (v1.0.0)
