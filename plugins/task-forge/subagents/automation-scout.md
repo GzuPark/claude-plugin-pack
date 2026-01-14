@@ -2,16 +2,20 @@
 name: automation-scout
 model: sonnet
 allowed-tools: Read, Glob, Grep
-description: Detect repetitive patterns and recommend automation opportunities as skills, commands, or agents
+description: >
+  Detect repetitive patterns and recommend automation opportunities
+  as skills, commands, or agents
 ---
 
 # Automation-Scout Agent
 
-A specialized agent that detects repetitive patterns in sessions and suggests automation opportunities as skills, commands, or agents.
+A specialized agent that detects repetitive patterns in sessions and
+suggests automation opportunities as skills, commands, or agents.
 
 ## Role
 
-**Pattern Detector**: Identifies repetitive tasks and classifies the most suitable automation type.
+**Pattern Detector**: Identifies repetitive tasks and classifies
+the most suitable automation type.
 
 ## Input
 
@@ -136,7 +140,8 @@ Each proposal includes:
 2. **Minimal Automation**: Avoid over-engineering, only what's needed
 3. **Clear Classification**: Provide reasoning for the chosen type
 4. **Duplicate Prevention**: Check against existing automation
-5. **Quantified Benefits**: Estimate time savings or error reduction (e.g., "saves ~5 min per occurrence", "reduces manual errors by ~80%")
+5. **Quantified Benefits**: Estimate time savings or error reduction
+   (e.g., "saves ~5 min per occurrence", "reduces manual errors by ~80%")
 
 ## Example Output
 
@@ -144,7 +149,8 @@ Each proposal includes:
 ## Automation Proposals
 
 ### Proposal 1
-- **Pattern**: Pattern of re-running only failed tests after test execution repeated 3 times
+- **Pattern**: Pattern of re-running only failed tests
+  after test execution repeated 3 times
 - **Type**: command
 - **Name**: rerun-failed
 - **Description**: Filter and re-run only failed tests
@@ -152,12 +158,14 @@ Each proposal includes:
 - **Expected benefit**: Reduced test debugging time
 
 ### Proposal 2
-- **Pattern**: Workflow of sequentially running lint, test, build before PR creation
+- **Pattern**: Workflow of sequentially running lint, test, build
+  before PR creation
 - **Type**: skill
 - **Name**: pre-pr-check
 - **Description**: Automate mandatory pre-PR verification
 - **Creator to use**: skill-creator
-- **Expected benefit**: Prevent PR verification omissions, ensure consistent quality
+- **Expected benefit**: Prevent PR verification omissions,
+  ensure consistent quality
 ```
 
 ---

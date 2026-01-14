@@ -1,6 +1,10 @@
 ---
 name: plan-interview
-description: Conduct technical interviews about project plans to uncover hidden assumptions and identify potential issues before implementation. Use when the user wants to be interviewed about a plan, spec, or project idea.
+description: >-
+  Conduct technical interviews about project plans to uncover hidden
+  assumptions and identify potential issues before implementation.
+  Use when the user wants to be interviewed about a plan, spec,
+  or project idea.
 model: sonnet
 user-invocable: false
 allowed-tools:
@@ -14,9 +18,12 @@ allowed-tools:
 
 # Plan Interview
 
-Conduct in-depth technical interviews about project plans to deeply understand implementation details, uncover hidden assumptions, and identify potential issues before implementation begins.
+Conduct in-depth technical interviews about project plans to deeply
+understand implementation details, uncover hidden assumptions,
+and identify potential issues before implementation begins.
 
-**Language:** Match the user's input language. Use explicitly requested language if specified.
+**Language:** Match the user's input language.
+Use explicitly requested language if specified.
 
 ## Workflow
 
@@ -24,22 +31,24 @@ Conduct in-depth technical interviews about project plans to deeply understand i
 
 Input: `$ARGUMENTS`
 
-- **File path** (contains `/` or ends with `.md`, `.txt`) -> Read the file, use Glob for related files
+- **File path** (contains `/` or ends with `.md`, `.txt`)
+  -> Read the file, use Glob for related files
 - **Text description** -> Use directly as project concept
 
 ### Step 2: Assess Complexity
 
-| Complexity | Indicators | Questions |
-|------------|------------|-----------|
-| Simple | Single feature, clear scope | 3-4 |
-| Medium | Multiple features, some integrations | 5-7 |
-| Complex | System-wide, many integrations | 8-10 |
+| Complexity | Indicators                           | Questions |
+| ---------- | ------------------------------------ | --------- |
+| Simple     | Single feature, clear scope          | 3-4       |
+| Medium     | Multiple features, some integrations | 5-7       |
+| Complex    | System-wide, many integrations       | 8-10      |
 
 ### Step 3: Conduct Interview
 
 Use AskUserQuestion tool. Ask ONE question at a time.
 
-For question areas, see [references/interview-areas.md](references/interview-areas.md).
+For question areas,
+see [references/interview-areas.md](references/interview-areas.md).
 
 **Progress Tracking:** Display after each question:
 
@@ -54,7 +63,8 @@ For question areas, see [references/interview-areas.md](references/interview-are
 - Challenge assumptions respectfully
 - Skip non-applicable areas
 
-**Intermediate Save:** Every 3-4 questions, save to `.interview-progress-<timestamp>.md`:
+**Intermediate Save:** Every 3-4 questions,
+save to `.interview-progress-<timestamp>.md`:
 
 - Questions asked and responses
 - Areas covered and remaining
@@ -65,7 +75,8 @@ For question areas, see [references/interview-areas.md](references/interview-are
 2. Maximum questions (10) reached, OR
 3. User requests to end
 
-Before ending: "I've covered [areas]. Anything else before writing the specification?"
+Before ending:
+"I've covered [areas]. Anything else before writing the specification?"
 
 ### Step 4: Write Specification
 
@@ -96,13 +107,18 @@ This skill activates when users want to:
 
 ## Extension Points
 
-1. **Custom interview areas**: Add domain-specific areas in references/interview-areas.md
+1. **Custom interview areas**: Add domain-specific areas
+   in references/interview-areas.md
 2. **Template customization**: Modify spec template for organization standards
 
 ## Design Rationale
 
-**Why dynamic question count?** Fixed counts don't fit all projects. Simple features need fewer questions; complex systems need thorough exploration.
+**Why dynamic question count?** Fixed counts don't fit all projects.
+Simple features need fewer questions;
+complex systems need thorough exploration.
 
-**Why intermediate saves?** Long interviews risk context loss. Periodic saves preserve progress and enable session recovery.
+**Why intermediate saves?** Long interviews risk context loss.
+Periodic saves preserve progress and enable session recovery.
 
-**Why separate references?** Keeps SKILL.md lean. Question lists and templates are loaded only when needed.
+**Why separate references?** Keeps SKILL.md lean.
+Question lists and templates are loaded only when needed.

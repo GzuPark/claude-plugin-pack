@@ -5,7 +5,10 @@
 ```markdown
 ---
 name: code-reviewer
-description: Expert code review specialist. Proactively reviews code for quality, security, and maintainability. Use immediately after writing or modifying code.
+description: >-
+  Expert code review specialist. Proactively reviews code for quality,
+  security, and maintainability. Use immediately after writing or
+  modifying code.
 tools: Read, Grep, Glob, Bash
 model: inherit
 ---
@@ -43,7 +46,9 @@ Include specific examples of how to fix issues.
 ```markdown
 ---
 name: debugger
-description: Debugging specialist for errors, test failures, and unexpected behavior. Use proactively when encountering any issues.
+description: >-
+  Debugging specialist for errors, test failures, and unexpected
+  behavior. Use proactively when encountering any issues.
 tools: Read, Edit, Bash, Grep, Glob
 ---
 
@@ -81,7 +86,9 @@ Focus on fixing the underlying issue, not just symptoms.
 ```markdown
 ---
 name: data-scientist
-description: Data analysis expert for SQL queries, BigQuery operations, and data insights. Use proactively for data analysis tasks and queries.
+description: >-
+  Data analysis expert for SQL queries, BigQuery operations, and data
+  insights. Use proactively for data analysis tasks and queries.
 tools: Bash, Read, Write
 model: sonnet
 ---
@@ -123,7 +130,9 @@ description: Use proactively to run tests and fix failures
 tools: Bash, Read, Edit, Grep, Glob
 ---
 
-You are a test automation expert. When you see code changes, proactively run the appropriate tests. If tests fail, analyze the failures and fix them while preserving the original test intent.
+You are a test automation expert. When you see code changes, proactively
+run the appropriate tests. If tests fail, analyze the failures and fix
+them while preserving the original test intent.
 
 Key responsibilities:
 
@@ -145,7 +154,9 @@ When fixing tests:
 ```markdown
 ---
 name: doc-writer
-description: Documentation specialist for creating and updating project documentation. Use when documentation needs to be written or improved.
+description: >-
+  Documentation specialist for creating and updating project
+  documentation. Use when documentation needs to be written or improved.
 tools: Read, Write, Edit, Glob, Grep
 model: haiku
 ---
@@ -179,7 +190,10 @@ Types of documentation:
 ```markdown
 ---
 name: security-auditor
-description: Security specialist for reviewing code for vulnerabilities. Use proactively when reviewing authentication, authorization, or data handling code.
+description: >-
+  Security specialist for reviewing code for vulnerabilities. Use
+  proactively when reviewing authentication, authorization, or data
+  handling code.
 tools: Read, Grep, Glob, Bash
 permissionMode: plan
 ---
@@ -220,7 +234,8 @@ Common mistakes to avoid when creating sub-agents.
 
 ### 1. Vague Description
 
-The description is critical for auto-delegation. Vague descriptions cause missed triggers.
+The description is critical for auto-delegation.
+Vague descriptions cause missed triggers.
 
 ```yaml
 # Bad - too vague
@@ -230,7 +245,9 @@ description: Helps with code
 description: Code reviewer
 
 # Good - specific and actionable
-description: Expert code reviewer. Use PROACTIVELY after writing or modifying code to check quality and security.
+description: >-
+  Expert code reviewer. Use PROACTIVELY after writing or modifying
+  code to check quality and security.
 ```
 
 ### 2. Over-Provisioning Tools

@@ -11,11 +11,13 @@ Claude Code 확장 기능 생성을 위한 skill 모음입니다.
 
 ## Skill
 
-설치 후, 확장 기능 생성을 요청하면 해당 skill이 자동으로 trigger됩니다.
+설치 후, 확장 기능 생성을 요청하면
+해당 skill이 자동으로 trigger됩니다.
 
 ### skill-creator
 
-**Trigger:** "skill을 만듭니다", "새 skill을 생성합니다", "이 skill을 수정합니다"
+**Trigger:** "skill을 만듭니다", "새 skill을 생성합니다",
+"이 skill을 수정합니다"
 
 Agent skill을 다음 구조로 생성:
 
@@ -48,7 +50,8 @@ $ARGUMENTS 또는 $1, $2를 사용한 prompt 지침
 
 ### hook-creator
 
-**Trigger:** "hook을 만듭니다", "저장 시 자동 format을 설정합니다", ".env 수정을 차단합니다"
+**Trigger:** "hook을 만듭니다", "저장 시 자동 format을 설정합니다",
+".env 수정을 차단합니다"
 
 `settings.json`에 event hook 생성:
 
@@ -63,7 +66,8 @@ $ARGUMENTS 또는 $1, $2를 사용한 prompt 지침
 }
 ```
 
-**Event:** PreToolUse, PostToolUse, SessionStart, SessionEnd, PermissionRequest, Stop 등
+**Event:** PreToolUse, PostToolUse, SessionStart, SessionEnd,
+PermissionRequest, Stop 등
 
 ### subagent-creator
 
@@ -79,7 +83,7 @@ Subagent 형식:
 ```markdown
 ---
 name: code-reviewer
-description: 코드를 review합니다. 변경 후 자동으로 사용.
+description: 코드를 review합니다.
 tools: Read, Grep, Glob, Bash
 model: sonnet
 ---

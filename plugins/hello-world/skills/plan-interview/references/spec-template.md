@@ -1,6 +1,7 @@
 # Specification Template
 
-Use this template for the final specification document. Include only sections relevant to the project type.
+Use this template for the final specification document.
+Include only sections relevant to the project type.
 
 ---
 
@@ -51,9 +52,9 @@ Use this template for the final specification document. Include only sections re
 
 ### 7. Concerns & Mitigations
 
-| Concern | Risk Level | Mitigation |
-|---------|------------|------------|
-| [Concern 1] | High/Medium/Low | [How to address] |
+| Concern      | Risk Level      | Mitigation       |
+| ------------ | --------------- | ---------------- |
+| [Concern 1]  | High/Medium/Low | [How to address] |
 
 ### 8. Open Questions
 

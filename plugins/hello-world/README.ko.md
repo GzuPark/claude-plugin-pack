@@ -1,6 +1,8 @@
 # hello-world
 
-Claude Code를 위한 필수 개발 워크플로우입니다. Git 커밋 및 GitHub PR 생성과 자동 코드 리뷰 기능을 포함합니다.
+Claude Code를 위한 필수 개발 워크플로우입니다.
+Git 커밋 및 GitHub PR 생성과 자동 코드 리뷰 기능을
+포함합니다.
 
 ## Command
 
@@ -21,7 +23,8 @@ Conventional Commit 형식으로 구조화된 Git 커밋을 생성합니다.
 
 ### /interview
 
-프로젝트 계획에 대한 기술 인터뷰를 수행하여 사양 문서를 생성합니다.
+프로젝트 계획에 대한 기술 인터뷰를 수행하여
+사양 문서를 생성합니다.
 
 ```text
 /interview path/to/plan.md
@@ -48,7 +51,8 @@ Conventional Commit 형식으로 구조화된 Git 커밋을 생성합니다.
 
 **기능:**
 
-- 사전 검사 (git 저장소, 브랜치, 커밋되지 않은 변경사항, gh CLI)
+- 사전 검사 (git 저장소, 브랜치, 커밋되지 않은 변경사항,
+  gh CLI)
 - 에러/경고 분류가 포함된 자동 코드 리뷰
 - 일반적인 이슈에 대한 자동 수정 제안
 - 스마트 PR 제목/설명 생성
@@ -58,16 +62,19 @@ Conventional Commit 형식으로 구조화된 Git 커밋을 생성합니다.
 
 ### plan-interview
 
-`/interview` command는 내부적으로 `plan-interview` skill을 사용합니다. 이 skill은 다음을 제공합니다:
+`/interview` command는 내부적으로 `plan-interview` skill을
+사용합니다. 이 skill은 다음을 제공합니다:
 
 - 4단계 workflow: 입력 이해, 복잡도 평가, 인터뷰, 사양 작성
-- 인터뷰 영역: architecture, backend, frontend, AI/LLM, 우려사항, 확장성
+- 인터뷰 영역: architecture, backend, frontend, AI/LLM,
+  우려사항, 확장성
 - 사양 template 생성
 - 인터뷰 질문 및 사양 형식을 위한 참조 문서
 
 ### pr-workflow
 
-`/pr` command는 내부적으로 `pr-workflow` skill을 사용합니다. 이 skill은 다음을 제공합니다:
+`/pr` command는 내부적으로 `pr-workflow` skill을 사용합니다.
+이 skill은 다음을 제공합니다:
 
 - 사전 검사부터 PR 생성까지 9단계 workflow
 - 가독성, error 처리, 중복, type 안전성에 대한 code review 규칙

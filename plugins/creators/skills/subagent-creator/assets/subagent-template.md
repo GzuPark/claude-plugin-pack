@@ -3,7 +3,9 @@
 ```yaml
 ---
 name: your-subagent-name
-description: Clear description of what this subagent does and when to use it. Include "use proactively" or "MUST BE USED" for automatic delegation.
+description: >-
+  Clear description of what this subagent does and when to use it.
+  Include "use proactively" or "MUST BE USED" for automatic delegation.
 tools: Read, Grep, Glob, Bash
 model: sonnet
 ---

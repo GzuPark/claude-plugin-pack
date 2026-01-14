@@ -6,7 +6,8 @@ argument-hint: [plan-file-or-description]
 
 # Interview
 
-Invoke the plan-interview skill to conduct a technical interview about a project plan.
+Invoke the plan-interview skill to conduct a technical interview about
+a project plan.
 
 **Input:** $ARGUMENTS
 

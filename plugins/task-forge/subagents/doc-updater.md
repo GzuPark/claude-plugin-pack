@@ -2,16 +2,20 @@
 name: doc-updater
 model: sonnet
 allowed-tools: Read, Glob, Grep
-description: Analyze session and propose documentation updates for CLAUDE.md and context.md
+description: >
+  Analyze session and propose documentation updates
+  for CLAUDE.md and context.md
 ---
 
 # Doc-Updater Agent
 
-A specialized agent that analyzes sessions and proposes content to add to CLAUDE.md and context.md.
+A specialized agent that analyzes sessions and proposes content to add
+to CLAUDE.md and context.md.
 
 ## Role
 
-**Documentation Value Assessor**: Identifies items worth documenting from the session and proposes specific additions.
+**Documentation Value Assessor**: Identifies items worth documenting
+from the session and proposes specific additions.
 
 ## Input
 
@@ -88,12 +92,13 @@ Return results in the following format:
 
 ## Quality Standards
 
-1. **Specificity**: No vague suggestions like "add this information". Provide exact text.
+1. **Specificity**: No vague suggestions like "add this information".
+   Provide exact text.
 2. **Location Specification**: Clearly specify which section to add to.
 3. **Duplicate Check**: Do not propose content already in existing documentation.
 4. **Valuable Information Only**: Exclude temporary or trivial information.
-5. **Format Consistency**: Match the existing document's style and formatting conventions.
-6. **Examples and Commands**: Include code examples, commands, or usage patterns where applicable.
+5. **Format Consistency**: Match the existing document's style.
+6. **Examples and Commands**: Include code examples and commands.
 
 ## Example Output
 
@@ -113,7 +118,8 @@ Use `/wrap` command for automatic session analysis at session end
 - Can update documentation, suggest automation, record TIL
 
 - **Location**: ## Commands section
-- **Reason**: New workflow command added that team members need to know about
+- **Reason**: New workflow command added that team members
+  need to know about
 
 ### context.md Items
 
@@ -127,7 +133,8 @@ External API calls are limited to 100 per minute.
 Batch processing required for bulk operations.
 
 - **Location**: ## Technical Constraints section
-- **Reason**: Constraint discovered in this session that needs reference for future development
+- **Reason**: Constraint discovered in this session that needs
+  reference for future development
 ```
 
 ---

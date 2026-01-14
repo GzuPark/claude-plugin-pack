@@ -9,7 +9,8 @@ These areas require special attention for accurate style recreation.
 - Exact length using body reference points (ears, shoulders, etc.)
 - Specific cut style by name (bob, shag, fade, undercut, etc.)
 - Texture pattern AND texture quality
-- Natural imperfections: flyaways, frizz, uneven sections, growth patterns
+- Natural imperfections: flyaways, frizz, uneven sections,
+  growth patterns
 - Part location with precision (e.g., "1 inch from center", "deep left")
 - Styling state with product evidence
 - Volume and movement quality
@@ -30,7 +31,8 @@ These areas require special attention for accurate style recreation.
 - Position of EACH hand separately (left and right)
 - Visibility status (visible, in pockets, behind back, out of frame)
 - Exact finger configurations and shapes
-- For clasped hands: interlacing pattern (loose/tight), thumb positions, finger overlap
+- For clasped hands: interlacing pattern (loose/tight), thumb positions,
+  finger overlap
 - Hand tension assessment (relaxed vs tense)
 - What hands are interacting with
 - Natural vs posed quality with evidence
@@ -59,7 +61,8 @@ Distinguish between:
 ### Background Required Elements
 
 - Every visible object cataloged with quadrant position
-- Plant species identification (monstera, pothos, bird of paradise, fern - NOT just "plant")
+- Plant species identification
+  (monstera, pothos, bird of paradise, fern - NOT just "plant")
 - Wall surface treatment (smooth paint vs textured vs raw vs polished)
 - Wall finish (matte vs glossy vs satin)
 - Wall condition (pristine vs weathered vs industrial)
@@ -112,4 +115,5 @@ Distinguish between:
 ### Assessment Criteria
 
 - Authenticity: genuine, posed, candid, formal, natural
-- Emotion: happy, content, serious, playful, confident, approachable, guarded, warm, cold
+- Emotion: happy, content, serious, playful, confident, approachable,
+  guarded, warm, cold

@@ -5,7 +5,7 @@ This guide covers installation of required tools for video-insight skill.
 ## Required Tools by Feature
 
 | Feature | Required Tools |
-|---------|----------------|
+| ------- | -------------- |
 | YouTube URL processing | `yt-dlp` |
 | Local media processing | `whisper-cpp`, `ffmpeg` |
 
@@ -96,7 +96,9 @@ pip install yt-dlp
 #### Option 3: Binary
 
 ```bash
-sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
+sudo curl -L \
+  https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp \
+  -o /usr/local/bin/yt-dlp
 sudo chmod a+rx /usr/local/bin/yt-dlp
 ```
 

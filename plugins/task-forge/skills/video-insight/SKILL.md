@@ -1,9 +1,12 @@
 ---
 name: video-insight
 description: |
-  Extract transcripts, generate summaries, create Q&A highlights, and perform deep research from YouTube videos or local media files.
-  Use when the user provides a YouTube URL or local video/audio file path and asks to summarize, digest, analyze, or transcribe media content.
-  Triggers: "video insight", "summarize video", "transcribe audio" + URL or file path.
+  Extract transcripts, generate summaries, create Q&A highlights,
+  and perform deep research from YouTube videos or local media files.
+  Use when the user provides a YouTube URL or local video/audio file path
+  and asks to summarize, digest, analyze, or transcribe media content.
+  Triggers: "video insight", "summarize video", "transcribe audio"
+  + URL or file path.
 metadata:
   model: sonnet
   allowed-tools:
@@ -17,7 +20,8 @@ metadata:
 
 # Video Insight
 
-Analyzes YouTube videos or local media files to generate summaries, insights, and optionally Q&A highlights to reinforce key learning points.
+Analyzes YouTube videos or local media files to generate summaries,
+insights, and optionally Q&A highlights to reinforce key learning points.
 
 ## Architecture
 
@@ -53,7 +57,8 @@ flowchart TB
     style Sonnet fill:#fff3e0,stroke:#f57c00
 ```
 
-**Context Management**: Main Session handles only orchestration. Long transcript processing is performed by Subagents to protect context.
+**Context Management**: Main Session handles only orchestration.
+Long transcript processing is performed by Subagents to protect context.
 
 ## Prerequisites
 
@@ -71,18 +76,19 @@ Check dependencies: `./scripts/check_dependencies.sh`
 
 ## Supported Input Types
 
-| Type | Pattern | Processing Method |
-|------|---------|-------------------|
-| YouTube URL | `https://youtu.be/...`, `https://youtube.com/...` | Extract subtitles with yt-dlp |
-| Video File | `*.mp4`, `*.mov`, `*.mkv`, `*.avi`, `*.webm` | Speech-to-text with whisper.cpp |
-| Audio File | `*.mp3`, `*.m4a`, `*.wav`, `*.flac`, `*.aac` | Speech-to-text with whisper.cpp |
-| Subtitle File | `*.srt`, `*.vtt` | Use directly |
+| Type          | Pattern              | Processing Method     |
+|---------------|----------------------|-----------------------|
+| YouTube URL   | `https://youtu.be/`  | Extract (yt-dlp)      |
+| Video File    | `*.mp4`, `*.mov`     | whisper.cpp STT       |
+| Audio File    | `*.mp3`, `*.m4a`     | whisper.cpp STT       |
+| Subtitle File | `*.srt`, `*.vtt`     | Use directly          |
 
 ## Workflow
 
 ### Dependency Check (Before Starting)
 
-**CRITICAL**: Check required dependencies before processing. If missing, show installation guide and **stop immediately** (do not retry).
+**CRITICAL**: Check required dependencies before processing.
+If missing, show installation guide and **stop immediately** (do not retry).
 
 **For YouTube URL:**
 
@@ -103,7 +109,8 @@ Check dependencies: `./scripts/check_dependencies.sh`
 3. Reference: `references/prerequisites.md` for detailed installation guide
 4. **Stop processing** - do not attempt to continue or retry
 
-**Important**: Do not repeatedly check or retry installation. The user must manually install dependencies and re-run the command.
+**Important**: Do not repeatedly check or retry installation.
+The user must manually install dependencies and re-run the command.
 
 ### Step 0: Detect Input Type
 
@@ -175,7 +182,8 @@ options:
 ./scripts/extract_transcript.sh "{youtube_url}" "/tmp/video-insight"
 ```
 
-Subtitle priority: Korean manual > English manual > Korean auto > English auto
+Subtitle priority:
+Korean manual > English manual > Korean auto > English auto
 
 **If no subtitles available**, present options with AskUserQuestion:
 
@@ -278,7 +286,8 @@ options:
 
 ### Step 8: Generate Additional Content (Parallel Execution)
 
-Based on user selection, execute agents in parallel. Each agent returns content only (does not write to file).
+Based on user selection, execute agents in parallel.
+Each agent returns content only (does not write to file).
 
 **If Q&A selected**, call **qa-generator** (Haiku):
 
@@ -292,8 +301,10 @@ Using Task tool:
     - digest_path: {file path from Step 6}
     - qa_patterns_path: references/qa-patterns.md
 
-    Create 1-5 Q&A pairs (based on content length) highlighting key information from the video.
-    Return the Q&A section content in markdown format (do not write to file).
+    Create 1-5 Q&A pairs (based on content length)
+    highlighting key information from the video.
+    Return the Q&A section content in markdown format
+    (do not write to file).
 ```
 
 **If Deep Research selected**, call **deep-researcher** (Sonnet):
@@ -309,10 +320,12 @@ Using Task tool:
     - deep_research_reference: references/deep-research.md
 
     Collect related materials via web search.
-    Return the Deep Research section content in markdown format (do not write to file).
+    Return the Deep Research section content in markdown format
+    (do not write to file).
 ```
 
-**Parallel Execution**: If both options are selected, launch both Task tools in a single message for parallel execution.
+**Parallel Execution**: If both options are selected,
+launch both Task tools in a single message for parallel execution.
 
 ### Step 9: Append Results to Digest
 
@@ -357,40 +370,40 @@ Manual cleanup: rm -rf /tmp/video-insight/
 ## Bundled Resources
 
 | Path | Description |
-|------|-------------|
-| `scripts/check_dependencies.sh` | Check whisper-cpp, ffmpeg installation and download model |
-| `scripts/extract_metadata.sh` | Extract YouTube metadata JSON with yt-dlp |
-| `scripts/extract_local_metadata.sh` | Extract local file metadata JSON with ffprobe |
-| `scripts/extract_transcript.sh` | Extract YouTube subtitles with yt-dlp (srt format) |
-| `scripts/extract_local_transcript.sh` | Convert local file speech-to-text with whisper.cpp |
+| ---- | ----------- |
+| `scripts/check_dependencies.sh` | Check whisper-cpp, ffmpeg |
+| `scripts/extract_metadata.sh` | Extract YouTube metadata |
+| `scripts/extract_local_metadata.sh` | Extract local file metadata |
+| `scripts/extract_transcript.sh` | Extract YouTube subtitles |
+| `scripts/extract_local_transcript.sh` | Speech-to-text (whisper) |
 | `templates/video-insight.md` | Output document template |
-| `references/prerequisites.md` | macOS/Ubuntu installation guide for yt-dlp, whisper-cpp, ffmpeg |
+| `references/prerequisites.md` | macOS/Ubuntu install guide |
 | `references/qa-patterns.md` | 3-level Q&A pattern guide |
 | `references/deep-research.md` | Deep Research workflow |
 
 ## Subagents
 
-| Agent | Model | Role |
-|-------|-------|------|
-| `transcript-analyzer` | Sonnet | Read/analyze transcript (context saving) |
-| `digest-writer` | Sonnet | Write digest + web search |
-| `qa-generator` | Haiku | Generate Q&A section |
-| `deep-researcher` | Sonnet | Deep research + web search |
+| Agent                 | Model  | Role                         |
+|-----------------------|--------|------------------------------|
+| `transcript-analyzer` | Sonnet | Read/analyze transcript      |
+| `digest-writer`       | Sonnet | Write digest + web search    |
+| `qa-generator`        | Haiku  | Generate Q&A section         |
+| `deep-researcher`     | Sonnet | Deep research + web search   |
 
 ## Error Handling
 
-| Situation | Action |
-|-----------|--------|
-| yt-dlp not installed | Installation guide (`brew install yt-dlp`) |
-| whisper-cpp not installed | Installation guide (`brew install whisper-cpp`) |
-| ffmpeg not installed | Installation guide (`brew install ffmpeg`) |
-| Whisper model missing | Run `check_dependencies.sh` to download |
-| Invalid URL | Error message + correct format guide |
-| File not found | File path verification guide |
-| Unsupported format | Supported format list guide |
-| No subtitles (YouTube) | Present fallback options |
-| 60+ minute media | Present processing options |
-| Subagent failure | Display error message + retry option |
+| Situation             | Action                          |
+|-----------------------|---------------------------------|
+| yt-dlp not installed  | `brew install yt-dlp`           |
+| whisper-cpp missing   | Installation guide              |
+| ffmpeg not installed  | `brew install ffmpeg`           |
+| Whisper model missing | Run `check_dependencies.sh`     |
+| Invalid URL           | Error + correct format guide    |
+| File not found        | File path verification guide    |
+| Unsupported format    | Supported format list guide     |
+| No subtitles (YT)     | Present fallback options        |
+| 60+ minute media      | Present processing options      |
+| Subagent failure      | Error message + retry option    |
 
 ## Context Management
 
@@ -410,13 +423,18 @@ Manual cleanup: rm -rf /tmp/video-insight/
 
 ## Design Rationale
 
-**Multi-Agent Architecture**: Reading long transcripts directly in main session quickly exhausts context. Processing in Subagents and returning only results protects main context.
+**Multi-Agent Architecture**: Reading long transcripts directly in main
+session quickly exhausts context. Processing in Subagents and returning
+only results protects main context.
 
 **Model Selection**:
 
 - Haiku: Simple/repetitive tasks (Q&A generation)
-- Sonnet: Analysis/creative tasks (transcript analysis, digest writing, deep research)
+- Sonnet: Analysis/creative tasks
+  (transcript analysis, digest writing, deep research)
 
-**Optional Q&A**: Not all users want Q&A sections. Providing it as optional increases flexibility.
+**Optional Q&A**: Not all users want Q&A sections.
+Providing it as optional increases flexibility.
 
-**Separate Deep Research**: Additional web search is an optional feature, incurring cost only when needed.
+**Separate Deep Research**: Additional web search is an optional feature,
+incurring cost only when needed.

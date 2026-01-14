@@ -39,10 +39,10 @@
 
 ## Full Transcript (Korean Translation)
 
-| Timestamp | Original | Korean |
-|-----------|----------|--------|
-| 00:00 | {original} | {translation} |
-| ... | ... | ... |
+| Timestamp | Original   | Korean        |
+|-----------|------------|---------------|
+| 00:00     | {original} | {translation} |
+| ...       | ...        | ...           |
 
 ---
 
@@ -71,8 +71,8 @@
 
 ### Related Resources
 
-| Source | Summary | URL |
-|--------|---------|-----|
+| Source   | Summary   | URL    |
+|----------|-----------|--------|
 | {source} | {summary} | {link} |
 
 ### Advanced Insights

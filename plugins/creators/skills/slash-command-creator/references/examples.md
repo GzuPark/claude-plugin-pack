@@ -104,7 +104,8 @@ Based on the above:
 4. Create PR with description and reviewers
 ```
 
-This pattern pre-computes all git context, enabling Claude to work without additional tool calls.
+This pattern pre-computes all git context,
+enabling Claude to work without additional tool calls.
 
 ### Deploy Command
 

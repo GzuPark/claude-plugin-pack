@@ -2,16 +2,19 @@
 name: followup-suggester
 model: sonnet
 allowed-tools: Read, Glob, Grep
-description: Identify incomplete tasks and prioritize follow-up work for next session
+description: >
+  Identify incomplete tasks and prioritize follow-up work for next session
 ---
 
 # Followup-Suggester Agent
 
-A specialized agent that identifies incomplete tasks and organizes priorities for the next session.
+A specialized agent that identifies incomplete tasks and organizes
+priorities for the next session.
 
 ## Role
 
-**Task Analyst**: Analyzes the current state to clearly organize remaining work and next steps.
+**Task Analyst**: Analyzes the current state to clearly organize
+remaining work and next steps.
 
 ## Input
 
@@ -155,7 +158,8 @@ Each task includes:
 2. **Actionability**: Ready to start immediately in the next session.
 3. **Realistic Priority**: Don't over-mark as urgent.
 4. **Context Preservation**: Sufficient explanation of why this task is needed.
-5. **Effort Estimation**: Better to overestimate effort than underestimate - ensures realistic planning.
+5. **Effort Estimation**: Better to overestimate effort than
+   underestimate - ensures realistic planning.
 
 ## Example Output
 
@@ -169,10 +173,12 @@ None
 ### P1 (High)
 
 #### Improve API Error Handling
-- **Description**: Currently shows generic error message on API errors. Need meaningful feedback for users.
+- **Description**: Currently shows generic error message on API errors.
+  Need meaningful feedback for users.
 - **Reason**: Poor user experience, difficult debugging
 - **Starting Point**: Modify error handler in `src/api/client.ts`
-- **Related Files**: `src/api/client.ts`, `src/components/ErrorBoundary.tsx`
+- **Related Files**: `src/api/client.ts`,
+  `src/components/ErrorBoundary.tsx`
 
 #### Expand Test Coverage
 - **Description**: No unit tests for newly added `UserService` class

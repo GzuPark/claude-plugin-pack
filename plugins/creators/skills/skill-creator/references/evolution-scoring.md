@@ -1,6 +1,7 @@
 # Evolution Scoring Framework
 
-Evaluates a skill's future-readiness. Answers the question: "What will happen to this skill over time?"
+Evaluates a skill's future-readiness. Answers the question: "What will
+happen to this skill over time?"
 
 ## Overview
 
@@ -13,7 +14,8 @@ Skills with low scores:
 
 **Recommended Score**: 7 or higher (out of 10)
 
-> **Note**: Scores below 7 show warnings and improvement suggestions, not block packaging.
+> **Note**: Scores below 7 show warnings and improvement suggestions,
+> not block packaging.
 
 ---
 
@@ -82,7 +84,8 @@ Generates OpenAPI 3.0 specifications...
 
 **Lifespan**: 1-2 years
 
-**Assessment**: Needs modification. Add extension points, document evolution path.
+**Assessment**: Needs modification. Add extension points, document
+evolution path.
 
 ---
 
@@ -107,7 +110,8 @@ Pattern-based approach adaptable to new documentation formats.
 
 **Lifespan**: 2-4 years
 
-**Assessment**: Approved. Good balance of current utility and future resilience.
+**Assessment**: Approved. Good balance of current utility and future
+resilience.
 
 ---
 
@@ -143,7 +147,7 @@ Pattern: Define → Decompose → Verify → Iterate
 Each item earns 2 points, plus base 2 points:
 
 | Item | Points | How to Check |
-|------|--------|--------------|
+| ---- | ------ | ------------ |
 | 2+ extension points | +2 | 2+ items in `## Extension Points` section |
 | No hardcoded versions | +2 | No specific version strings |
 | WHY documented | +2 | `## Design Rationale` or `## WHY` section exists |
@@ -262,7 +266,7 @@ Utilize available context window
 ## Anti-Obsolescence Pattern Checklist
 
 | Pattern | Applied? | Evidence |
-|---------|----------|----------|
+| ------- | -------- | -------- |
 | Principles over implementation | ☐ | General approach, not specific tools |
 | WHY documented | ☐ | Rationale included for all decisions |
 | Loose coupling | ☐ | Dependencies abstracted |
@@ -303,7 +307,7 @@ Evaluate at each timepoint:
 
 ### Basic Score Assessment
 | Item | Score | Evidence |
-|------|-------|----------|
+| ---- | ----- | -------- |
 | Extension points (2+) | 0 or 2 | [evidence] |
 | No hardcoded versions | 0 or 2 | [evidence] |
 | WHY documented | 0 or 2 | [evidence] |

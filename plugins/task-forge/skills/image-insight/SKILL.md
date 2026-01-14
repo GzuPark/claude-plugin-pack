@@ -1,13 +1,19 @@
 ---
 name: image-insight
-description: Analyze images and generate comprehensive JSON profiles for style recreation. Use when users upload images for visual analysis, style extraction, AI image generation prompts, or need detailed breakdowns of composition, lighting, color, and subject elements.
+description: >
+  Analyze images and generate comprehensive JSON profiles for style recreation.
+  Use when users upload images for visual analysis, style extraction,
+  AI image generation prompts, or need detailed breakdowns of composition,
+  lighting, color, and subject elements.
 ---
 
 # Image Insight
 
 ## Overview
 
-Analyze uploaded images and return structured JSON profiles containing composition, color, lighting, subject, and background analysis with actionable recreation parameters for AI image generation.
+Analyze uploaded images and return structured JSON profiles containing
+composition, color, lighting, subject, and background analysis with
+actionable recreation parameters for AI image generation.
 
 ## Triggers
 
@@ -40,11 +46,13 @@ Analyze across all schema categories:
 
 ### Step 3: Apply Critical Area Rules
 
-For portraits, apply detailed analysis per [references/critical-areas.md](references/critical-areas.md):
+For portraits, apply detailed analysis per
+[references/critical-areas.md](references/critical-areas.md):
 
 - Hair: exact length, cut style, natural imperfections
 - Hands: each hand separately, finger positions, tension
-- Background: wall material distinction (drywall vs concrete vs brick)
+- Background: wall material distinction
+  (drywall vs concrete vs brick)
 - Lighting: directionality, shadow characteristics
 
 ### Step 4: Generate JSON Output
@@ -90,8 +98,10 @@ Return structured JSON following [references/json-schema.md](references/json-sch
 
 - [core-prompt.md](references/core-prompt.md) - Core analysis system prompt
 - [json-schema.md](references/json-schema.md) - Complete JSON output schema
-- [analysis-rules.md](references/analysis-rules.md) - Category-specific analysis rules
-- [critical-areas.md](references/critical-areas.md) - Hair, hands, background, lighting details
+- [analysis-rules.md](references/analysis-rules.md) -
+  Category-specific analysis rules
+- [critical-areas.md](references/critical-areas.md) -
+  Hair, hands, background, lighting details
 
 ### scripts/
 
@@ -99,15 +109,21 @@ Return structured JSON following [references/json-schema.md](references/json-sch
 
 ## Anti-Patterns
 
-- **Vague descriptions**: Avoid "nice", "good", "beautiful" - use specific technical terms
-- **Perfect hair**: Never describe hair as "perfect" - real hair has flyaways, frizz, variation
-- **Generic backgrounds**: Don't say "wall" - specify material (painted drywall, concrete, brick)
-- **Skipped hands**: Always document hand positions even if hidden or out of frame
-- **Markdown in output**: Output pure JSON only - no code blocks, no explanatory text
+- **Vague descriptions**: Avoid "nice", "good", "beautiful" -
+  use specific technical terms
+- **Perfect hair**: Never describe hair as "perfect" -
+  real hair has flyaways, frizz, variation
+- **Generic backgrounds**: Don't say "wall" -
+  specify material (painted drywall, concrete, brick)
+- **Skipped hands**: Always document hand positions
+  even if hidden or out of frame
+- **Markdown in output**: Output pure JSON only -
+  no code blocks, no explanatory text
 
 ## Extension Points
 
-1. **Image Type Variants**: Create specialized schemas for landscapes, products, architecture
+1. **Image Type Variants**: Create specialized schemas
+   for landscapes, products, architecture
 2. **Selective Analysis**: Add parameter to request specific categories only
 3. **Batch Processing**: Extend for analyzing multiple images in sequence
 4. **Confidence Thresholds**: Add configurable confidence scoring criteria
@@ -117,7 +133,10 @@ Return structured JSON following [references/json-schema.md](references/json-sch
 This skill encapsulates 15+ years of visual analysis expertise to:
 
 1. Enable consistent, reproducible image analysis across different contexts
-2. Generate actionable prompts for AI image recreation (Midjourney, DALL-E, etc.)
+2. Generate actionable prompts for AI image recreation
+   (Midjourney, DALL-E, etc.)
 3. Provide structured data for downstream processing and automation
-4. Standardize style extraction with emphasis on natural imperfections over idealized descriptions
-5. Support multimodal analysis leveraging Claude's vision capability
+4. Standardize style extraction with emphasis on natural imperfections
+   over idealized descriptions
+5. Support multimodal analysis leveraging Claude's vision
+   capability

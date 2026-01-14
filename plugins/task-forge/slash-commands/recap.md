@@ -6,7 +6,8 @@ argument-hint: "[commit message]"
 
 # Work Recap Command
 
-Analyze the session and organize documentation updates, automation suggestions, learning records, and follow-up tasks.
+Analyze the session and organize documentation updates,
+automation suggestions, learning records, and follow-up tasks.
 
 ## Input
 
@@ -23,7 +24,8 @@ git diff --stat
 
 Check if there are any changes.
 
-**Early Exit:** If there are no staged/unstaged changes and no untracked files, inform the user "No changes to analyze" and end the command.
+**Early Exit:** If there are no staged/unstaged changes and no
+untracked files, inform the user "No changes to analyze" and end.
 
 ### Step 2: Prepare Session Context
 
@@ -144,7 +146,7 @@ Execute selected actions in **fixed order**:
 4. **Commit** (if selected)
    - Check if `/commit` command exists (`.claude/commands/commit.md`)
    - If exists: Run `/commit` with `$1` or generated message
-   - If not exists: Stage all changes and commit directly with `$1` or generated message
+   - If not exists: Stage all and commit with `$1` or generated msg
 
 ## Error Handling
 

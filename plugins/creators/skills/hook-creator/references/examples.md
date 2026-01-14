@@ -35,7 +35,7 @@ Complete, tested hook configurations for common use cases.
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '\"\\(.tool_input.command) - \\(.tool_input.description // \"No description\")\"' >> ~/.claude/bash-command-log.txt"
+            "command": "jq -r '\"\\(.tool_input.command)\"' >> ~/.claude/bash-log.txt"
           }
         ]
       }
@@ -55,7 +55,7 @@ Complete, tested hook configurations for common use cases.
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '\"[\\(now | strftime(\"%Y-%m-%d %H:%M:%S\"))] \\(.tool_name): \\(.tool_input.file_path)\"' >> ~/.claude/edit-log.txt"
+            "command": "jq -r '.tool_input.file_path' >> ~/.claude/edit-log.txt"
           }
         ]
       }
@@ -68,7 +68,7 @@ Complete, tested hook configurations for common use cases.
 
 ### Required Tools for Formatting
 
-`jq`, and formatters (`prettier`, `black`, `gofmt`)
+`jq`, and formatters (`prettier`, `black`, `gofmt`).
 
 ### Format TypeScript Files
 
@@ -76,6 +76,8 @@ Complete, tested hook configurations for common use cases.
 
 `prettier` (`npm install -g prettier`)
 
+<!-- markdownlint-disable MD013 -->
+
 ```json
 {
   "hooks": {
@@ -85,7 +87,7 @@ Complete, tested hook configurations for common use cases.
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.tool_input.file_path' | { read file_path; if echo \"$file_path\" | grep -q '\\.tsx\\?$'; then npx prettier --write \"$file_path\" 2>/dev/null; fi; }"
+            "command": "f=$(jq -r '.tool_input.file_path'); echo \"$f\" | grep -qE '\\.tsx?$' && npx prettier --write \"$f\"; exit 0"
           }
         ]
       }
@@ -93,6 +95,8 @@ Complete, tested hook configurations for common use cases.
   }
 }
 ```
+
+<!-- markdownlint-enable MD013 -->
 
 ### Format Python Files with Black
 
@@ -100,6 +104,8 @@ Complete, tested hook configurations for common use cases.
 
 `black` (`pip install black`)
 
+<!-- markdownlint-disable MD013 -->
+
 ```json
 {
   "hooks": {
@@ -109,7 +115,7 @@ Complete, tested hook configurations for common use cases.
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.tool_input.file_path' | { read f; [[ \"$f\" == *.py ]] && black \"$f\" 2>/dev/null; }"
+            "command": "f=$(jq -r '.tool_input.file_path'); [[ \"$f\" == *.py ]] && black \"$f\"; exit 0"
           }
         ]
       }
@@ -117,6 +123,8 @@ Complete, tested hook configurations for common use cases.
   }
 }
 ```
+
+<!-- markdownlint-enable MD013 -->
 
 ### Format Go Files
 
@@ -124,6 +132,8 @@ Complete, tested hook configurations for common use cases.
 
 `gofmt` (included with Go installation)
 
+<!-- markdownlint-disable MD013 -->
+
 ```json
 {
   "hooks": {
@@ -133,7 +143,7 @@ Complete, tested hook configurations for common use cases.
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.tool_input.file_path' | { read f; [[ \"$f\" == *.go ]] && gofmt -w \"$f\"; }"
+            "command": "f=$(jq -r '.tool_input.file_path'); [[ \"$f\" == *.go ]] && gofmt -w \"$f\""
           }
         ]
       }
@@ -141,6 +151,8 @@ Complete, tested hook configurations for common use cases.
   }
 }
 ```
+
+<!-- markdownlint-enable MD013 -->
 
 ## File Protection Hooks
 
@@ -149,6 +161,8 @@ Complete, tested hook configurations for common use cases.
 `jq` or `python3`
 
 ### Block Edits to Sensitive Files
+
+<!-- markdownlint-disable MD013 -->
 
 ```json
 {
@@ -159,7 +173,7 @@ Complete, tested hook configurations for common use cases.
         "hooks": [
           {
             "type": "command",
-            "command": "python3 -c \"import json, sys; data=json.load(sys.stdin); path=data.get('tool_input',{}).get('file_path',''); blocked=['.env', 'package-lock.json', '.git/', 'secrets']; sys.exit(2 if any(p in path for p in blocked) else 0)\""
+            "command": "p=$(jq -r '.tool_input.file_path'); echo $p | grep -qE '(\\.env|\\.git/|secrets)' && exit 2 || exit 0"
           }
         ]
       }
@@ -168,7 +182,11 @@ Complete, tested hook configurations for common use cases.
 }
 ```
 
+<!-- markdownlint-enable MD013 -->
+
 ### Block Modifications to Production Directory
+
+<!-- markdownlint-disable MD013 -->
 
 ```json
 {
@@ -179,7 +197,7 @@ Complete, tested hook configurations for common use cases.
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.tool_input | .file_path // .command // \"\"' | grep -q '/prod/' && echo 'BLOCKED: Cannot modify production files' && exit 2 || exit 0"
+            "command": "jq -r '.tool_input | .file_path // .command // \"\"' | grep -q '/prod/' && exit 2 || exit 0"
           }
         ]
       }
@@ -188,13 +206,18 @@ Complete, tested hook configurations for common use cases.
 }
 ```
 
+<!-- markdownlint-enable MD013 -->
+
 ## Notification Hooks
 
 ### Required Tools for Notifications
 
-`jq`, platform-specific tools (`osascript` for macOS, `notify-send` for Linux)
+`jq`, platform-specific tools (`osascript` for macOS, `notify-send` for
+Linux).
 
 ### macOS Desktop Notification
+
+<!-- markdownlint-disable MD013 -->
 
 ```json
 {
@@ -205,7 +228,7 @@ Complete, tested hook configurations for common use cases.
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.message' | xargs -I{} osascript -e 'display notification \"{}\" with title \"Claude Code\"'"
+            "command": "msg=$(jq -r '.message'); osascript -e \"display notification \\\"$msg\\\"\""
           }
         ]
       }
@@ -213,6 +236,8 @@ Complete, tested hook configurations for common use cases.
   }
 }
 ```
+
+<!-- markdownlint-enable MD013 -->
 
 ### Linux Desktop Notification
 
@@ -225,7 +250,7 @@ Complete, tested hook configurations for common use cases.
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.message' | xargs -I{} notify-send 'Claude Code' '{}'"
+            "command": "jq -r '.message' | xargs -I{} notify-send 'Claude' '{}'"
           }
         ]
       }
@@ -262,6 +287,8 @@ Complete, tested hook configurations for common use cases.
 
 ### Validate JSON Before Write
 
+<!-- markdownlint-disable MD013 -->
+
 ```json
 {
   "hooks": {
@@ -271,7 +298,7 @@ Complete, tested hook configurations for common use cases.
         "hooks": [
           {
             "type": "command",
-            "command": "jq -e '.tool_input | select(.file_path | endswith(\".json\")) | .content' | jq . > /dev/null 2>&1 || { echo 'Invalid JSON content'; exit 2; }"
+            "command": "jq -e '.tool_input | select(.file_path | endswith(\".json\")) | .content' | jq . || exit 2"
           }
         ]
       }
@@ -280,7 +307,11 @@ Complete, tested hook configurations for common use cases.
 }
 ```
 
+<!-- markdownlint-enable MD013 -->
+
 ### Lint TypeScript Before Commit
+
+<!-- markdownlint-disable MD013 -->
 
 ```json
 {
@@ -291,7 +322,7 @@ Complete, tested hook configurations for common use cases.
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.tool_input.command' | grep -q 'git commit' && npx eslint . --max-warnings 0 || exit 0"
+            "command": "jq -r '.tool_input.command' | grep -q 'git commit' && npx eslint .; exit 0"
           }
         ]
       }
@@ -299,6 +330,8 @@ Complete, tested hook configurations for common use cases.
   }
 }
 ```
+
+<!-- markdownlint-enable MD013 -->
 
 ## Session Hooks
 
@@ -376,6 +409,8 @@ Automatically approve all Read tool permission requests:
 
 Block write operations to system directories:
 
+<!-- markdownlint-disable MD013 -->
+
 ```json
 {
   "hooks": {
@@ -385,7 +420,7 @@ Block write operations to system directories:
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.tool_input.file_path // \"\"' | grep -qE '^/(etc|usr|sys|proc)' && echo 'BLOCKED: System directory' && exit 2 || exit 0"
+            "command": "p=$(jq -r '.tool_input.file_path // \"\"'); echo $p | grep -qE '^/(etc|usr|sys)' && exit 2; exit 0"
           }
         ]
       }
@@ -394,9 +429,12 @@ Block write operations to system directories:
 }
 ```
 
+<!-- markdownlint-enable MD013 -->
+
 ## User Prompt Hooks
 
-Hooks for the `UserPromptSubmit` event to process user input before Claude sees it.
+Hooks for the `UserPromptSubmit` event to process user input before
+Claude sees it.
 
 ### Required Tools for Prompts
 
@@ -415,7 +453,7 @@ Log all user prompts to a file:
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '\"[\\(now | strftime(\"%Y-%m-%d %H:%M:%S\"))] \\(.prompt)\"' >> ~/.claude/prompts.log"
+            "command": "jq -r '.prompt' >> ~/.claude/prompts.log"
           }
         ]
       }
@@ -428,6 +466,8 @@ Log all user prompts to a file:
 
 Warn if prompt exceeds a certain length:
 
+<!-- markdownlint-disable MD013 -->
+
 ```json
 {
   "hooks": {
@@ -437,7 +477,7 @@ Warn if prompt exceeds a certain length:
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.prompt | length' | { read len; [ \"$len\" -gt 10000 ] && echo 'Warning: Very long prompt' >&2; exit 0; }"
+            "command": "len=$(jq -r '.prompt | length'); [ $len -gt 10000 ] && echo 'Long prompt' >&2; exit 0"
           }
         ]
       }
@@ -445,6 +485,8 @@ Warn if prompt exceeds a certain length:
   }
 }
 ```
+
+<!-- markdownlint-enable MD013 -->
 
 ## Compaction Hooks
 
@@ -463,7 +505,7 @@ Log when context compaction occurs:
         "hooks": [
           {
             "type": "command",
-            "command": "echo \"[$(date '+%Y-%m-%d %H:%M:%S')] Context compaction triggered\" >> ~/.claude/compaction.log"
+            "command": "date '+[%Y-%m-%d %H:%M] Compaction' >> ~/.claude/compaction.log"
           }
         ]
       }
@@ -498,6 +540,8 @@ Save important context information before compaction:
 
 Combine multiple hooks in one configuration:
 
+<!-- markdownlint-disable MD013 -->
+
 ```json
 {
   "hooks": {
@@ -507,7 +551,7 @@ Combine multiple hooks in one configuration:
         "hooks": [
           {
             "type": "command",
-            "command": "python3 -c \"import json,sys; p=json.load(sys.stdin).get('tool_input',{}).get('file_path',''); sys.exit(2 if '.env' in p else 0)\""
+            "command": "p=$(jq -r '.tool_input.file_path'); [[ \"$p\" == *.env* ]] && exit 2; exit 0"
           }
         ]
       }
@@ -518,7 +562,7 @@ Combine multiple hooks in one configuration:
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.tool_input.file_path' | { read f; [[ \"$f\" == *.ts ]] && npx prettier --write \"$f\" 2>/dev/null; exit 0; }"
+            "command": "f=$(jq -r '.tool_input.file_path'); [[ \"$f\" == *.ts ]] && npx prettier --write \"$f\"; exit 0"
           }
         ]
       }
@@ -538,6 +582,8 @@ Combine multiple hooks in one configuration:
 }
 ```
 
+<!-- markdownlint-enable MD013 -->
+
 ---
 
 ## Troubleshooting
@@ -552,19 +598,20 @@ Hook command never executes.
 
 #### Solutions
 
-1. **Check matcher pattern**: Ensure the matcher matches the tool name exactly (case-sensitive)
+1. **Check matcher pattern**: Ensure the matcher matches the tool name exactly
+   (case-sensitive)
 
    ```text
    "matcher": "Bash"  // Correct
    "matcher": "bash"  // Wrong - won't match
    ```
 
-2. **Verify event type**: Make sure you're using the correct event for your use case
+2. **Verify event type**: Make sure you're using the correct event
    - `PreToolUse`: Before tool execution
    - `PostToolUse`: After tool execution
    - `PermissionRequest`: When permission dialog appears
 
-3. **Test command manually**: Run your hook command in terminal to verify it works
+3. **Test command manually**: Run your hook command in terminal to verify
 
 ### Hook Blocks Everything
 
@@ -574,7 +621,8 @@ All operations of a certain type are blocked.
 
 #### Solutions for Blocking Issue
 
-1. **Check exit code**: Exit code 2 blocks the operation. Ensure your script returns 0 for allowed operations
+1. **Check exit code**: Exit code 2 blocks the operation.
+   Ensure your script returns 0 for allowed operations
 
    ```bash
    # Always allow (exit 0)
@@ -584,7 +632,7 @@ All operations of a certain type are blocked.
    [[ "$path" == *".env"* ]] && exit 2 || exit 0
    ```
 
-2. **Use proper error handling**: Add `|| exit 0` to prevent unexpected blocks
+2. **Use proper error handling**: Add `|| exit 0` to prevent blocks
 
    ```bash
    some_command 2>/dev/null || exit 0
@@ -598,7 +646,7 @@ All operations of a certain type are blocked.
 
 #### Solutions for Parsing Issue
 
-1. **Escape quotes properly**: JSON in shell requires careful escaping
+1. **Escape quotes properly**: JSON in shell requires careful escaping:
 
    ```json
    "command": "jq -r '.tool_input.file_path'"  // Correct
@@ -611,7 +659,7 @@ All operations of a certain type are blocked.
    jq -r '.tool_input.description // ""'
    ```
 
-3. **Debug with logging**: Temporarily log the input to see what's received
+3. **Debug with logging**: Log the input to see what's received:
 
    ```bash
    tee /tmp/hook-debug.json | jq -r '.tool_input.command'

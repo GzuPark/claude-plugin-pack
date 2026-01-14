@@ -1,6 +1,7 @@
 # Regression Questioning Protocol
 
-Core methodology for skill analysis. Apply questions iteratively until no new insights emerge.
+Core methodology for skill analysis. Apply questions iteratively until
+no new insights emerge.
 
 ## Termination Conditions
 
@@ -16,7 +17,7 @@ Core methodology for skill analysis. Apply questions iteratively until no new in
 Clarifies the skill's scope and limits.
 
 | Question | Purpose |
-|----------|---------|
+| -------- | ------- |
 | What should this skill **do**? | Define core functionality |
 | What should this skill **NOT do**? | Limit scope |
 | What are the edge cases? | Identify edge cases |
@@ -42,7 +43,7 @@ MVP: Simple commit message generation
 Identifies target users and usage environment.
 
 | Question | Purpose |
-|----------|---------|
+| -------- | ------- |
 | Who is the primary user? | Define audience |
 | In what situations will it be used? | Understand context |
 | What is the user's skill level? | Adjust difficulty |
@@ -52,7 +53,7 @@ Identifies target users and usage environment.
 **Expert Simulation**:
 
 | Expert Type | Key Question |
-|-------------|--------------|
+| ----------- | ------------ |
 | Domain Expert | "What would a domain expert add?" |
 | UX Expert | "Is this intuitive for the target user?" |
 | System Designer | "How does this integrate with existing systems?" |
@@ -64,7 +65,7 @@ Identifies target users and usage environment.
 Identifies technical limitations and requirements.
 
 | Question | Purpose |
-|----------|---------|
+| -------- | ------- |
 | Required tools/libraries? | Identify dependencies |
 | Performance requirements? | Optimization targets |
 | Compatibility requirements? | Environment constraints |
@@ -78,7 +79,7 @@ Identifies technical limitations and requirements.
 Defines quality criteria.
 
 | Question | Purpose |
-|----------|---------|
+| -------- | ------- |
 | Accuracy requirements? | Quality criteria |
 | Response time requirements? | Performance criteria |
 | Error tolerance? | Failure response |
@@ -92,7 +93,7 @@ Defines quality criteria.
 Identifies integration with other systems.
 
 | Question | Purpose |
-|----------|---------|
+| -------- | ------- |
 | Integration with other skills? | Composition potential |
 | External system integration? | API connections |
 | Data format requirements? | Input/output formats |
@@ -106,7 +107,7 @@ Identifies integration with other systems.
 Prepares for future changes.
 
 | Question | Purpose |
-|----------|---------|
+| -------- | ------- |
 | Future expansion plans? | Design extension points |
 | Expected changes? | Ensure flexibility |
 | Version upgrade strategy? | Backward compatibility |
@@ -116,7 +117,7 @@ Prepares for future changes.
 **Time Projection Analysis**:
 
 | Timeframe | Question | Focus |
-|-----------|----------|-------|
+| --------- | -------- | ----- |
 | Now | Does it solve the immediate problem? | Current utility |
 | 1 week | Can the first user succeed? | Initial experience |
 | 1 month | What feedback is expected? | Early adoption |
@@ -131,7 +132,7 @@ Prepares for future changes.
 Identifies and addresses potential risks.
 
 | Question | Target Failure Mode |
-|----------|---------------------|
+| -------- | ------------------- |
 | What causes complete failure? | Critical failure |
 | What produces wrong results? | Silent failure |
 | What makes users give up? | Adoption failure |
@@ -231,7 +232,7 @@ If Rounds 6 and 7 also yield no new insights → **Analysis complete**.
 ## Question Anti-Patterns
 
 | Anti-Pattern | Problem | Instead |
-|--------------|---------|---------|
+| ------------ | ------- | ------- |
 | Surface-level questions | Miss deep issues | Apply 5 Whys technique |
 | Single perspective | Blind spots | Rotate expert types |
 | Early termination | Incomplete analysis | Require 3 empty rounds |

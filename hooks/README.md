@@ -57,7 +57,8 @@ brew install jq
 
 #### Configuration
 
-Merge [markdown-lint.json](markdown-lint.json) into `~/.claude/settings.json` (personal) or `.claude/settings.json` (project) under the `hooks` key.
+Merge [markdown-lint.json](markdown-lint.json) into `~/.claude/settings.json`
+(personal) or `.claude/settings.json` (project) under the `hooks` key.
 
 #### How It Works
 
@@ -100,7 +101,9 @@ After setup:
 **Lint only specific directories** - Modify command:
 
 ```bash
-jq -r '.tool_input.file_path // empty' | { read f; [[ "$f" == *.md ]] && [[ "$f" == /path/to/docs/* ]] && npx markdownlint "$f" 2>&1 || true; }
+jq -r '.tool_input.file_path // empty' \
+  | { read f; [[ "$f" == *.md ]] && [[ "$f" == /path/to/docs/* ]] \
+      && npx markdownlint "$f" 2>&1 || true; }
 ```
 
 #### Troubleshooting

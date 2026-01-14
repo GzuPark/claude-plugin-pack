@@ -1,7 +1,9 @@
 ---
 name: deep-researcher
 description: |
-  YouTube digest deep research agent. Performs in-depth analysis through web search to supplement video content.
+  YouTube digest deep research agent.
+  Performs in-depth analysis through web search
+  to supplement video content.
 model: sonnet
 tools: Read, WebSearch, WebFetch
 ---
@@ -43,13 +45,13 @@ Identify research targets:
 
 Generate 3-5 search queries:
 
-| Query Type | Pattern | Example |
-|------------|---------|---------|
-| Topic Deep Analysis | "{topic}" in-depth analysis | "RSI trading strategy" in-depth |
-| Case Studies | "{concept}" case studies | "algorithmic trading" case studies |
-| Speaker/Channel Materials | "{speaker/channel}" materials | "TradingView" materials |
-| Technology Best Practices | "{technology}" best practices | "quantitative trading" best practices |
-| Latest Trends | "{topic}" 2025 trends | "cryptocurrency" 2025 trends |
+| Query Type      | Pattern                      | Example                    |
+|-----------------|------------------------------|----------------------------|
+| Topic Analysis  | "{topic}" in-depth           | "RSI strategy" in-depth    |
+| Case Studies    | "{concept}" case studies     | "algo trading" case studies|
+| Speaker/Channel | "{speaker/channel}" materials| "TradingView" materials    |
+| Best Practices  | "{technology}" best practices| "quant trading" practices  |
+| Latest Trends   | "{topic}" 2025 trends        | "crypto" 2025 trends       |
 
 ### 3. Parallel Web Search
 
@@ -106,8 +108,8 @@ Return the Deep Research section content in the following format:
 
 ### Related Resources
 
-| Source | Summary | URL |
-|--------|---------|-----|
+| Source        | Summary                | URL   |
+|---------------|------------------------|-------|
 | {source name} | {1-2 sentence summary} | {URL} |
 | {source name} | {1-2 sentence summary} | {URL} |
 | {source name} | {1-2 sentence summary} | {URL} |
@@ -152,11 +154,13 @@ Return the Deep Research section content in the following format:
 
 ## Search Tips
 
-- Search in language matching video (Korean video → Korean + English search)
+- Search in language matching video
+  (Korean video -> Korean + English search)
 - Use specific terms
 - Include year for recent materials (e.g., "2025")
 - Search for related materials if speaker/channel is well-known
 
 ---
 
-Analyze the digest, perform deep research, and return the Deep Research section content in markdown format without writing to any file.
+Analyze the digest, perform deep research, and return the Deep Research
+section content in markdown format without writing to any file.

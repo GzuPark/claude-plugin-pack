@@ -1,12 +1,14 @@
 # task-forge
 
-Claude Code를 위한 업무 생산성 도구입니다. 회의 분석, 영상 요약, 작업 정리, 문서 insight 기능을 제공합니다.
+Claude Code를 위한 업무 생산성 도구입니다.
+회의 분석, 영상 요약, 작업 정리, 문서 insight 기능을 제공합니다.
 
 ## Command
 
 ### /recap
 
-Multi-agent system으로 작업 session을 분석하고 실행 가능한 결과물을 정리합니다.
+Multi-agent system으로 작업 session을 분석하고
+실행 가능한 결과물을 정리합니다.
 
 **기능:**
 
@@ -16,12 +18,12 @@ Multi-agent system으로 작업 session을 분석하고 실행 가능한 결과�
 
 **분석 결과:**
 
-| 결과 | 설명 |
-|------|------|
-| 문서 | CLAUDE.md, context.md 수정 제안 |
-| 자동화 | skill/command/agent 생성 기회 |
-| TIL | 오늘 배운 것 |
-| 다음 단계 | 미완료 작업과 우선순위 |
+| 결과      | 설명                             |
+|-----------|----------------------------------|
+| 문서      | CLAUDE.md, context.md 수정 제안  |
+| 자동화    | skill/command/agent 생성 기회    |
+| TIL       | 오늘 배운 것                     |
+| 다음 단계 | 미완료 작업과 우선순위           |
 
 **사용법:**
 
@@ -52,28 +54,33 @@ Multi-agent system으로 작업 session을 분석하고 실행 가능한 결과�
 **사용 예시:**
 
 ```text
-이 폴더의 모든 회의를 분석하고 갈등을 회피한 순간을 알려 주세요.
+이 폴더의 모든 회의를 분석하고
+갈등을 회피한 순간을 알려 주세요.
 ```
 
 ```text
-지난 달 회의를 보고 communication pattern을 파악해 주세요.
+지난 달 회의를 보고
+communication pattern을 파악해 주세요.
 ```
 
 ```text
-Q1과 Q2 회의를 비교하여 경청 skill이 개선되었는지 확인해 주세요.
+Q1과 Q2 회의를 비교하여
+경청 skill이 개선되었는지 확인해 주세요.
 ```
 
 **주요 분석 영역:**
 
 - **갈등 회피**: 회피 언어, 간접적 표현, 주제 전환
-- **발언 비율**: 발언 시간 비율, 끼어들기 횟수, 질문 대 진술 비율
+- **발언 비율**: 발언 시간 비율, 끼어들기 횟수,
+  질문 대 진술 비율
 - **군말**: "음", "어", "그러니까", "있잖아", "뭐랄까" 빈도
 - **적극적 경청**: 인용, 바꿔 말하기, 명확화 질문
 - **리더십**: 의사결정 방식, 포용적 진행
 
 ### video-insight
 
-YouTube 영상 및 로컬 미디어 파일에서 자막을 추출하고, 요약을 생성하며, 퀴즈를 만들고, 심화 조사를 수행합니다.
+YouTube 영상 및 로컬 미디어 파일에서 자막을 추출하고,
+요약을 생성하며, 퀴즈를 만들고, 심화 조사를 수행합니다.
 
 **Trigger:**
 
@@ -82,12 +89,12 @@ YouTube 영상 및 로컬 미디어 파일에서 자막을 추출하고, 요약�
 
 **지원 입력:**
 
-| 유형 | 형식 |
-|------|------|
+| 유형    | 형식                                              |
+|---------|---------------------------------------------------|
 | YouTube | `https://youtu.be/...`, `https://youtube.com/...` |
-| 비디오 | `.mp4`, `.mov`, `.mkv`, `.avi`, `.webm` |
-| 오디오 | `.mp3`, `.m4a`, `.wav`, `.flac`, `.aac` |
-| 자막 | `.srt`, `.vtt` |
+| 비디오  | `.mp4`, `.mov`, `.mkv`, `.avi`, `.webm`           |
+| 오디오  | `.mp3`, `.m4a`, `.wav`, `.flac`, `.aac`           |
+| 자막    | `.srt`, `.vtt`                                    |
 
 **기능:**
 
@@ -98,10 +105,10 @@ YouTube 영상 및 로컬 미디어 파일에서 자막을 추출하고, 요약�
 
 **필수 도구:**
 
-| 기능 | 필요 도구 |
-|------|-----------|
-| YouTube | `yt-dlp` |
-| 로컬 파일 | `whisper-cpp`, `ffmpeg` |
+| 기능      | 필요 도구                |
+|-----------|--------------------------|
+| YouTube   | `yt-dlp`                 |
+| 로컬 파일 | `whisper-cpp`, `ffmpeg`  |
 
 **macOS 설치:**
 
@@ -136,7 +143,8 @@ cd whisper.cpp && make && sudo cp main /usr/local/bin/whisper-cpp
 
 ### image-insight
 
-이미지를 분석하여 style 재현 및 AI 이미지 생성을 위한 종합적인 JSON profile을 생성합니다.
+이미지를 분석하여 style 재현 및 AI 이미지 생성을 위한
+종합적인 JSON profile을 생성합니다.
 
 **Trigger:**
 
@@ -145,24 +153,25 @@ cd whisper.cpp && make && sudo cp main /usr/local/bin/whisper-cpp
 
 **기능:**
 
-- 10개 category 종합 분석 (composition, color, lighting, subject, background 등)
+- 10개 category 종합 분석
+  (composition, color, lighting, subject, background 등)
 - AI 이미지 재현을 위한 구조화된 JSON 출력 (Midjourney, DALL-E 등)
 - 중요 영역 분석: hair, hands, 표정, lighting 세부사항
 - Hex color code 및 실행 가능한 generation prompt
 
 **분석 Category:**
 
-| Category | 설명 |
-|----------|------|
-| metadata | 신뢰도, 이미지 유형, 목적 |
-| composition | 구도, layout, focal point, hierarchy |
-| color_profile | Hex code 포함 dominant color, palette, 온도 |
-| lighting | 유형, 방향, shadow, highlight |
-| technical_specs | 매체, style, texture, 피사계 심도 |
-| artistic_elements | 장르, 영향, 분위기, atmosphere |
-| subject_analysis | 표정, hair, hands, 자세 |
-| background | 배경 설정, 표면, object catalog |
-| generation_parameters | 재현 prompt, keyword |
+| Category              | 설명                                          |
+|-----------------------|-----------------------------------------------|
+| metadata              | 신뢰도, 이미지 유형, 목적                     |
+| composition           | 구도, layout, focal point, hierarchy          |
+| color_profile         | Hex code 포함 dominant color, palette, 온도   |
+| lighting              | 유형, 방향, shadow, highlight                 |
+| technical_specs       | 매체, style, texture, 피사계 심도             |
+| artistic_elements     | 장르, 영향, 분위기, atmosphere                |
+| subject_analysis      | 표정, hair, hands, 자세                       |
+| background            | 배경 설정, 표면, object catalog               |
+| generation_parameters | 재현 prompt, keyword                          |
 
 **사용 예시:**
 
@@ -171,7 +180,8 @@ cd whisper.cpp && make && sudo cp main /usr/local/bin/whisper-cpp
 ```
 
 ```text
-이 사진의 조명과 구도를 재현할 수 있는 JSON profile을 생성해 주세요.
+이 사진의 조명과 구도를 재현할 수 있는
+JSON profile을 생성해 주세요.
 ```
 
 ## 설치

@@ -1,6 +1,8 @@
 # 6-Lens Analysis Framework
 
-Systematically applies 6 mental models to skill design. Each lens reveals different aspects of the problem space that single-perspective analysis might miss.
+Systematically applies 6 mental models to skill design. Each lens reveals
+different aspects of the problem space that single-perspective analysis
+might miss.
 
 ## Application Rules
 
@@ -32,8 +34,10 @@ What is fundamentally needed? What remains when conventions are removed?
 
 ```text
 Input: "I need a PDF processing skill"
-Analysis: Is PDF the real goal? Or is "extracting information from documents" the goal?
-Conclusion: Core value is "information extraction"; PDF is just one input format
+Analysis: Is PDF the real goal?
+  Or is "extracting information from documents" the goal?
+Conclusion: Core value is "information extraction";
+  PDF is just one input format
 ```
 
 ### First Principles Output
@@ -76,7 +80,7 @@ Outcome: Skill is unused and deprecated
 ### Pre-Mortem Failure Categories
 
 | Category | Failure Examples |
-|----------|------------------|
+| -------- | ---------------- |
 | Adoption | Too complex, unclear triggers, wrong audience |
 | Execution | Timeouts, wrong output, missing edge cases |
 | Integration | Conflicts with other skills, ecosystem disruption |
@@ -104,7 +108,7 @@ What are the real constraints? Which are self-imposed?
 ### Constraint Analysis Categories
 
 | Type | Examples | Fixed? |
-|------|----------|--------|
+| ---- | -------- | ------ |
 | Platform | Claude's token limits | Hard |
 | Convention | "Skills should be under 500 lines" | Soft |
 | Technical | Must work with existing tools | Mostly Hard |
@@ -141,7 +145,7 @@ Which 20% of features deliver 80% of the value?
 ### Pareto Matrix
 
 | Feature | Value Contribution | Effort | Include? |
-|---------|-------------------|--------|----------|
+| ------- | ------------------ | ------ | -------- |
 | Core functionality | 60% | Medium | Yes - Essential |
 | Edge case handling | 10% | High | Defer - Later |
 | Nice-to-have UI | 5% | Low | Consider - Easy win |
@@ -184,7 +188,8 @@ Why 4? → Written without user research
 Why 5? → No user research step in skill creation process
 
 Root Cause: Missing user understanding step
-Solution: Make specific use case collection mandatory in Understanding phase
+Solution: Make specific use case collection mandatory
+  in Understanding phase
 ```
 
 ### Root Cause Output
@@ -229,8 +234,10 @@ System Relationships:
 - Influences other developers' commit styles
 
 Feedback Loops:
-- Good commit messages → easier code review → more usage → quality improvement
-- Wrong messages → trust loss → abandonment → lost improvement opportunity
+- Good commit messages → easier code review →
+  more usage → quality improvement
+- Wrong messages → trust loss → abandonment →
+  lost improvement opportunity
 ```
 
 ### Systems Thinking Output
@@ -247,7 +254,7 @@ Apply each lens for 2-3 minutes to identify most relevant ones:
 
 ```text
 | Lens | Relevance (H/M/L) | Key Insight |
-|------|-------------------|-------------|
+| ---- | ----------------- | ----------- |
 | First Principles | High | Need to remove X convention |
 | Pre-Mortem | High | Clear failure mode: Y |
 | Constraint Analysis | Medium | Fake constraint: V |

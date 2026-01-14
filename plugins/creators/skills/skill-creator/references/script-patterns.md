@@ -1,6 +1,7 @@
 # Script Pattern Catalog
 
-Standard Python patterns for skill scripts. Ensures consistency, reliability, and autonomous execution capability.
+Standard Python patterns for skill scripts. Ensures consistency,
+reliability, and autonomous execution capability.
 
 ---
 
@@ -63,7 +64,13 @@ class ValidationResult:
     warnings: List[str] = field(default_factory=list)
     errors: List[str] = field(default_factory=list)
 
-    def check(self, name: str, condition: bool, message: str, warning_only: bool = False):
+    def check(
+        self,
+        name: str,
+        condition: bool,
+        message: str,
+        warning_only: bool = False
+    ):
         """Record validation check result."""
         if condition:
             self.passed.append(f"[PASS] {name}: {message}")
@@ -81,14 +88,23 @@ class ValidationResult:
     def summary(self) -> str:
         """Human-readable summary."""
         total = len(self.passed) + len(self.warnings) + len(self.errors)
-        return f"{len(self.passed)}/{total} passed, {len(self.warnings)} warnings, {len(self.errors)} errors"
+        return (
+            f"{len(self.passed)}/{total} passed, "
+            f"{len(self.warnings)} warnings, "
+            f"{len(self.errors)} errors"
+        )
 
 # Usage example
 def validate_skill(path: Path) -> ValidationResult:
     result = ValidationResult()
 
     result.check("file_exists", path.exists(), "SKILL.md exists")
-    result.check("has_triggers", "## Triggers" in content, "Has triggers", warning_only=True)
+    result.check(
+        "has_triggers",
+        "## Triggers" in content,
+        "Has triggers",
+        warning_only=True
+    )
 
     return result
 ```
@@ -136,7 +152,7 @@ def main():
 **Quick Reference**:
 
 | Code | Meaning |
-|------|---------|
+| ---- | ------- |
 | 0 | Success |
 | 1 | General failure |
 | 2 | Invalid arguments |
@@ -157,7 +173,10 @@ import json
 
 def get_state_path(skill_name: str) -> Path:
     """Return state file path."""
-    return Path.home() / ".claude" / "skills" / ".state" / f"{skill_name}.json"
+    return (
+        Path.home() / ".claude" / "skills" / ".state"
+        / f"{skill_name}.json"
+    )
 
 def load_state(path: Path) -> dict:
     """Load state (graceful fallback on corruption)."""
@@ -174,7 +193,11 @@ def load_state(path: Path) -> dict:
         # Backup corrupted file
         backup = path.with_suffix(".json.bak")
         path.rename(backup)
-        return {"version": "1.0", "data": {}, "recovered_from": str(backup)}
+        return {
+            "version": "1.0",
+            "data": {},
+            "recovered_from": str(backup)
+        }
 
 def save_state(path: Path, state: dict) -> None:
     """Save state atomically."""
@@ -220,10 +243,18 @@ def print_styled(message: str, style: str = "normal"):
     try:
         from rich.console import Console
         console = Console()
-        styles = {"success": "[green]", "error": "[red]", "warning": "[yellow]"}
+        styles = {
+            "success": "[green]",
+            "error": "[red]",
+            "warning": "[yellow]"
+        }
         console.print(f"{styles.get(style, '')}{message}")
     except ImportError:
-        prefixes = {"success": "[OK] ", "error": "[ERROR] ", "warning": "[WARN] "}
+        prefixes = {
+            "success": "[OK] ",
+            "error": "[ERROR] ",
+            "warning": "[WARN] "
+        }
         print(f"{prefixes.get(style, '')}{message}")
 ```
 
@@ -241,15 +272,29 @@ import sys
 from pathlib import Path
 
 def main():
-    parser = argparse.ArgumentParser(description="Validate skill directory")
+    parser = argparse.ArgumentParser(
+        description="Validate skill directory"
+    )
 
     # Positional argument
     parser.add_argument("path", type=Path, help="Skill directory path")
 
     # Optional flags
-    parser.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
-    parser.add_argument("--json", action="store_true", help="Output as JSON")
-    parser.add_argument("--strict", action="store_true", help="Treat warnings as errors")
+    parser.add_argument(
+        "--verbose", "-v",
+        action="store_true",
+        help="Verbose output"
+    )
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Output as JSON"
+    )
+    parser.add_argument(
+        "--strict",
+        action="store_true",
+        help="Treat warnings as errors"
+    )
 
     args = parser.parse_args()
 
@@ -273,19 +318,20 @@ if __name__ == "__main__":
     main()
 ```
 
-**When to use**: Single-purpose scripts for validation, generation, transformation
+**When to use**: Single-purpose scripts for validation, generation,
+transformation
 
 ---
 
 ## Script Category Guide
 
-| Category | Purpose | Recommended Patterns |
-|----------|---------|---------------------|
-| Validation | Verify artifact standards | ValidationResult + Simple argparse |
-| State Management | Progress tracking, data persistence | JSON state + Subcommand argparse |
-| Generation | Create artifacts from templates | Result + Template substitution |
-| Transformation | Data conversion/processing | Result + Input/output argparse |
-| Calculation | Metrics/score calculation | Result + JSON output |
+| Category | Purpose | Patterns |
+| -------- | ------- | -------- |
+| Validation | Verify standards | ValidationResult + Simple argparse |
+| State Mgmt | Progress, data | JSON state + Subcommand argparse |
+| Generation | Create artifacts | Result + Template substitution |
+| Transform | Data convert | Result + Input/output argparse |
+| Calculation | Metrics/score | Result + JSON output |
 
 ---
 
@@ -313,7 +359,11 @@ def execute_with_verification(input_data, verify_func):
             data={"output": output, "verified": True}
         )
     except Exception as e:
-        return Result(success=False, message=f"Execution failed: {e}", errors=[str(e)])
+        return Result(
+            success=False,
+            message=f"Execution failed: {e}",
+            errors=[str(e)]
+        )
 
 # Verification function example
 def verify_file_exists(path):
@@ -352,11 +402,11 @@ run.sh automatically installs dependencies via uv or shared venv.
 ## Quick Reference
 
 | Pattern | Use Case | Key Imports |
-|---------|----------|-------------|
+| ------- | -------- | ----------- |
 | Result dataclass | Return values | `dataclasses`, `typing` |
-| ValidationResult | Multi-check validation | `dataclasses`, `typing` |
+| ValidationResult | Multi-check | `dataclasses`, `typing` |
 | Standard Exit codes | Script chaining | `sys`, `enum` |
 | JSON state | State persistence | `json`, `pathlib` |
-| Graceful fallback | Optional dependencies | try/except ImportError |
-| Simple argparse | Single-purpose scripts | `argparse` |
-| Self-verification | Autonomous operations | (pattern, no imports) |
+| Graceful fallback | Optional deps | try/except ImportError |
+| Simple argparse | Single-purpose | `argparse` |
+| Self-verification | Autonomous ops | (pattern, no imports) |

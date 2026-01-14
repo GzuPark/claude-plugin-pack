@@ -1,6 +1,7 @@
 # Synthesis Checklist
 
-Self-review checklist replacing multi-agent synthesis. Apply multiple perspectives to validate skill design before finalization.
+Self-review checklist replacing multi-agent synthesis. Apply multiple
+perspectives to validate skill design before finalization.
 
 ## Purpose
 
@@ -19,11 +20,11 @@ Evaluates architectural quality and technical soundness.
 ### Design Checklist
 
 | # | Item | Check | Notes |
-|---|------|-------|-------|
-| D1 | **Single responsibility**: Does the skill do one thing well? | ☐ | |
-| D2 | **Clear boundaries**: Are scope limits explicitly defined? | ☐ | |
-| D3 | **Minimal dependencies**: Are external dependencies minimized? | ☐ | |
-| D4 | **Error handling**: Are failure modes identified and handled? | ☐ | |
+| --- | --- | --- | --- |
+| D1 | **Single responsibility**: One thing well? | ☐ | |
+| D2 | **Clear boundaries**: Scope limits defined? | ☐ | |
+| D3 | **Minimal dependencies**: Deps minimized? | ☐ | |
+| D4 | **Error handling**: Failures handled? | ☐ | |
 
 ### Design Key Questions
 
@@ -48,11 +49,11 @@ Evaluates usability and user experience.
 ### Audience Checklist
 
 | # | Item | Check | Notes |
-|---|------|-------|-------|
-| A1 | **Clear triggers**: Are invocation methods obvious? | ☐ | |
-| A2 | **Intuitive workflow**: Does the process match user expectations? | ☐ | |
-| A3 | **Helpful output**: Does output guide next steps? | ☐ | |
-| A4 | **Appropriate complexity**: Does difficulty match target audience? | ☐ | |
+| --- | --- | --- | --- |
+| A1 | **Clear triggers**: Invocation obvious? | ☐ | |
+| A2 | **Intuitive workflow**: Matches expectations? | ☐ | |
+| A3 | **Helpful output**: Guides next steps? | ☐ | |
+| A4 | **Appropriate complexity**: Matches audience? | ☐ | |
 
 ### Audience Key Questions
 
@@ -77,11 +78,11 @@ Evaluates future-readiness and maintainability.
 ### Evolution Checklist
 
 | # | Item | Check | Notes |
-|---|------|-------|-------|
-| E1 | **Extension points**: Are customization hooks documented? | ☐ | |
-| E2 | **Version independence**: No hardcoded versions or paths? | ☐ | |
-| E3 | **Design rationale**: Is the WHY documented? | ☐ | |
-| E4 | **Anti-patterns**: Are pitfalls documented? | ☐ | |
+| --- | --- | --- | --- |
+| E1 | **Extension points**: Hooks documented? | ☐ | |
+| E2 | **Version independence**: No hardcoded? | ☐ | |
+| E3 | **Design rationale**: WHY documented? | ☐ | |
+| E4 | **Anti-patterns**: Pitfalls documented? | ☐ | |
 
 ### Evolution Key Questions
 

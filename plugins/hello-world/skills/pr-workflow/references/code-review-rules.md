@@ -6,14 +6,14 @@ Code review rules for PR workflow. Reference this file during Step 6.
 
 Categorize each changed file:
 
-| Pattern | Category | Review Level |
-|---------|----------|--------------|
-| `*.ts`, `*.tsx`, `*.js`, `*.jsx` | Code (JS/TS) | Full review |
-| `*.py` | Code (Python) | Full review |
-| `*.go`, `*.rs`, `*.java` | Code (Other) | Full review |
-| `*.json`, `*.yaml`, `*.toml` | Config | Secrets check only |
-| `*.md`, `*.txt` | Documentation | Skip |
-| Binary files | Binary | Skip (list only) |
+| Pattern                          | Category        | Review Level       |
+| -------------------------------- | --------------- | ------------------ |
+| `*.ts`, `*.tsx`, `*.js`, `*.jsx` | Code (JS/TS)    | Full review        |
+| `*.py`                           | Code (Python)   | Full review        |
+| `*.go`, `*.rs`, `*.java`         | Code (Other)    | Full review        |
+| `*.json`, `*.yaml`, `*.toml`     | Config          | Secrets check only |
+| `*.md`, `*.txt`                  | Documentation   | Skip               |
+| Binary files                     | Binary          | Skip (list only)   |
 
 Impact level:
 
@@ -92,12 +92,12 @@ Note: Duplication issues are always warnings, never blocking errors.
 
 ## Auto-Fix Capabilities
 
-| Issue Type | Fix Method | Risk |
-|------------|------------|------|
-| Formatting | prettier/eslint --fix | Low |
-| Lint issues | eslint --fix | Low |
-| Missing types | Add explicit types | Medium |
-| Error handling | Add try-catch | Medium |
+| Issue Type     | Fix Method            | Risk   |
+| -------------- | --------------------- | ------ |
+| Formatting     | prettier/eslint --fix | Low    |
+| Lint issues    | eslint --fix          | Low    |
+| Missing types  | Add explicit types    | Medium |
+| Error handling | Add try-catch         | Medium |
 
 ### Auto-Fix Transformations
 

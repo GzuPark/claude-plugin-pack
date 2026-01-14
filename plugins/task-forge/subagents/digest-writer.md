@@ -1,8 +1,10 @@
 ---
 name: digest-writer
 description: |
-  YouTube digest document writing agent. Creates detailed digest documents based on transcript analysis results.
-  Uses WebSearch/WebFetch to correct proper nouns and add background information.
+  YouTube digest document writing agent.
+  Creates detailed digest documents based on transcript analysis results.
+  Uses WebSearch/WebFetch to correct proper nouns
+  and add background information.
 model: sonnet
 tools: Read, Write, WebSearch, WebFetch
 ---
@@ -33,7 +35,8 @@ The following information is provided when called:
 From "Technical Terms / Proper Nouns" extracted by transcript-analyzer:
 
 1. Verify items with `Needs Verification: Yes` via WebSearch
-2. Correct to proper spelling (e.g., "claude" → "Claude", "tradingview" → "TradingView")
+2. Correct to proper spelling
+   (e.g., "claude" -> "Claude", "tradingview" -> "TradingView")
 3. Apply corrections to analysis results
 
 ### 2. Collect Background Information
@@ -126,4 +129,5 @@ Follow template (`templates/video-insight.md`) format with these enhancements:
 
 ---
 
-Create a high-quality digest document based on analysis results and save to the specified path.
+Create a high-quality digest document based on analysis results and
+save to the specified path.

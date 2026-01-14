@@ -14,7 +14,8 @@ description: Create a git commit with staged changes
 
 ### `allowed-tools`
 
-Specifies which tools the command can use. Format: `ToolName(pattern:*)` or just `ToolName`.
+Specifies which tools the command can use.
+Format: `ToolName(pattern:*)` or just `ToolName`.
 
 ```yaml
 # Single tool
@@ -70,7 +71,8 @@ disable-model-invocation: true
 
 ### `hooks`
 
-Define hooks that run during command execution. Supports `PreToolUse`, `PostToolUse`, and `Stop` events.
+Define hooks that run during command execution.
+Supports `PreToolUse`, `PostToolUse`, and `Stop` events.
 
 ```yaml
 hooks:

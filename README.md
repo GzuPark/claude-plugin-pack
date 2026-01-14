@@ -1,6 +1,7 @@
 # Claude Plugin Pack
 
-> A curated collection of plugins to supercharge your [Claude Code](https://docs.anthropic.com/en/docs/claude-code) experience.
+> A curated collection of plugins to supercharge your
+> [Claude Code](https://docs.anthropic.com/en/docs/claude-code) experience.
 
 ## Quick Start
 
@@ -16,7 +17,7 @@
 
 ### hello-world
 
-**Essential dev workflow for daily development**
+> Essential dev workflow for daily development
 
 | Command | Description |
 | ------- | ----------- |
@@ -32,7 +33,7 @@
 
 ### heimdall
 
-**Enhanced statusline for Claude Code** *(named after the Norse watchman god)*
+> Enhanced statusline for Claude Code *(named after the Norse watchman god)*
 
 | Feature | Description |
 | ------- | ----------- |
@@ -53,7 +54,7 @@
 
 ### creators
 
-**Skills for creating Claude Code extensions**
+> Skills for creating Claude Code extensions
 
 | Skill | Description |
 | ----- | ----------- |
@@ -70,7 +71,7 @@
 
 ### task-forge
 
-**Workplace productivity tools**
+> Workplace productivity tools
 
 | Feature | Description |
 | ------- | ----------- |
@@ -87,7 +88,8 @@
 
 ## Hooks
 
-Reusable hook configurations. Ask Claude Code to set them up automatically.
+Reusable hook configurations.
+Ask Claude Code to set them up automatically.
 
 | Hook | Description |
 | ---- | ----------- |
@@ -115,7 +117,9 @@ claude-plugin-pack/
 
 ## Create Your Own
 
-See [Claude Code Plugins Documentation](https://docs.anthropic.com/en/docs/claude-code/plugins).
+See [Claude Code Plugins Documentation][plugins-docs].
+
+[plugins-docs]: https://docs.anthropic.com/en/docs/claude-code/plugins
 
 ## License
 

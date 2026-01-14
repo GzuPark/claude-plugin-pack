@@ -8,16 +8,16 @@ PR generation rules for Step 8.
 
 #### Priority 1: Branch name prefix
 
-| Branch Pattern | Type |
-|----------------|------|
-| `feature/*`, `feat/*` | feat |
-| `fix/*`, `bugfix/*`, `hotfix/*` | fix |
-| `refactor/*` | refactor |
-| `docs/*`, `documentation/*` | docs |
-| `test/*`, `tests/*` | test |
-| `chore/*` | chore |
-| `style/*` | style |
-| `perf/*`, `performance/*` | perf |
+| Branch Pattern                 | Type     |
+| ------------------------------ | -------- |
+| `feature/*`, `feat/*`          | feat     |
+| `fix/*`, `bugfix/*`, `hotfix/*`| fix      |
+| `refactor/*`                   | refactor |
+| `docs/*`, `documentation/*`    | docs     |
+| `test/*`, `tests/*`            | test     |
+| `chore/*`                      | chore    |
+| `style/*`                      | style    |
+| `perf/*`, `performance/*`      | perf     |
 
 Extract: `git branch --show-current | sed -E 's|^([^/]+)/.*|\1|'`
 
@@ -31,11 +31,11 @@ git log <base-branch>..HEAD --format=%s | head -1
 
 #### Priority 3: Changed file patterns
 
-| File Pattern | Type |
-|--------------|------|
-| Only `*.md` files | docs |
-| Only `*test*`, `*spec*` files | test |
-| Only config files | chore |
+| File Pattern                  | Type  |
+| ----------------------------- | ----- |
+| Only `*.md` files             | docs  |
+| Only `*test*`, `*spec*` files | test  |
+| Only config files             | chore |
 
 **Default**: `feat` if no pattern matches.
 

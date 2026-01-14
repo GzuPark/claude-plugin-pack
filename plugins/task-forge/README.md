@@ -1,12 +1,14 @@
 # task-forge
 
-Workplace productivity tools: meeting analysis, video summaries, work recap, and document insights for Claude Code.
+Workplace productivity tools: meeting analysis, video summaries,
+work recap, and document insights for Claude Code.
 
 ## Commands
 
 ### /recap
 
-Analyzes your work session with multi-agent system and organizes actionable outputs.
+Analyzes your work session with multi-agent system and organizes
+actionable outputs.
 
 **Features:**
 
@@ -16,12 +18,12 @@ Analyzes your work session with multi-agent system and organizes actionable outp
 
 **Analysis Outputs:**
 
-| Output | Description |
-|--------|-------------|
-| Documentation | CLAUDE.md, context.md update suggestions |
-| Automation | Skill/command/agent creation opportunities |
-| TIL | Today I Learned items |
-| Next Steps | Incomplete tasks with priority |
+| Output        | Description                               |
+|---------------|-------------------------------------------|
+| Documentation | CLAUDE.md, context.md update suggestions  |
+| Automation    | Skill/command/agent creation opportunities|
+| TIL           | Today I Learned items                     |
+| Next Steps    | Incomplete tasks with priority            |
 
 **Usage:**
 
@@ -37,7 +39,8 @@ Analyzes your work session with multi-agent system and organizes actionable outp
 
 ### meeting-insight
 
-Analyzes meeting transcripts to uncover behavioral patterns and communication insights.
+Analyzes meeting transcripts to uncover behavioral patterns
+and communication insights.
 
 **Triggers:**
 
@@ -56,7 +59,8 @@ Analyze all meetings in this folder and tell me when I avoided conflict.
 ```
 
 ```text
-Look at my meetings from the past month and identify my communication patterns.
+Look at my meetings from the past month and identify my communication
+patterns.
 ```
 
 ```text
@@ -66,14 +70,16 @@ Compare my Q1 vs Q2 meetings to see if my listening skills improved.
 **Key Analysis Areas:**
 
 - **Conflict Avoidance**: Hedging language, indirect phrasing, topic-shifting
-- **Speaking Ratios**: Talk time percentage, interruption count, question-to-statement ratio
+- **Speaking Ratios**: Talk time percentage, interruption count,
+  question-to-statement ratio
 - **Filler Words**: "um", "uh", "like", "you know", "actually" frequency
 - **Active Listening**: References, paraphrasing, clarifying questions
 - **Leadership**: Decision-making approach, inclusion practices
 
 ### video-insight
 
-Extract transcripts, generate summaries, create quizzes, and perform deep research from YouTube videos and local media files.
+Extract transcripts, generate summaries, create quizzes, and perform
+deep research from YouTube videos and local media files.
 
 **Triggers:**
 
@@ -82,12 +88,12 @@ Extract transcripts, generate summaries, create quizzes, and perform deep resear
 
 **Supported Input:**
 
-| Type | Formats |
-|------|---------|
-| YouTube | `https://youtu.be/...`, `https://youtube.com/...` |
-| Video | `.mp4`, `.mov`, `.mkv`, `.avi`, `.webm` |
-| Audio | `.mp3`, `.m4a`, `.wav`, `.flac`, `.aac` |
-| Subtitle | `.srt`, `.vtt` |
+| Type     | Formats                                            |
+| -------- | -------------------------------------------------- |
+| YouTube  | `https://youtu.be/...`, `https://youtube.com/...`  |
+| Video    | `.mp4`, `.mov`, `.mkv`, `.avi`, `.webm`            |
+| Audio    | `.mp3`, `.m4a`, `.wav`, `.flac`, `.aac`            |
+| Subtitle | `.srt`, `.vtt`                                     |
 
 **Features:**
 
@@ -98,10 +104,10 @@ Extract transcripts, generate summaries, create quizzes, and perform deep resear
 
 **Prerequisites:**
 
-| Feature | Required Tools |
-|---------|----------------|
-| YouTube | `yt-dlp` |
-| Local files | `whisper-cpp`, `ffmpeg` |
+| Feature     | Required Tools           |
+|-------------|--------------------------|
+| YouTube     | `yt-dlp`                 |
+| Local files | `whisper-cpp`, `ffmpeg`  |
 
 **macOS Installation:**
 
@@ -136,7 +142,8 @@ Summarize this YouTube video: https://youtu.be/...
 
 ### image-insight
 
-Analyze images and generate comprehensive JSON profiles for style recreation and AI image generation.
+Analyze images and generate comprehensive JSON profiles for style
+recreation and AI image generation.
 
 **Triggers:**
 
@@ -145,24 +152,25 @@ Analyze images and generate comprehensive JSON profiles for style recreation and
 
 **Features:**
 
-- 10-category comprehensive analysis (composition, color, lighting, subject, background, etc.)
+- 10-category comprehensive analysis
+  (composition, color, lighting, subject, background, etc.)
 - Structured JSON output for AI image recreation (Midjourney, DALL-E, etc.)
 - Critical area analysis: hair, hands, facial expression, lighting details
 - Hex color codes and actionable generation prompts
 
 **Analysis Categories:**
 
-| Category | Description |
-|----------|-------------|
-| metadata | Confidence, image type, purpose |
-| composition | Rule, layout, focal points, hierarchy |
-| color_profile | Dominant colors with hex, palette, temperature |
-| lighting | Type, direction, shadows, highlights |
-| technical_specs | Medium, style, texture, depth of field |
-| artistic_elements | Genre, influences, mood, atmosphere |
-| subject_analysis | Expression, hair, hands, positioning |
-| background | Setting, surfaces, objects catalog |
-| generation_parameters | Recreation prompts, keywords |
+| Category              | Description                                    |
+| --------------------- | ---------------------------------------------- |
+| metadata              | Confidence, image type, purpose                |
+| composition           | Rule, layout, focal points, hierarchy          |
+| color_profile         | Dominant colors with hex, palette, temperature |
+| lighting              | Type, direction, shadows, highlights           |
+| technical_specs       | Medium, style, texture, depth of field         |
+| artistic_elements     | Genre, influences, mood, atmosphere            |
+| subject_analysis      | Expression, hair, hands, positioning           |
+| background            | Setting, surfaces, objects catalog             |
+| generation_parameters | Recreation prompts, keywords                   |
 
 **Usage Examples:**
 
@@ -171,7 +179,8 @@ Analyze this image and extract the visual style.
 ```
 
 ```text
-Generate a JSON profile for recreating this photo's lighting and composition.
+Generate a JSON profile for recreating this photo's lighting and
+composition.
 ```
 
 ## Installation

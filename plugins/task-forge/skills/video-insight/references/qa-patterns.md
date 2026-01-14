@@ -1,18 +1,20 @@
 # Q&A Patterns Reference
 
-Video Insight Q&A generates 1-5 Q&A pairs based on content length to help viewers remember key information.
+Video Insight Q&A generates 1-5 Q&A pairs based on content length
+to help viewers remember key information.
 
 ## Q&A Count Guidelines
 
-| Content Length | Q&A Count | Criteria |
-|----------------|-----------|----------|
-| Very short | 1 | < 5 min video, minimal insights |
-| Short | 2 | 5-15 min, few key points |
-| Medium | 3 | 15-30 min, moderate content |
-| Long | 4 | 30-60 min, substantial content |
-| Very long | 5 | 60+ min, comprehensive content |
+| Content Length | Q&A Count | Criteria                   |
+|----------------|-----------|----------------------------|
+| Very short     | 1         | < 5 min, minimal insights  |
+| Short          | 2         | 5-15 min, few key points   |
+| Medium         | 3         | 15-30 min, moderate        |
+| Long           | 4         | 30-60 min, substantial     |
+| Very long      | 5         | 60+ min, comprehensive     |
 
-**Principle**: Quality over quantity. Each Q&A should cover a distinct, important point.
+**Principle**: Quality over quantity.
+Each Q&A should cover a distinct, important point.
 
 ---
 
@@ -20,14 +22,14 @@ Video Insight Q&A generates 1-5 Q&A pairs based on content length to help viewer
 
 Select the most appropriate question types based on content:
 
-| Type | Focus | When to Use |
-|------|-------|-------------|
-| Core Message | Main topic | Always include at least one |
-| Key Facts | Specific data/numbers | When video contains important statistics |
-| Definition | Basic concept | When new terms are introduced |
-| Comparison | Concept differences | When video contrasts multiple ideas |
-| Reasoning | Cause/Effect | When video explains why something works |
-| Application | Practical use | When video provides actionable advice |
+| Type         | Focus          | When to Use                  |
+|--------------|----------------|------------------------------|
+| Core Message | Main topic     | Always include at least one  |
+| Key Facts    | Data/numbers   | When video has key stats     |
+| Definition   | Basic concept  | When new terms introduced    |
+| Comparison   | Differences    | When video contrasts ideas   |
+| Reasoning    | Cause/Effect   | When explaining why it works |
+| Application  | Practical use  | When providing advice        |
 
 ---
 
@@ -38,7 +40,8 @@ Select the most appropriate question types based on content:
 ```markdown
 **Q: What is the main message of this video?**
 
-The speaker emphasizes that [core message]. This is demonstrated through [supporting point]. (around 2:30)
+The speaker emphasizes that [core message]. This is demonstrated
+through [supporting point]. (around 2:30)
 ```
 
 ### Key Facts Example
@@ -46,7 +49,8 @@ The speaker emphasizes that [core message]. This is demonstrated through [suppor
 ```markdown
 **Q: What percentage improvement was achieved in the case study?**
 
-The case study showed a 40% improvement in efficiency after implementing the new process. The speaker attributes this to [reason]. (around 12:15)
+The case study showed a 40% improvement in efficiency after implementing
+the new process. The speaker attributes this to [reason]. (around 12:15)
 ```
 
 ### Comparison Example
@@ -54,7 +58,9 @@ The case study showed a 40% improvement in efficiency after implementing the new
 ```markdown
 **Q: What is the key difference between approach A and approach B?**
 
-Approach A focuses on [aspect], while approach B emphasizes [different aspect]. The speaker recommends A for [situation] and B for [other situation]. (around 8:45)
+Approach A focuses on [aspect], while approach B emphasizes
+[different aspect]. The speaker recommends A for [situation]
+and B for [other situation]. (around 8:45)
 ```
 
 ### Application Example
@@ -62,7 +68,8 @@ Approach A focuses on [aspect], while approach B emphasizes [different aspect]. 
 ```markdown
 **Q: How can viewers apply this technique in their daily work?**
 
-The speaker suggests starting with [first step], then [second step]. Key considerations include [important factor]. (around 18:20)
+The speaker suggests starting with [first step], then [second step].
+Key considerations include [important factor]. (around 18:20)
 ```
 
 ---
@@ -85,7 +92,8 @@ The speaker suggests starting with [first step], then [second step]. Key conside
 
 ## Q&A Generation Guidelines
 
-1. **Based on video content**: Q&A from actual mentioned content, not speculation
+1. **Based on video content**: Q&A from actual mentioned content,
+   not speculation
 2. **Complete answers**: Provide enough context for standalone understanding
 3. **Use timestamps**: Reference when the content appeared if possible
 4. **Practical focus**: Emphasize actionable insights when available

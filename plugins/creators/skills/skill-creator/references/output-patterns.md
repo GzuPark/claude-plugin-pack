@@ -1,10 +1,12 @@
 # Output Patterns
 
-Use these patterns when skills need to produce consistent, high-quality output.
+Use these patterns when skills need to produce consistent, high-quality
+output.
 
 ## Template Pattern
 
-Provide templates for output format. Match the level of strictness to your needs.
+Provide templates for output format. Match the level of strictness to
+your needs.
 
 **For strict requirements (like API responses or data formats):**
 
@@ -51,7 +53,8 @@ Adjust sections as needed for the specific analysis type.
 
 ## Examples Pattern
 
-For skills where output quality depends on seeing examples, provide input/output pairs:
+For skills where output quality depends on seeing examples, provide
+input/output pairs:
 
 ````markdown
 ## Commit message format
@@ -76,7 +79,9 @@ fix(reports): correct date formatting in timezone conversion
 Use UTC timestamps consistently across report generation
 ```
 
-Follow this style: type(scope): brief description, then detailed explanation.
+Follow this style: type(scope): brief description, then detailed
+explanation.
 ````
 
-Examples help Claude understand the desired style and level of detail more clearly than descriptions alone.
+Examples help Claude understand the desired style and level of detail
+more clearly than descriptions alone.

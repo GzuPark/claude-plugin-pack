@@ -2,18 +2,18 @@
 
 ## Event Overview
 
-| Event | Trigger | Can Block | Prompt Hook | Typical Use |
-|-------|---------|-----------|-------------|-------------|
-| PreToolUse | Before tool execution | Yes (exit 2) | Yes | Validation, blocking |
-| PostToolUse | After tool completion | No | No | Formatting, logging |
-| PermissionRequest | Permission dialog shown | Yes | Yes | Auto-allow/deny |
-| UserPromptSubmit | User submits prompt | No | Yes | Pre-processing |
-| Notification | Claude sends notification | No | No | Custom alerts |
-| Stop | Claude finishes responding | Yes (prompt) | Yes | Post-processing |
-| SubagentStop | Subagent task completes | Yes (prompt) | Yes | Subagent cleanup |
-| PreCompact | Before compact operation | No | No | Pre-compact actions |
-| SessionStart | Session starts/resumes | No | No | Initialization |
-| SessionEnd | Session ends | No | No | Cleanup |
+| Event             | Trigger           | Block     | Prompt | Use           |
+|-------------------|-------------------|-----------|--------|---------------|
+| PreToolUse        | Before tool exec  | Yes (2)   | Yes    | Validation    |
+| PostToolUse       | After tool done   | No        | No     | Formatting    |
+| PermissionRequest | Permission dialog | Yes       | Yes    | Auto-allow    |
+| UserPromptSubmit  | User submits      | No        | Yes    | Pre-process   |
+| Notification      | Claude notifies   | No        | No     | Custom alerts |
+| Stop              | Claude finishes   | Yes       | Yes    | Post-process  |
+| SubagentStop      | Subagent done     | Yes       | Yes    | Cleanup       |
+| PreCompact        | Before compact    | No        | No     | Pre-compact   |
+| SessionStart      | Session starts    | No        | No     | Init          |
+| SessionEnd        | Session ends      | No        | No     | Cleanup       |
 
 ## PreToolUse
 

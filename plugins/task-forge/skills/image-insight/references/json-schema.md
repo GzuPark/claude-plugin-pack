@@ -36,11 +36,11 @@ Complete JSON schema for image analysis output.
   "lighting": {
     "type": "natural window/artificial/mixed/studio/practical lights",
     "source_count": "single source/multiple sources - number and placement",
-    "direction": "front/45-degree side/90-degree side/back/top/bottom/diffused from above",
-    "directionality": "highly directional/moderately directional/diffused/omni-directional",
+    "direction": "front/45-degree side/90-degree side/back/top/bottom",
+    "directionality": "highly directional/moderately directional/diffused/...",
     "quality": "hard light/soft light/dramatic/even/gradient/sculpted",
     "intensity": "bright/moderate/low/moody/high-key/low-key",
-    "contrast_ratio": "high contrast (dramatic shadows)/medium contrast/low contrast (flat)",
+    "contrast_ratio": "high contrast (dramatic shadows)/medium/low (flat)",
     "mood": "cheerful/dramatic/mysterious/calm/energetic/professional/casual",
     "shadows": {
       "type": "harsh defined edges/soft gradual edges/minimal/dramatic/absent",
@@ -62,10 +62,11 @@ Complete JSON schema for image analysis output.
     "sharpness": "tack sharp/slightly soft/deliberately soft/bokeh effect",
     "grain": "none/film grain/digital noise/intentional grain",
     "depth_of_field": "shallow/medium/deep - with subject isolation description",
-    "perspective": "straight on/low angle/high angle/dutch angle/isometric/one-point/two-point"
+    "perspective": "straight on/low angle/high angle/dutch angle/isometric/..."
   },
   "artistic_elements": {
-    "genre": "portrait/landscape/abstract/conceptual/commercial/editorial/street/fine art",
+    "genre":
+      "portrait/landscape/abstract/conceptual/commercial/editorial/street/fine art",
     "influences": ["Identified artistic movement or style influence"],
     "mood": "energetic/calm/dramatic/playful/sophisticated/raw/polished",
     "atmosphere": "Overall feeling and emotional impact description",
@@ -101,8 +102,10 @@ Complete JSON schema for image analysis output.
       "cut": "blunt/layered/shaggy/undercut/fade/tapered/disconnected",
       "texture": "straight/wavy/curly/coily/kinky",
       "texture_quality": "smooth/coarse/fine/thick/thin",
-      "natural_imperfections": "flyaways/frizz/uneven sections/growth patterns/cowlicks",
-      "styling": "sleek/tousled/wet look/blow-dried/natural/product-heavy/messy/textured",
+      "natural_imperfections":
+        "flyaways/frizz/uneven sections/growth patterns/cowlicks",
+      "styling":
+        "sleek/tousled/wet look/blow-dried/natural/product-heavy/messy/textured",
       "styling_detail": "Degree of styling description",
       "part": "center/side/deep side/no part/zigzag",
       "volume": "flat/moderate volume/voluminous",
@@ -115,7 +118,8 @@ Complete JSON schema for image analysis output.
       "finger_interlacing": "For clasped hands: interlacing style",
       "hand_tension": "relaxed/tense/natural/posed/rigid",
       "interaction": "What hands are doing",
-      "naturalness": "organic casual/deliberately posed/caught mid-motion/static formal"
+      "naturalness":
+        "organic casual/deliberately posed/caught mid-motion/static formal"
     },
     "body_positioning": {
       "posture": "standing/sitting/leaning/lying",
@@ -139,7 +143,8 @@ Complete JSON schema for image analysis output.
     ],
     "wall_surface": {
       "material": "painted drywall/concrete/brick/wood paneling/tile/wallpaper/plaster",
-      "surface_treatment": "smooth paint/textured paint/raw concrete/polished concrete/exposed brick",
+      "surface_treatment":
+        "smooth paint/textured paint/raw concrete/polished concrete/exposed brick",
       "texture": "perfectly smooth/slightly textured/rough/patterned/brushed",
       "finish": "matte/satin/glossy/flat",
       "color": "Specific color with undertones",
@@ -156,7 +161,10 @@ Complete JSON schema for image analysis output.
     "background_treatment": "blurred/sharp/minimal/detailed/gradient/textured"
   },
   "generation_parameters": {
-    "prompts": ["Detailed technical prompt for recreating this style", "Alternative variation prompt"],
+    "prompts": [
+      "Detailed technical prompt for recreating this style",
+      "Alternative variation prompt"
+    ],
     "keywords": ["keyword1", "keyword2", "keyword3", "keyword4", "keyword5"],
     "technical_settings": "Recommended camera/render settings",
     "post_processing": "Color grading, filters, or editing techniques"

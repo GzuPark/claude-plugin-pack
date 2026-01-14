@@ -1,6 +1,7 @@
 # Claude Plugin Pack
 
-> [Claude Code](https://docs.anthropic.com/en/docs/claude-code) 경험을 향상시키는 plugin 모음입니다.
+> [Claude Code](https://docs.anthropic.com/en/docs/claude-code) 경험을
+> 향상시키는 plugin 모음입니다.
 
 ## Quick Start
 
@@ -16,7 +17,7 @@
 
 ### hello-world
 
-**일상적인 개발을 위한 필수 workflow**
+> 일상적인 개발을 위한 필수 workflow
 
 | Command | 설명 |
 | ------- | ---- |
@@ -32,7 +33,7 @@
 
 ### heimdall
 
-**Claude Code용 확장 statusline** *(북유럽 신화의 감시자 신 헤임달)*
+> Claude Code용 확장 statusline *(북유럽 신화의 감시자 신 헤임달)*
 
 | Feature | 설명 |
 | ------- | ---- |
@@ -53,7 +54,7 @@
 
 ### creators
 
-**Claude Code 확장 기능 생성을 위한 skill**
+> Claude Code 확장 기능 생성을 위한 skill
 
 | Skill | 설명 |
 | ----- | ---- |
@@ -70,7 +71,7 @@
 
 ### task-forge
 
-**업무 생산성 도구**
+> 업무 생산성 도구
 
 | Feature | 설명 |
 | ------- | ---- |
@@ -87,7 +88,8 @@
 
 ## Hooks
 
-재사용 가능한 hook 설정입니다. Claude Code에 설정을 요청하면 자동으로 적용됩니다.
+재사용 가능한 hook 설정입니다.
+Claude Code에 설정을 요청하면 자동으로 적용됩니다.
 
 | Hook | 설명 |
 | ---- | ---- |
@@ -115,7 +117,9 @@ claude-plugin-pack/
 
 ## 직접 만들기
 
-[Claude Code Plugins Documentation](https://docs.anthropic.com/en/docs/claude-code/plugins)을 참고하세요.
+[Claude Code Plugins Documentation][plugins-docs]을 참고하세요.
+
+[plugins-docs]: https://docs.anthropic.com/en/docs/claude-code/plugins
 
 ## License
 

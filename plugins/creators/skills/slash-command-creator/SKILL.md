@@ -1,11 +1,12 @@
 ---
 name: slash-command-creator
-description: Guide for creating Claude Code slash commands. Use when the user wants to create a new slash command, update an existing slash command, or asks about slash command syntax, frontmatter options, or best practices.
+description: Guide for creating Claude Code slash commands. Use when the user wants to create a new slash command, update an existing slash command, or asks about syntax and options.
 ---
 
 # Slash Command Creator
 
-Create custom slash commands for Claude Code to automate frequently-used prompts.
+Create custom slash commands for Claude Code
+to automate frequently-used prompts.
 
 ## Quick Start
 
@@ -66,7 +67,8 @@ Review PR #$1 with priority $2
 
 ### Bash Execution
 
-Execute shell commands inline using the exclamation mark prefix (see example below). The allowed-tools field is required in frontmatter:
+Execute shell commands inline using the exclamation mark prefix.
+The allowed-tools field is required in frontmatter:
 
 ```markdown
 ---
@@ -77,7 +79,8 @@ Current status: !`git status`
 Changes: !`git diff HEAD`
 ```
 
-**Tip (Boris Cherny)**: Inline Bash pre-computes context, reducing round-trips with Claude:
+**Tip (Boris Cherny)**: Inline Bash pre-computes context,
+reducing round-trips with Claude:
 
 ```markdown
 # Current branch
@@ -89,7 +92,8 @@ Changes: !`git diff HEAD`
 # Based on above, create a PR with...
 ```
 
-This pattern is especially powerful for `/commit-push-pr` style commands where context changes frequently.
+This pattern is especially powerful for `/commit-push-pr` style commands
+where context changes frequently.
 
 ### File References
 
@@ -102,14 +106,14 @@ Compare @$1 with @$2.
 
 ## Frontmatter Options
 
-| Field                     | Purpose                                | Required |
-|---------------------------|----------------------------------------|----------|
-| `description`             | Brief description for /help            | Yes      |
-| `allowed-tools`           | Tools the command can use              | No       |
-| `argument-hint`           | Expected arguments hint                | No       |
-| `model`                   | Specific model to use                  | No       |
-| `disable-model-invocation`| Prevent Skill tool invocation          | No       |
-| `hooks`                   | Define hooks for command execution (PreToolUse, PostToolUse, Stop) | No |
+| Field                      | Purpose                         | Required |
+| -------------------------- | ------------------------------- | -------- |
+| `description`              | Brief description for /help     | Yes      |
+| `allowed-tools`            | Tools the command can use       | No       |
+| `argument-hint`            | Expected arguments hint         | No       |
+| `model`                    | Specific model to use           | No       |
+| `disable-model-invocation` | Prevent Skill tool invocation   | No       |
+| `hooks`                    | Hooks for command execution     | No       |
 
 See [references/frontmatter.md](references/frontmatter.md) for detailed reference.
 
@@ -131,7 +135,7 @@ hooks:
 
 ## Examples
 
-See [references/examples.md](references/examples.md) for complete examples including:
+See [references/examples.md](references/examples.md) for complete examples:
 
 - Simple review/explain commands
 - Commands with positional arguments
@@ -158,24 +162,31 @@ This skill activates when users want to:
 
 ## Extension Points
 
-1. **init_command.py customization**: Modify the template generation script to match organizational standards or add custom frontmatter fields
-2. **Frontmatter schema**: Add custom frontmatter fields for organization-specific metadata (e.g., `owner`, `category`, `version`)
-3. **Command templates**: Create reusable command templates in `assets/` for common patterns (review, deploy, test workflows)
+1. **init_command.py customization**: Modify the template generation script
+   to match organizational standards or add custom frontmatter fields
+2. **Frontmatter schema**: Add custom frontmatter fields for organization
+   metadata (e.g., `owner`, `category`, `version`)
+3. **Command templates**: Create reusable command templates in `assets/`
+   for common patterns (review, deploy, test workflows)
 
 ## Anti-Patterns
 
 Avoid these common mistakes when creating slash commands:
 
-- **Overly complex commands**: Commands should do one thing well; split complex workflows into multiple commands
-- **Missing descriptions**: Always include a description for discoverability in /help
+- **Overly complex commands**: Commands should do one thing well;
+  split complex workflows into multiple commands
+- **Missing descriptions**: Always include a description for discoverability
 - **Hardcoded paths**: Use arguments ($1, $2) instead of hardcoding file paths
-- **Excessive bash execution**: Prefer Claude's tools over shell commands when possible
-- **No argument hints**: For commands expecting arguments, include `argument-hint` in frontmatter
+- **Excessive bash execution**: Prefer Claude's tools over shell commands
+- **No argument hints**: For commands with arguments, include `argument-hint`
 
 ## Design Rationale
 
-**Why Markdown format?** Markdown is readable, versionable, and familiar to developers. YAML frontmatter provides structured metadata without sacrificing readability.
+**Why Markdown format?** Markdown is readable, versionable, and familiar.
+YAML frontmatter provides structured metadata without sacrificing readability.
 
-**Why separate project/personal scopes?** Project commands are shared with the team via version control. Personal commands are private and portable across projects.
+**Why separate project/personal scopes?** Project commands are shared via VCS.
+Personal commands are private and portable across projects.
 
-**Why namespacing?** Subdirectories prevent naming conflicts and organize commands by domain (frontend, backend, devops), making large command libraries manageable.
+**Why namespacing?** Subdirectories prevent naming conflicts and organize
+commands by domain, making large command libraries manageable.

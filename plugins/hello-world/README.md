@@ -1,6 +1,7 @@
 # hello-world
 
-Essential dev workflow: git commit and GitHub PR with automated code review for Claude Code.
+Essential dev workflow: git commit and GitHub PR with automated code review
+for Claude Code.
 
 ## Commands
 
@@ -21,7 +22,8 @@ Create well-structured git commits with conventional commit format.
 
 ### /interview
 
-Conduct technical interviews about project plans to generate specifications.
+Conduct technical interviews about project plans
+to generate specifications.
 
 ```text
 /interview path/to/plan.md
@@ -58,10 +60,13 @@ Create GitHub PR with automated code review.
 
 ### plan-interview
 
-The `/interview` command uses the `plan-interview` skill internally. This skill provides:
+The `/interview` command uses the `plan-interview` skill internally.
+This skill provides:
 
-- 4-step workflow: input understanding, complexity assessment, interview, specification
-- Interview areas: Architecture, Backend, Frontend, AI/LLM, Concerns, Scalability
+- 4-step workflow: input understanding, complexity assessment,
+  interview, specification
+- Interview areas: Architecture, Backend, Frontend, AI/LLM,
+  Concerns, Scalability
 - Specification template generation
 - References for interview questions and spec format
 

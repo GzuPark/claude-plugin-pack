@@ -1,6 +1,9 @@
 ---
 name: pr-workflow
-description: GitHub PR creation workflow with automated code review. Use when user wants to create a PR, requests `/pr`, or needs to push changes to GitHub with quality checks.
+description: >-
+  GitHub PR creation workflow with automated code review.
+  Use when user wants to create a PR, requests `/pr`,
+  or needs to push changes to GitHub with quality checks.
 ---
 
 # PR Workflow
@@ -109,7 +112,9 @@ git diff <base-branch>...HEAD
 
 ## Step 6: Code Review
 
-Analyze changes for code quality issues. See [references/code-review-rules.md](references/code-review-rules.md) for detailed rules.
+Analyze changes for code quality issues.
+See [references/code-review-rules.md](references/code-review-rules.md)
+for detailed rules.
 
 ### 6.1 Change Analysis
 
@@ -175,12 +180,12 @@ If user accepts auto-fix:
 git status -sb
 ```
 
-| Status | Action |
-|--------|--------|
-| No remote info | Push with `-u` |
-| `[ahead N]` | Push |
-| Up to date | Skip push |
-| `[behind N]` | Warn and stop |
+| Status         | Action          |
+| -------------- | --------------- |
+| No remote info | Push with `-u`  |
+| `[ahead N]`    | Push            |
+| Up to date     | Skip push       |
+| `[behind N]`   | Warn and stop   |
 
 ### 7.2 Push Scenarios
 
@@ -198,7 +203,8 @@ git push -u origin $(git branch --show-current)
 
 ## Step 8: Generate PR
 
-See [references/pr-template.md](references/pr-template.md) for detailed generation rules.
+See [references/pr-template.md](references/pr-template.md)
+for detailed generation rules.
 
 ### 8.1 Generate Title
 
@@ -233,7 +239,8 @@ gh pr create \
 
 Output success message with PR URL and next steps.
 
-See [references/error-messages.md](references/error-messages.md) for all message templates.
+See [references/error-messages.md](references/error-messages.md)
+for all message templates.
 
 ## Anti-Patterns
 
@@ -245,17 +252,28 @@ See [references/error-messages.md](references/error-messages.md) for all message
 
 ## Extension Points
 
-1. **Review rules customization**: Modify `references/code-review-rules.md` to add project-specific rules
-2. **PR template customization**: Edit `references/pr-template.md` for team-specific formats
+1. **Review rules customization**: Modify `references/code-review-rules.md`
+   to add project-specific rules
+2. **PR template customization**: Edit `references/pr-template.md`
+   for team-specific formats
 3. **Additional pre-checks**: Add project-specific validation in Step 1
 4. **Custom auto-fix rules**: Extend Step 6.9 with project-specific fixers
 
 ## Design Rationale
 
-**Why inline review instead of separate agents?** MVP simplicity. The workflow is straightforward enough that a single pass can handle analysis and review. Agents can be added in Phase 2 if more specialized review is needed.
+**Why inline review instead of separate agents?** MVP simplicity.
+The workflow is straightforward enough that a single pass
+can handle analysis and review.
+Agents can be added in Phase 2 if more specialized review is needed.
 
-**Why auto-fix with user confirmation?** Balance between convenience and safety. Auto-fix handles common issues but requires user to review changes before committing.
+**Why auto-fix with user confirmation?**
+Balance between convenience and safety.
+Auto-fix handles common issues
+but requires user to review changes before committing.
 
-**Why stop after auto-fix?** User should verify changes and commit manually. This ensures awareness of modifications and prevents accidental commits.
+**Why stop after auto-fix?** User should verify changes and commit manually.
+This ensures awareness of modifications and prevents accidental commits.
 
-**Why progressive push confirmation?** Different scenarios require different handling. No upstream needs `-u` flag, ahead needs simple push, behind needs pull first.
+**Why progressive push confirmation?**
+Different scenarios require different handling.
+No upstream needs `-u` flag, ahead needs simple push, behind needs pull first.

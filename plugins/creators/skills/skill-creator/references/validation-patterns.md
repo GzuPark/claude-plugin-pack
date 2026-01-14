@@ -1,6 +1,7 @@
 # Validation Patterns
 
-Patterns for implementing validation in skill scripts. Ensures consistent, reliable validation across all skill operations.
+Patterns for implementing validation in skill scripts. Ensures consistent,
+reliable validation across all skill operations.
 
 ---
 
@@ -21,7 +22,9 @@ class ValidationResult:
     warnings: List[str] = field(default_factory=list)
     errors: List[str] = field(default_factory=list)
 
-    def check(self, name: str, condition: bool, message: str, warning_only: bool = False):
+    def check(
+        self, name: str, condition: bool, message: str, warning_only: bool = False
+    ):
         """Record validation check result."""
         if condition:
             self.passed.append(f"[PASS] {name}: {message}")
@@ -39,7 +42,10 @@ class ValidationResult:
     def summary(self) -> str:
         """Human-readable summary."""
         total = len(self.passed) + len(self.warnings) + len(self.errors)
-        return f"{len(self.passed)}/{total} passed, {len(self.warnings)} warnings, {len(self.errors)} errors"
+        return (
+            f"{len(self.passed)}/{total} passed, "
+            f"{len(self.warnings)} warnings, {len(self.errors)} errors"
+        )
 ```
 
 **When to use**: Any validation that checks multiple criteria
@@ -51,8 +57,8 @@ class ValidationResult:
 ### Required vs Optional Checks
 
 | Category | Failure Behavior | Use For |
-|----------|------------------|---------|
-| Required | Blocks operation | Critical structure, syntax errors |
+| --- | --- | --- |
+| Required | Blocks operation | Critical structure, syntax |
 | Warning | Allows continuation | Best practices, recommendations |
 | Informational | Display only | Scores, metrics, suggestions |
 
@@ -314,13 +320,13 @@ QUALITY
 ## Exit Code Conventions
 
 | Code | Meaning | When to Use |
-|------|---------|-------------|
+| --- | --- | --- |
 | 0 | Success | All checks passed |
 | 1 | General error | Unexpected failure |
 | 2 | Invalid arguments | Bad CLI input |
 | 3 | File not found | Missing required files |
 | 10 | Validation failed | Required checks failed |
-| 11 | Verification failed | Post-operation verification failed |
+| 11 | Verification failed | Post-op verification failed |
 
 ```python
 from enum import IntEnum

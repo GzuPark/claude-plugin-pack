@@ -16,10 +16,10 @@
 
 #### 설정 위치
 
-| 위치    | 파일                      | 범위                 |
-| ------- | ------------------------- | -------------------- |
-| Personal | `~/.claude/settings.json` | 모든 project에 적용  |
-| Project  | `.claude/settings.json`   | 현재 project만 적용  |
+| 위치     | 파일                      | 범위                |
+| -------- | ------------------------- | ------------------- |
+| Personal | `~/.claude/settings.json` | 모든 project에 적용 |
+| Project  | `.claude/settings.json`   | 현재 project만 적용 |
 
 ### 사용자용
 
@@ -57,7 +57,9 @@ brew install jq
 
 #### Configuration
 
-[markdown-lint.json](markdown-lint.json) 내용을 `~/.claude/settings.json` (personal) 또는 `.claude/settings.json` (project)의 `hooks` key에 병합합니다.
+[markdown-lint.json](markdown-lint.json) 내용을
+`~/.claude/settings.json` (personal) 또는 `.claude/settings.json` (project)의
+`hooks` key에 병합합니다.
 
 #### 동작 방식
 
@@ -100,7 +102,9 @@ jq -r '.tool_input.file_path // empty'  # stdin JSON에서 file_path 추출
 **특정 directory만 lint** - command 수정:
 
 ```bash
-jq -r '.tool_input.file_path // empty' | { read f; [[ "$f" == *.md ]] && [[ "$f" == /path/to/docs/* ]] && npx markdownlint "$f" 2>&1 || true; }
+jq -r '.tool_input.file_path // empty' \
+  | { read f; [[ "$f" == *.md ]] && [[ "$f" == /path/to/docs/* ]] \
+      && npx markdownlint "$f" 2>&1 || true; }
 ```
 
 #### Troubleshooting

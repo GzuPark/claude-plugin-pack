@@ -1,6 +1,10 @@
 ---
 name: meeting-insight
-description: Analyzes meeting transcripts to uncover behavioral patterns and communication insights. Identifies conflict avoidance, filler words, conversation dominance, and listening gaps. Use for professionals seeking to improve communication and leadership skills.
+description: >
+  Analyzes meeting transcripts to uncover behavioral patterns and
+  communication insights. Identifies conflict avoidance, filler words,
+  conversation dominance, and listening gaps. Use for professionals
+  seeking to improve communication and leadership skills.
 metadata:
   model: sonnet
   allowed-tools:
@@ -11,7 +15,8 @@ metadata:
 
 # Meeting Insight
 
-Transforms meeting transcripts into actionable insights about communication patterns.
+Transforms meeting transcripts into actionable insights about
+communication patterns.
 
 ## Triggers
 
@@ -47,12 +52,14 @@ If not specified, ask what to analyze:
 
 ### 3. Analyze Patterns
 
-See [references/analysis-criteria.md](references/analysis-criteria.md) for detailed criteria.
+See [references/analysis-criteria.md](references/analysis-criteria.md)
+for detailed criteria.
 
 Key analysis areas:
 
 - **Conflict Avoidance**: Hedging language, indirect phrasing, topic-shifting
-- **Speaking Ratios**: Talk time percentage, interruption count, question-to-statement ratio
+- **Speaking Ratios**: Talk time percentage, interruption count,
+  question-to-statement ratio
 - **Filler Words**: "um", "uh", "like", "you know", "actually" frequency
 - **Active Listening**: References, paraphrasing, clarifying questions
 - **Leadership**: Decision-making approach, inclusion practices
@@ -123,7 +130,8 @@ Analyze all meetings in this folder and tell me when I avoided conflict.
 ```
 
 ```text
-Look at my meetings from the past month and identify my communication patterns.
+Look at my meetings from the past month and identify my communication
+patterns.
 ```
 
 ```text

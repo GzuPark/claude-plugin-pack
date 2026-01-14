@@ -1,8 +1,10 @@
 ---
 name: transcript-analyzer
 description: |
-  YouTube transcript analysis agent. Reads long subtitle files and extracts key content.
-  Protects main context by reading the entire transcript and returning only a summary.
+  YouTube transcript analysis agent.
+  Reads long subtitle files and extracts key content.
+  Protects main context by reading the entire transcript
+  and returning only a summary.
 model: sonnet
 tools: Read
 ---
@@ -66,11 +68,11 @@ Extract the following items:
 
 ### Detailed Timeline
 
-| Timestamp | Content |
-|-----------|---------|
-| 00:00 | {content} |
-| 01:30 | {content} |
-| ... | ... |
+| Timestamp | Content   |
+|-----------|-----------|
+| 00:00     | {content} |
+| 01:30     | {content} |
+| ...       | ...       |
 
 ### Key Quotes
 
@@ -80,9 +82,9 @@ Extract the following items:
 
 ### Technical Terms / Proper Nouns
 
-| Term | Context | Needs Verification |
-|------|---------|-------------------|
-| {term} | {context} | Yes/No |
+| Term   | Context   | Needs Verification |
+|--------|-----------|-------------------|
+| {term} | {context} | Yes/No            |
 
 ### Action Items
 
@@ -100,7 +102,8 @@ Extract the following items:
 2. **Accuracy**: Timestamps and content must match exactly
 3. **Conciseness**: Remove unnecessary repetition and filler
 4. **Structure**: Organize in consistent format
-5. **Language**: Unify in Korean (keep English original only in Key Quotes)
+5. **Language**: Unify in Korean
+   (keep English original only in Key Quotes)
 
 ## Handling Long Videos
 

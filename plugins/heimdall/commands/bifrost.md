@@ -1,11 +1,15 @@
 ---
-allowed-tools: Bash(npm install:*), Bash(npm run build:*), Bash(rm -rf:*), Bash(ls:*), Read, Write, Edit
-description: Open the Bifrost - Install, update, or manage Heimdall statusline
+allowed-tools: >-
+  Bash(npm install:*), Bash(npm run build:*), Bash(rm -rf:*),
+  Bash(ls:*), Read, Write, Edit
+description: >-
+  Open the Bifrost - Install, update, or manage Heimdall statusline
 ---
 
 # Bifrost
 
-Open the Bifrost bridge and summon Heimdall to watch over your Claude Code session.
+Open the Bifrost bridge and summon Heimdall to watch over your
+Claude Code session.
 
 ## Step 1: Find Plugin Versions
 
@@ -15,7 +19,8 @@ ls -d ~/.claude/plugins/cache/claude-plugin-pack/heimdall/*/ 2>/dev/null
 
 **If no directories found:**
 
-- Inform user: "Heimdall not installed. Run `/plugin install heimdall@claude-plugin-pack` first."
+- Inform user: "Heimdall not installed.
+  Run `/plugin install heimdall@claude-plugin-pack` first."
 - END
 
 **If directories found:**
@@ -58,7 +63,8 @@ Read `~/.claude/settings.json` and extract current `statusLine.command` path.
 ## Step 4: Build Latest Version
 
 ```bash
-cd ~/.claude/plugins/cache/claude-plugin-pack/heimdall/<LATEST_VERSION>/statusline
+HEIMDALL=~/.claude/plugins/cache/claude-plugin-pack/heimdall
+cd $HEIMDALL/<LATEST_VERSION>/statusline
 npm install
 npm run build
 ```
@@ -81,11 +87,14 @@ Update `~/.claude/settings.json`:
 {
   "statusLine": {
     "type": "command",
-    "command": "node <HOME>/.claude/plugins/cache/claude-plugin-pack/heimdall/<LATEST_VERSION>/statusline/dist/index.js",
+    "command": "node <HEIMDALL_PATH>/statusline/dist/index.js",
     "padding": 0
   }
 }
 ```
+
+Where `<HEIMDALL_PATH>` is:
+`<HOME>/.claude/plugins/cache/claude-plugin-pack/heimdall/<LATEST_VERSION>`
 
 Use Edit tool to preserve existing settings.
 
@@ -102,7 +111,7 @@ List all version directories except `LATEST_VERSION`.
 **If old versions exist:**
 
 ```bash
-rm -rf ~/.claude/plugins/cache/claude-plugin-pack/heimdall/<OLD_VERSION>/
+rm -rf $HEIMDALL/<OLD_VERSION>/
 ```
 
 Record removed versions

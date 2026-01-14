@@ -1,15 +1,19 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code (claude.ai/code)
+when working with code in this repository.
 
 ## Repository Purpose
 
-This is a Claude Code plugin marketplace repository. It hosts a collection of plugins that users can install via `/plugin marketplace add GzuPark/claude-plugin-pack`.
+This is a Claude Code plugin marketplace repository.
+It hosts a collection of plugins that users can install via
+`/plugin marketplace add GzuPark/claude-plugin-pack`.
 
 ## Architecture
 
 - `.claude-plugin/plugin.json` - Plugin manifest with metadata
-- `.claude-plugin/marketplace.json` - Marketplace configuration listing available plugins
+- `.claude-plugin/marketplace.json` - Marketplace configuration
+  listing available plugins
 - `plugins/` - Contains individual plugin directories
 
 ## Development
@@ -29,18 +33,21 @@ See `README.md` for detailed plugin structure.
 - `README.md` - English version
 - `README.ko.md` - Korean version
 
-**Important:** When either README is modified, the other must be updated to keep content in sync.
+**Important:** When either README is modified,
+the other must be updated to keep content in sync.
 
 ### Korean Language Style
 
-SHOULD use formal polite speech ("~합니다" form), NOT casual speech ("~해줘" form).
+SHOULD use formal polite speech ("~합니다" form),
+NOT casual speech ("~해줘" form).
 
 - Good: "스킬을 만듭니다", "수정합니다"
 - Bad: "스킬 만들어줘", "수정해줘"
 
 ### Technical Terms in Korean Documentation
 
-Keep technical terms in English rather than transliterating to Korean. This improves readability for developers.
+Keep technical terms in English rather than transliterating to Korean.
+This improves readability for developers.
 
 **Example:**
 
@@ -92,6 +99,14 @@ All changes are recorded in `CHANGELOG.md`.
 
 ## Reference
 
-- [Create plugins](https://code.claude.com/docs/en/plugins.md): Create custom plugins to extend Claude Code with slash commands, agents, hooks, Skills, and MCP servers.
-- [Plugins reference](https://code.claude.com/docs/en/plugins-reference.md): Complete technical reference for Claude Code plugin system, including schemas, CLI commands, and component specifications.
-- [Plugin Marketplaces Guide](https://code.claude.com/docs/en/plugin-marketplaces)
+- [Create plugins][plugins-md]:
+  Create custom plugins to extend Claude Code with slash commands,
+  agents, hooks, Skills, and MCP servers.
+- [Plugins reference][plugins-reference-md]:
+  Complete technical reference for Claude Code plugin system,
+  including schemas, CLI commands, and component specifications.
+- [Plugin Marketplaces Guide][plugin-marketplaces]
+
+[plugins-md]: https://code.claude.com/docs/en/plugins.md
+[plugins-reference-md]: https://code.claude.com/docs/en/plugins-reference.md
+[plugin-marketplaces]: https://code.claude.com/docs/en/plugin-marketplaces

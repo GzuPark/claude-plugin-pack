@@ -1,6 +1,7 @@
 # Deep Research Reference
 
-Deep Research is conducted via web search after quiz completion when the user selects "Deep Research".
+Deep Research is conducted via web search after quiz completion
+when the user selects "Deep Research".
 
 ---
 
@@ -20,12 +21,12 @@ Deep Research is activated when:
 Generate search queries based on video content:
 
 | Query Type | Pattern | Example |
-|------------|---------|---------|
-| Topic Deep Analysis | `"{topic}" in-depth analysis` | `"microservices" in-depth analysis` |
-| Case Studies | `"{core concept}" case studies` | `"event-driven architecture" case studies` |
-| Speaker/Channel Materials | `"{speaker/channel}" materials` | `"Martin Fowler" materials` |
-| Technology Best Practices | `"{technology}" best practices` | `"Kubernetes" best practices` |
-| Academic Materials | `"{topic}" research paper` | `"distributed systems" research paper` |
+| ---------- | ------- | ------- |
+| Topic Deep Analysis | `"{topic}" in-depth analysis` | `"microservices"...` |
+| Case Studies | `"{core concept}" case studies` | `"event-driven"...` |
+| Speaker/Channel | `"{speaker/channel}" materials` | `"Martin Fowler"...` |
+| Tech Best Practices | `"{technology}" best practices` | `"Kubernetes"...` |
+| Academic Materials | `"{topic}" research paper` | `"distributed"...` |
 
 **Parallel Execution**: Execute 3-5 queries simultaneously with WebSearch tool
 

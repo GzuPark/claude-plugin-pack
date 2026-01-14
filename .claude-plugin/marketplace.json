@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "claude-plugin-pack",
-  "version": "26.1.12",
+  "version": "26.1.13",
   "description": "A collection of useful plugins, skills, and commands for Claude Code",
   "owner": {
     "name": "Jongmin Park",

@@ -11,7 +11,8 @@ Skills for creating Claude Code extensions.
 
 ## Skills
 
-After installation, these skills are automatically triggered when you ask Claude to create extensions.
+After installation, these skills are automatically triggered
+when you ask Claude to create extensions.
 
 ### skill-creator
 
@@ -63,7 +64,8 @@ Creates event hooks in `settings.json`:
 }
 ```
 
-**Events:** PreToolUse, PostToolUse, SessionStart, SessionEnd, PermissionRequest, Stop, etc.
+**Events:** PreToolUse, PostToolUse, SessionStart, SessionEnd,
+PermissionRequest, Stop, etc.
 
 ### subagent-creator
 
@@ -79,7 +81,7 @@ Subagent format:
 ```markdown
 ---
 name: code-reviewer
-description: Reviews code. Use proactively after changes.
+description: Reviews code. Use after changes.
 tools: Read, Grep, Glob, Bash
 model: sonnet
 ---

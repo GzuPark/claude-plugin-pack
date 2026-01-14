@@ -1,5 +1,12 @@
 # Changelog
 
+## 26.1.13 (2026-01-14)
+
+- Remove `.markdownlintrc` and fix all lint errors without disabling rules
+  - MD036: Bold descriptions changed to blockquotes in READMEs
+  - MD013: Long lines (>80 chars) broken at logical points
+  - MD060: Table pipe spacing fixed for consistency
+
 ## 26.1.12 (2026-01-14)
 
 - Add hooks directory with reusable hook configurations
@@ -21,18 +28,21 @@
 ## 26.1.10 (2026-01-14)
 
 - Update heimdall plugin (v1.1.0)
-  - bifrost: Add version check, auto-update settings.json path, and old version cleanup
+  - bifrost: Add version check, auto-update settings.json path,
+    and old version cleanup
   - Step-by-step conditional workflow for install/update/cleanup
 
 ## 26.1.9 (2026-01-14)
 
 - Fix heimdall plugin (v1.0.2)
-  - Fix delimiter display bug between tools and agents (`| │ |` → `│`)
+  - Fix delimiter display bug between tools and agents
+    (`| │ |` → `│`)
 
 ## 26.1.8 (2026-01-14)
 
 - Fix heimdall plugin (v1.0.1)
-  - Remove invalid `commands` field from plugin.json (auto-discovery used instead)
+  - Remove invalid `commands` field from plugin.json
+    (auto-discovery used instead)
 
 ## 26.1.7 (2026-01-14)
 
@@ -45,31 +55,41 @@
   - Todo progress with full task description
   - Git integration (branch, staged/modified, sync status)
   - MCP server connection status
-  - Context usage with color-coded progress bar (80%+ red, 60%+ yellow)
+  - Context usage with color-coded progress bar
+    (80%+ red, 60%+ yellow)
   - 5-hour reset timer (UTC blocks: 04, 09, 14, 19, 00)
   - Project directory display (stable, not affected by cd)
 
 ## 26.1.6 (2026-01-14)
 
 - Update task-forge plugin (v1.2.0)
-  - image-insight: Analyze images and generate JSON profiles for AI image recreation
-  - 10-category analysis (composition, color, lighting, subject, background, etc.)
-  - Critical area analysis for hair, hands, facial expression, lighting details
-  - Structured output with hex color codes and actionable generation prompts
+  - image-insight: Analyze images and generate JSON profiles
+    for AI image recreation
+  - 10-category analysis
+    (composition, color, lighting, subject, background, etc.)
+  - Critical area analysis for hair, hands, facial expression,
+    lighting details
+  - Structured output with hex color codes
+    and actionable generation prompts
 
 ## 26.1.5 (2026-01-14)
 
 - Update task-forge plugin (v1.1.0)
   - /recap: Multi-agent work session analysis command
-  - 5 new agents: doc-updater, automation-scout, learning-extractor, followup-suggester, duplicate-checker
-  - Documentation updates, automation suggestions, TIL extraction, follow-up task prioritization
+  - 5 new agents: doc-updater, automation-scout, learning-extractor,
+    followup-suggester, duplicate-checker
+  - Documentation updates, automation suggestions, TIL extraction,
+    follow-up task prioritization
 
 ## 26.1.4 (2026-01-13)
 
 - Add task-forge plugin (v1.0.0)
-  - meeting-insight: Analyze meeting transcripts for communication patterns and insights
-  - video-insight: Extract transcripts, summaries, Q&A highlights from YouTube/local media
-  - 4 subagents: transcript-analyzer, digest-writer, qa-generator, deep-researcher
+  - meeting-insight: Analyze meeting transcripts
+    for communication patterns and insights
+  - video-insight: Extract transcripts, summaries, Q&A highlights
+    from YouTube/local media
+  - 4 subagents: transcript-analyzer, digest-writer,
+    qa-generator, deep-researcher
   - Supports macOS and Ubuntu (see prerequisites.md for installation)
   - Parallel execution for Q&A and Deep Research
   - Dynamic Q&A count (1-5 pairs based on content length)
@@ -79,20 +99,24 @@
 - Update creators plugin (v1.0.1)
   - slash-command-creator: Fix bash execution example description
 - Update hello-world plugin (v1.1.1)
-  - /commit: Add missing allowed-tools (git diff, branch, log), add error handling for empty repos
+  - /commit: Add missing allowed-tools (git diff, branch, log),
+    add error handling for empty repos
   - /interview: Improve description
   - plan-interview: Add Triggers section
 
 ## 26.1.2 (2026-01-13)
 
 - Update hello-world plugin (v1.1.0)
-  - /interview: Conduct technical interviews about project plans (uses plan-interview skill)
+  - /interview: Conduct technical interviews about project plans
+    (uses plan-interview skill)
 
 ## 26.1.1 (2026-01-13)
 
 - Add hello-world plugin (v1.0.0)
-  - /commit: Create well-structured git commits with conventional commit format
-  - /pr: Create GitHub PR with automated code review (uses pr-workflow skill)
+  - /commit: Create well-structured git commits
+    with conventional commit format
+  - /pr: Create GitHub PR with automated code review
+    (uses pr-workflow skill)
 
 ## 26.1.0 (2026-01-12)
 

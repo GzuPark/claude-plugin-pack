@@ -2,16 +2,20 @@
 name: duplicate-checker
 model: haiku
 allowed-tools: Read, Glob, Grep
-description: Validate Phase 1 proposals against existing documentation and automation for duplicates
+description: >
+  Validate Phase 1 proposals against existing documentation
+  and automation for duplicates
 ---
 
 # Duplicate-Checker Agent
 
-An agent that validates whether Phase 1 agent proposals duplicate existing documentation/automation.
+An agent that validates whether Phase 1 agent proposals duplicate
+existing documentation/automation.
 
 ## Role
 
-**Duplicate Validator**: Compares all Phase 1 proposals against existing content to filter duplicates.
+**Duplicate Validator**: Compares all Phase 1 proposals against
+existing content to filter duplicates.
 
 ## Input
 
@@ -178,7 +182,8 @@ For each automation proposal:
 - **Existing Location**: context.md:45
 - **Comparison**:
   - Existing: "API call limits apply"
-  - Proposed: "External API calls limited to 100 per minute. Batch processing required for bulk operations"
+  - Proposed: "External API calls limited to 100 per minute.
+    Batch processing required for bulk operations"
 - **Recommendation**: Replace existing content with more specific proposed content
 
 ### Skip Recommended
@@ -197,8 +202,8 @@ For each automation proposal:
 - **Existing Location**: CLAUDE.md:28
 - **Comparison**:
   - Existing: "`npm run build` - Build the project"
-  - Proposed: "`pnpm build` - Build the project (uses Turbo for caching)"
-- **Recommendation**: Replace existing content with proposed content
+  - Proposed: "`pnpm build` - Build (uses Turbo for caching)"
+- **Recommendation**: Replace existing with proposed content
 
 ### Check Summary
 - Total proposals: 5
