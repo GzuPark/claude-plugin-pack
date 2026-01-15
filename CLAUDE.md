@@ -26,6 +26,21 @@ It hosts a collection of plugins that users can install via
 
 See `README.md` for detailed plugin structure.
 
+### Creating Claude Code Extensions
+
+When creating Claude Code extensions, use the appropriate creator skill:
+
+| Extension Type  | Creator Skill            |
+| --------------- | ------------------------ |
+| Skill           | `skill-creator`          |
+| Hook            | `hook-creator`           |
+| Agent           | `subagent-creator`       |
+| Slash Command   | `slash-command-creator`  |
+
+**If creator skills are not available:**
+Recommend installing the `creators` plugin first,
+then proceed with an agent to create the desired functionality.
+
 ## Rules
 
 ### Documentation
@@ -93,12 +108,16 @@ This improves readability for developers.
 - New feature → minor ↑
 - Bug fix → patch ↑
 
-**Version Sync:** Keep versions in sync between:
+**Version Sync (CRITICAL):** Keep versions in sync between:
 
 - `.claude-plugin/marketplace.json`
 - `.claude-plugin/plugin.json`
 
 Both files must have the same version number.
+
+**IMPORTANT:** When updating `marketplace.json` version,
+ALWAYS update `plugin.json` version as well.
+Never leave these files out of sync.
 
 **Heimdall Version Sync:** Keep versions in sync between:
 
