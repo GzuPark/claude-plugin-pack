@@ -1,7 +1,7 @@
 {
   "name": "claude-plugin-pack",
   "description": "A collection of useful plugins for Claude Code",
-  "version": "26.1.16",
+  "version": "26.1.17",
   "author": {
     "name": "Jongmin Park",
     "url": "https://github.com/GzuPark"

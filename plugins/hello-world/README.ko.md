@@ -56,6 +56,37 @@ Conventional Commit 형식으로 구조화된 Git 커밋을 생성합니다.
 - 스마트 PR 제목/설명 생성
 - PR 생성 전 푸시 확인
 
+---
+
+```text
+/simplify
+/simplify src/utils.ts
+```
+
+Code 완성 후 단순화를 수행합니다.
+
+**기능:**
+
+- 중첩 조건문 평탄화 (3단계 이상) - early return 사용
+- 반복 pattern 추출 (3회 이상) - utility 함수로 분리
+- 변수/함수 naming 개선 - 명확한 식별자 사용
+- Dead code 제거: 미사용 import, 주석 처리된 code
+- Edit 전 항상 사용자 확인 요청
+
+## Agent
+
+### code-simplifier
+
+`/simplify` command는 `code-simplifier` agent를 사용합니다.
+이 agent는 proactively code 단순화 기회를 분석합니다.
+
+**단순화 원칙:**
+
+- 복잡도 감소: early return, guard clause
+- Pattern 추출: 반복 logic에 DRY 원칙 적용
+- Naming 개선: 명확하고 설명적인 식별자
+- Dead code 제거: 미사용 import, 도달 불가능한 code
+
 ## Skill
 
 ### plan-interview

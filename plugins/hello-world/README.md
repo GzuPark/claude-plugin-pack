@@ -54,6 +54,37 @@ Create GitHub PR with automated code review.
 - Smart PR title/description generation
 - Push confirmation before creating PR
 
+---
+
+```text
+/simplify
+/simplify src/utils.ts
+```
+
+Simplify code after completion.
+
+**Features:**
+
+- Flatten nested conditionals (3+ levels) using early return
+- Extract repeated patterns (3+ occurrences) into utility functions
+- Improve variable/function naming for clarity
+- Remove dead code: unused imports, commented code
+- Always asks for confirmation before making edits
+
+## Agents
+
+### code-simplifier
+
+The `/simplify` command uses the `code-simplifier` agent.
+This agent proactively analyzes code for simplification opportunities.
+
+**Simplification Principles:**
+
+- Complexity reduction: early return, guard clauses
+- Pattern extraction: DRY principle for repeated logic
+- Naming improvement: clear, descriptive identifiers
+- Dead code removal: unused imports, unreachable code
+
 ## Skills
 
 ### plan-interview

@@ -23,6 +23,7 @@ See [plugins](plugins/) for overview.
 | `/commit` | Create well-structured git commits with conventional format |
 | `/interview` | Conduct technical interviews to generate project specs |
 | `/pr` | Create GitHub PR with automated code review |
+| `/simplify` | Simplify code after completion |
 
 ```bash
 /plugin install hello-world@claude-plugin-pack

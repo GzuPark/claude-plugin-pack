@@ -1,5 +1,13 @@
 # Changelog
 
+## 26.1.17 (2026-01-15)
+
+- Update hello-world plugin (v1.2.0)
+  - /simplify: New command to simplify code after completion
+  - code-simplifier: New agent for proactive code simplification
+  - 4 principles: complexity reduction, pattern extraction,
+    naming improvement, dead code removal
+
 ## 26.1.16 (2026-01-14)
 
 - Update heimdall plugin (v1.2.0)

@@ -23,6 +23,7 @@
 | `/commit` | Conventional format으로 Git commit 생성 |
 | `/interview` | Project spec 생성을 위한 기술 인터뷰 |
 | `/pr` | 자동 code review가 포함된 GitHub PR 생성 |
+| `/simplify` | Code 완성 후 단순화 |
 
 ```bash
 /plugin install hello-world@claude-plugin-pack
