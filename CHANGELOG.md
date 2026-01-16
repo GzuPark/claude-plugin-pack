@@ -1,5 +1,12 @@
 # Changelog
 
+## 26.1.18 (2026-01-16)
+
+- Update task-forge plugin (v1.2.3)
+  - Fix: Rename directories to match plugin spec
+  - `slash-commands/` → `commands/`
+  - `subagents/` → `agents/`
+
 ## 26.1.17 (2026-01-15)
 
 - Update hello-world plugin (v1.2.0)
