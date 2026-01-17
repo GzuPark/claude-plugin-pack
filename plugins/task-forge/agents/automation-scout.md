@@ -1,7 +1,7 @@
 ---
 name: automation-scout
 model: sonnet
-allowed-tools: Read, Glob, Grep
+tools: Read, Glob, Grep
 description: >
   Detect repetitive patterns and recommend automation opportunities
   as skills, commands, or agents

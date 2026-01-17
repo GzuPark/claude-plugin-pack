@@ -1,7 +1,7 @@
 ---
 name: followup-suggester
 model: sonnet
-allowed-tools: Read, Glob, Grep
+tools: Read, Glob, Grep
 description: >
   Identify incomplete tasks and prioritize follow-up work for next session
 ---

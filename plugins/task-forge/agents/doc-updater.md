@@ -1,7 +1,7 @@
 ---
 name: doc-updater
 model: sonnet
-allowed-tools: Read, Glob, Grep
+tools: Read, Glob, Grep
 description: >
   Analyze session and propose documentation updates
   for CLAUDE.md and context.md

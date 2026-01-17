@@ -1,5 +1,10 @@
 # Changelog
 
+## 26.1.19 (2026-01-17)
+
+- Update task-forge plugin (v1.2.4)
+  - Fix: Use `tools` field instead of `allowed-tools` in agent frontmatter
+
 ## 26.1.18 (2026-01-16)
 
 - Update task-forge plugin (v1.2.3)

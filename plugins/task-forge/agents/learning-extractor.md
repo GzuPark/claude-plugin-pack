@@ -1,7 +1,7 @@
 ---
 name: learning-extractor
 model: sonnet
-allowed-tools: Read
+tools: Read
 description: >
   Extract learnings, mistakes, and discoveries from session in TIL format
 ---
