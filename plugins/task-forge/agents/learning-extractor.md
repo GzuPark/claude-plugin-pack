@@ -1,6 +1,5 @@
 ---
 name: learning-extractor
-model: sonnet
 tools: Read
 description: >
   Extract learnings, mistakes, and discoveries from session in TIL format

@@ -7,7 +7,7 @@ work recap, and document insights for Claude Code.
 
 ```text
 /recap
-/recap "feat: add user authentication"
+/recap "focus on documentation updates"
 ```
 
 Analyzes your work session with multi-agent system and organizes

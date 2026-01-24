@@ -1,6 +1,5 @@
 ---
 name: doc-updater
-model: sonnet
 tools: Read, Glob, Grep
 description: >
   Analyze session and propose documentation updates

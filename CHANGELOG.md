@@ -1,5 +1,15 @@
 # Changelog
 
+## 26.1.20 (2026-01-24)
+
+- Update hello-world plugin (v1.2.1)
+  - PR: Add AI attribution exclusion rule (no Co-Authored-By unless requested)
+  - /commit: Fix error handling for new repositories without commits
+- Update task-forge plugin (v1.3.0)
+  - /recap: Remove commit functionality, focus on TIL/docs/automation
+  - /recap: Change argument from commit message to user request
+  - Agents: Remove explicit model field (inherit from parent)
+
 ## 26.1.19 (2026-01-17)
 
 - Update task-forge plugin (v1.2.4)

@@ -139,3 +139,9 @@ gh pr create \
 ```
 
 Add `--draft` flag if specified in arguments.
+
+## AI Attribution
+
+- Do NOT include "Generated with Claude Code", "Co-Authored-By", or
+  any AI attribution in the PR title or description unless the user
+  explicitly requests it.

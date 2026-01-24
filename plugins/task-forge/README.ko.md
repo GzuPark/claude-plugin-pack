@@ -7,7 +7,7 @@ Claude Code를 위한 업무 생산성 도구입니다.
 
 ```text
 /recap
-/recap "feat: 사용자 인증 추가"
+/recap "문서 업데이트에 집중"
 ```
 
 Multi-agent system으로 작업 session을 분석하고

@@ -1,6 +1,5 @@
 ---
 name: duplicate-checker
-model: haiku
 tools: Read, Glob, Grep
 description: >
   Validate Phase 1 proposals against existing documentation

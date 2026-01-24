@@ -1,7 +1,7 @@
 {
   "name": "hello-world",
   "description": "Essential dev workflow: git commit and GitHub PR with automated code review",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": {
     "name": "Jongmin Park",
     "url": "https://github.com/GzuPark"

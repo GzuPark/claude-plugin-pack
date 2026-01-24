@@ -1,7 +1,7 @@
 ---
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash, Task, AskUserQuestion
 description: Work recap with multi-agent analysis
-argument-hint: "[commit message]"
+argument-hint: "[request]"
 ---
 
 # Work Recap Command
@@ -11,7 +11,7 @@ automation suggestions, learning records, and follow-up tasks.
 
 ## Input
 
-- `$1`: (Optional) Commit message. If provided, automatically commits after analysis.
+- `$1`: (Optional) User request. Additional context or focus area for the analysis.
 
 ## Execution Flow
 
@@ -83,10 +83,6 @@ Display results **grouped by action**:
 ```markdown
 ## Work Recap Analysis Complete
 
-### To Commit
-- N files changed
-- Suggested commit message: "[generated message]"
-
 ### Documentation Updates
 - CLAUDE.md: N items suggested
   - [Item 1 summary]
@@ -117,11 +113,10 @@ Use AskUserQuestion to present **multi-select** options:
 Which actions would you like to execute?
 
 Options:
-1. Create commit
-2. Update documentation (CLAUDE.md, context.md)
-3. Generate automation (skills/commands/agents)
-4. Save TIL
-5. Do nothing
+1. Update documentation (CLAUDE.md, context.md)
+2. Generate automation (skills/commands/agents)
+3. Save TIL
+4. Do nothing
 ```
 
 Set `multiSelect: true` to allow multiple selections.
@@ -143,11 +138,6 @@ Execute selected actions in **fixed order**:
    - Create or append to `docs/til/YYYY-MM-DD.md` file
    - Save learning-extractor results
 
-4. **Commit** (if selected)
-   - Check if `/commit` command exists (`.claude/commands/commit.md`)
-   - If exists: Run `/commit` with `$1` or generated message
-   - If not exists: Stage all and commit with `$1` or generated msg
-
 ## Error Handling
 
 ### Phase 1 Agent Failure
@@ -161,13 +151,13 @@ Execute selected actions in **fixed order**:
 - Display Phase 1 results without validation
 - Add "Possible duplicates" warning message
 
-## Quick Mode
+## Focus Mode
 
-When `$1` (commit message) is provided:
+When `$1` (user request) is provided:
 
-- Run full analysis process
+- Run full analysis process with the request as additional context
+- Agents can use this context to focus their analysis
 - Present action selection to user after analysis
-- Use provided `$1` for commit message
 
 ---
 
